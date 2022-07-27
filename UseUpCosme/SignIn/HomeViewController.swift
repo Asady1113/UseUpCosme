@@ -17,10 +17,19 @@ class HomeViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! SignInViewController
-        if let sheet = next.sheetPresentationController {
-            sheet.detents = [.medium()]
-            sheet.preferredCornerRadius = 55.0
+        
+        if segue.identifier == "toSignIn" {
+            let next = segue.destination as! SignInViewController
+            if let sheet = next.sheetPresentationController {
+                sheet.detents = [.medium()]
+                sheet.preferredCornerRadius = 55.0
+            }
+        } else if segue.identifier == "toSignUp" {
+            let next = segue.destination as! SignUpViewController
+            if let sheet = next.sheetPresentationController {
+                sheet.detents = [.medium()]
+                sheet.preferredCornerRadius = 55.0
+            }
         }
     }
    
