@@ -26,6 +26,7 @@
 		94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FB28919FD700E3DA12 /* HomeViewController.swift */; };
 		94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16FD2891A47F00E3DA12 /* peopleImage.png */; };
 		94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */; };
+		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		94AE16FB28919FD700E3DA12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94AE16FD2891A47F00E3DA12 /* peopleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peopleImage.png; sourceTree = "<group>"; };
 		94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
 		A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.release.xcconfig"; sourceTree = "<group>"; };
 		B99EFAA45BD0C539268FB429 /* Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				94AE16F92891991400E3DA12 /* titleImage.png */,
+				94D069F82892525700755C92 /* emailImage.png */,
 				94AE16FD2891A47F00E3DA12 /* peopleImage.png */,
 			);
 			path = Images;
@@ -326,6 +329,7 @@
 				9403CDA52891778F00243A79 /* Assets.xcassets in Resources */,
 				9403CDA32891778E00243A79 /* Main.storyboard in Resources */,
 				94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */,
+				94D069F92892525700755C92 /* emailImage.png in Resources */,
 				94AE16FA2891991400E3DA12 /* titleImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

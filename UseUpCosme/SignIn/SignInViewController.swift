@@ -21,7 +21,10 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func signIn() {
         
