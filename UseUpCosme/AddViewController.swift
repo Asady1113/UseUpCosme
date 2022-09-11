@@ -15,6 +15,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     let function = NCMBFunction()
     
     @IBOutlet weak var cosmeImageView: UIImageView!
+    @IBOutlet weak var pencilImage: UIImageView!
     
     @IBOutlet weak var cosmeNameTextField: UITextField!
     @IBOutlet weak var startTextField: UITextField!
@@ -30,6 +31,9 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         super.viewDidLoad()
         
         function.judgeLogin()
+        
+        pencilImage.layer.cornerRadius = 15
+        pencilImage.clipsToBounds = true
 
         cosmeNameTextField.delegate = self
         startTextField.delegate = self

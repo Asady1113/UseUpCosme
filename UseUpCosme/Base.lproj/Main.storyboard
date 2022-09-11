@@ -81,10 +81,6 @@
                                     <action selector="selectImage" destination="xGB-qV-CB7" eventType="touchUpInside" id="N3h-b9-tt1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="editButton.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Fm-XLN">
-                                <rect key="frame" x="288" y="390" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="コスメの詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO6-gh-OaT">
                                 <rect key="frame" x="20" y="463" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -250,6 +246,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="editButton.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Fm-XLN">
+                                <rect key="frame" x="295" y="390" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PAQ-t2-SfI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -262,6 +262,7 @@
                         <outlet property="category4" destination="1Ej-1r-Isy" id="NLD-6C-CPl"/>
                         <outlet property="cosmeImageView" destination="Eh9-Se-znx" id="k3K-qv-1LA"/>
                         <outlet property="cosmeNameTextField" destination="IAg-Zl-b2B" id="Scx-OF-t1H"/>
+                        <outlet property="pencilImage" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
                         <outlet property="startTextField" destination="iAF-kP-UMg" id="DAA-ZQ-1zs"/>
                         <outlet property="useupDateTextField" destination="7xJ-Rk-fIp" id="aSM-9e-RT2"/>
                     </connections>
@@ -315,7 +316,7 @@
         <image name="category2.png" width="103" height="107"/>
         <image name="category3.png" width="105" height="99"/>
         <image name="category4.png" width="103" height="99"/>
-        <image name="editButton.jpeg" width="76.800003051757812" height="76.800003051757812"/>
+        <image name="editButton.jpeg" width="360" height="360"/>
         <image name="homeicon.png" width="30" height="30"/>
         <image name="plusicon.png" width="30" height="30"/>
         <image name="textField.png" width="22" height="33"/>
