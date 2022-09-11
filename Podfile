@@ -8,6 +8,7 @@ target 'UseUpCosme' do
   # Pods for UseUpCosme
   pod 'NYXImagesKit'
   pod 'NCMB', :git => 'https://github.com/NIFTYCloud-mbaas/ncmb_ios.git', :branch => 'develop'
+  pod 'KRProgressHUD'
 
 
   target 'UseUpCosmeTests' do

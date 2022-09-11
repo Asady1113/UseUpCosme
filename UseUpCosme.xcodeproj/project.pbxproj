@@ -38,6 +38,7 @@
 		94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16FD2891A47F00E3DA12 /* peopleImage.png */; };
 		94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */; };
 		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
+		94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		94AE16FD2891A47F00E3DA12 /* peopleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peopleImage.png; sourceTree = "<group>"; };
 		94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
+		94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMBFunction.swift; sourceTree = "<group>"; };
 		A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.release.xcconfig"; sourceTree = "<group>"; };
 		B99EFAA45BD0C539268FB429 /* Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				9403CD9D2891778E00243A79 /* SceneDelegate.swift */,
 				9403CD9F2891778E00243A79 /* ViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
+				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
 				9403CDA12891778E00243A79 /* Main.storyboard */,
 				94AE16F22891955A00E3DA12 /* SignIn */,
 				94AE16F32891957100E3DA12 /* Design */,
@@ -505,6 +508,7 @@
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* ViewController.swift in Sources */,
+				94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
