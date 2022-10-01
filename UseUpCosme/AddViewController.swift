@@ -13,6 +13,7 @@ import NYXImagesKit
 class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let function = NCMBFunction()
+    var resizedImage: UIImage!
     
     @IBOutlet weak var cosmeImageView: UIImageView!
     @IBOutlet weak var pencilImage: UIImageView!
@@ -88,14 +89,42 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let resizedImage = selectedImage.scale(byFactor: 0.3)
+        resizedImage = selectedImage.scale(byFactor: 0.3)
        
         cosmeImageView.image = resizedImage
         picker.dismiss(animated: true, completion: nil)
     }
     
     
-
+    @IBAction func add() {
+        if cosmeImageView.image == UIImage(named: "default-placeholder") {
+            KRProgressHUD.showError(withMessage: "画像を登録してください")
+            
+        } else if cosmeNameTextField.text?.count == 0{
+            KRProgressHUD.showError(withMessage: "名前を登録してください")
+        } else if startTextField.text?.count == 0{
+            KRProgressHUD.showError(withMessage: "使用開始日を登録してください")
+        } else if useupDateTextField.text?.count == 0 {
+            KRProgressHUD.showError(withMessage: "使用期限を登録してください")
+        } //else if category == nil {
+            //カテゴリーは一旦保留
+       // }
+        
+        else {
+            UIGraphicsBeginImageContext(resizedImage.size)
+            let rect = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
+            resizedImage.draw(in: rect)
+            resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            //コスメの登録から
+            
+            
+        }
+        
+        
+        
+    }
     
 
 }
