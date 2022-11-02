@@ -14,6 +14,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     
     let function = NCMBFunction()
     var resizedImage: UIImage!
+    var selectedCategory: String!
     
     @IBOutlet weak var cosmeImageView: UIImageView!
     @IBOutlet weak var pencilImage: UIImageView!
@@ -97,7 +98,8 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     
     //カテゴリ選択関数
     @IBAction func selectCategory(_sender: UIButton) {
-        
+        let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
+        selectedCategory = category[_sender.tag]
     }
     
     
@@ -111,11 +113,9 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             KRProgressHUD.showError(withMessage: "使用開始日を登録してください")
         } else if useupDateTextField.text?.count == 0 {
             KRProgressHUD.showError(withMessage: "使用期限を登録してください")
-        } //else if category == nil {
-            //カテゴリーは一旦保留
-       // }
-        
-        else {
+        } else if selectedCategory == nil {
+            KRProgressHUD.showError(withMessage: "カテゴリを登録してください")
+        } else {
             UIGraphicsBeginImageContext(resizedImage.size)
             let rect = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
             resizedImage.draw(in: rect)
