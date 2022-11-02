@@ -15,9 +15,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS5-0v-dIj">
+                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUL-Am-zRY">
+                                        <rect key="frame" x="0.0" y="0.0" width="621" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bBz-ep-6xz">
+                                                <rect key="frame" x="0.0" y="0.0" width="621" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-Qb-HRY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-1s-0oL">
+                                                        <rect key="frame" x="207" y="0.0" width="207" height="50"/>
+                                                        <color key="backgroundColor" red="0.96862745289999996" green="0.84705877299999999" blue="0.61960786580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB5-HJ-CZ9">
+                                                        <rect key="frame" x="414" y="0.0" width="207" height="50"/>
+                                                        <color key="backgroundColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.66274511810000003" green="0.83137255909999996" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="bBz-ep-6xz" firstAttribute="top" secondItem="UUL-Am-zRY" secondAttribute="top" id="2Fq-LO-VW1"/>
+                                            <constraint firstAttribute="bottom" secondItem="bBz-ep-6xz" secondAttribute="bottom" id="7m6-1R-XIC"/>
+                                            <constraint firstItem="bBz-ep-6xz" firstAttribute="leading" secondItem="UUL-Am-zRY" secondAttribute="leading" id="XgA-6l-UaC"/>
+                                            <constraint firstAttribute="trailing" secondItem="bBz-ep-6xz" secondAttribute="trailing" id="i8n-2W-bpN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UUL-Am-zRY" firstAttribute="height" secondItem="fS5-0v-dIj" secondAttribute="height" id="81h-Ci-0hX"/>
+                                    <constraint firstAttribute="height" constant="50" id="Gu2-0G-apg"/>
+                                    <constraint firstItem="UUL-Am-zRY" firstAttribute="leading" secondItem="fS5-0v-dIj" secondAttribute="leading" id="IDd-aN-05E"/>
+                                    <constraint firstItem="UUL-Am-zRY" firstAttribute="top" secondItem="fS5-0v-dIj" secondAttribute="top" id="QmV-Ue-sqf"/>
+                                    <constraint firstAttribute="trailing" secondItem="UUL-Am-zRY" secondAttribute="trailing" id="YEz-TC-en2"/>
+                                    <constraint firstItem="UUL-Am-zRY" firstAttribute="width" secondItem="fS5-0v-dIj" secondAttribute="width" multiplier="1.5" id="aPy-5a-3KD"/>
+                                    <constraint firstAttribute="bottom" secondItem="UUL-Am-zRY" secondAttribute="bottom" id="apT-R0-ePs"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Aks-uy-3de"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="a42-U3-Xfd"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fS5-0v-dIj" secondAttribute="trailing" id="PLb-Vy-vOO"/>
+                            <constraint firstItem="fS5-0v-dIj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="YbR-BY-Igh"/>
+                            <constraint firstItem="fS5-0v-dIj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tK4-DC-ML3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="homeicon.png" id="asL-r8-WGb">
                         <color key="badgeColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
