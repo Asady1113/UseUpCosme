@@ -95,6 +95,11 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //カテゴリ選択関数
+    @IBAction func selectCategory(_sender: UIButton) {
+        
+    }
+    
     
     @IBAction func add() {
         if cosmeImageView.image == UIImage(named: "default-placeholder") {
@@ -121,9 +126,6 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             
             
         }
-        
-        
-        
     }
     
 
