@@ -13,6 +13,7 @@ import NYXImagesKit
 class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let function = NCMBFunction()
+    let buttonDesign = SetButtonImage()
     var resizedImage: UIImage!
     var selectedCategory: String!
     
@@ -33,6 +34,9 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         super.viewDidLoad()
         
         function.judgeLogin()
+        
+        //ボタンに写真をセット
+        buttonDesign.setImage(button: category1)
         
         pencilImage.layer.cornerRadius = 15
         pencilImage.clipsToBounds = true
@@ -98,6 +102,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     
     //カテゴリ選択関数
     @IBAction func selectCategory(_sender: UIButton) {
+        
         let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
         selectedCategory = category[_sender.tag]
     }
