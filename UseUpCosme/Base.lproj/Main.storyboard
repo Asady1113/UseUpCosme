@@ -342,8 +342,8 @@
                         <outlet property="category1" destination="a3P-XB-nuQ" id="Urp-2y-qWy"/>
                         <outlet property="cosmeImageView" destination="Eh9-Se-znx" id="k3K-qv-1LA"/>
                         <outlet property="cosmeNameTextField" destination="IAg-Zl-b2B" id="Scx-OF-t1H"/>
-                        <outlet property="pencilImage" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
-                        <outlet property="startTextField" destination="iAF-kP-UMg" id="DAA-ZQ-1zs"/>
+                        <outlet property="pencilImageView" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
+                        <outlet property="startDateTextField" destination="iAF-kP-UMg" id="DAA-ZQ-1zs"/>
                         <outlet property="useupDateTextField" destination="7xJ-Rk-fIp" id="aSM-9e-RT2"/>
                     </connections>
                 </viewController>

@@ -39,7 +39,7 @@
 		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
 		94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */; };
 		94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94D7B19728CDE6470053A5F4 /* editButton.jpeg */; };
-		94FDDFEA2938C09800BBC400 /* SetButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDDFE92938C09800BBC400 /* SetButtonImage.swift */; };
+		94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDDFE92938C09800BBC400 /* DesignAddView.swift */; };
 		94FDDFEE2938C40600BBC400 /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FDDFED2938C40600BBC400 /* foundation.png */; };
 /* End PBXBuildFile section */
 
@@ -97,7 +97,7 @@
 		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
 		94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMBFunction.swift; sourceTree = "<group>"; };
 		94D7B19728CDE6470053A5F4 /* editButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = editButton.jpeg; sourceTree = "<group>"; };
-		94FDDFE92938C09800BBC400 /* SetButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetButtonImage.swift; sourceTree = "<group>"; };
+		94FDDFE92938C09800BBC400 /* DesignAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignAddView.swift; sourceTree = "<group>"; };
 		94FDDFED2938C40600BBC400 /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
 		A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				94AE16F4289195A300E3DA12 /* CustomButton.swift */,
-				94FDDFE92938C09800BBC400 /* SetButtonImage.swift */,
+				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
-				94FDDFEA2938C09800BBC400 /* SetButtonImage.swift in Sources */,
+				94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */,
 				94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

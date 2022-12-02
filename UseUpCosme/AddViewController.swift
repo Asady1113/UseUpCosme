@@ -13,15 +13,15 @@ import NYXImagesKit
 class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let function = NCMBFunction()
-    let buttonDesign = SetButtonImage()
+    let design = DesignAddView()
     var resizedImage: UIImage!
     var selectedCategory: String!
     
     @IBOutlet weak var cosmeImageView: UIImageView!
-    @IBOutlet weak var pencilImage: UIImageView!
+    @IBOutlet weak var pencilImageView: UIImageView!
     
     @IBOutlet weak var cosmeNameTextField: UITextField!
-    @IBOutlet weak var startTextField: UITextField!
+    @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var useupDateTextField: UITextField!
     
     @IBOutlet weak var category1: UIButton!
@@ -35,14 +35,17 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         
         function.judgeLogin()
         
-        //ボタンに写真をセット
-        buttonDesign.setImage(button: category1)
+        //ボタンに写真をセット(カテゴリー1のみ）
+        design.setImage(button: category1)
         
-        pencilImage.layer.cornerRadius = 15
-        pencilImage.clipsToBounds = true
+        //pickerの設定
+        design.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
+        
+        //鉛筆の画像を丸くする
+        design.designImage(image: pencilImageView)
 
         cosmeNameTextField.delegate = self
-        startTextField.delegate = self
+        startDateTextField.delegate = self
         useupDateTextField.delegate = self
     }
     
@@ -114,7 +117,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             
         } else if cosmeNameTextField.text?.count == 0{
             KRProgressHUD.showError(withMessage: "名前を登録してください")
-        } else if startTextField.text?.count == 0{
+        } else if startDateTextField.text?.count == 0{
             KRProgressHUD.showError(withMessage: "使用開始日を登録してください")
         } else if useupDateTextField.text?.count == 0 {
             KRProgressHUD.showError(withMessage: "使用期限を登録してください")
