@@ -9,6 +9,12 @@ import UIKit
 
 class DesignAddView {
     
+    var startDateTextField: UITextField!
+    var useupDateTextField: UITextField!
+    
+    let startDatePicker: UIDatePicker = UIDatePicker()
+    let useupDatePicker: UIDatePicker = UIDatePicker()
+    
     //画像を丸くする処理
     func designImage(image: UIImageView) {
         image.layer.cornerRadius = 15
@@ -25,8 +31,9 @@ class DesignAddView {
     
     //日付のテキストフィールドを設定する
     func makeDatePicker(startDateTextField: UITextField,useupDateTextField: UITextField,view: UIView) {
-        let startDatePicker: UIDatePicker = UIDatePicker()
-        let useupDatePicker: UIDatePicker = UIDatePicker()
+        
+        self.startDateTextField = startDateTextField
+        self.useupDateTextField = useupDateTextField
         
         startDatePicker.preferredDatePickerStyle = .wheels
         startDatePicker.datePickerMode = UIDatePicker.Mode.date
@@ -37,10 +44,10 @@ class DesignAddView {
         let startSpacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let startDoneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(startDoneDate))
         let startCancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(startCancelDate))
-        startToolbar.setItems([startSpacelItem, startDoneItem], animated: true)
+        startToolbar.setItems([startCancelItem, startSpacelItem, startDoneItem], animated: true)
         
-        startDateTextField.inputView = startDatePicker
-        startDateTextField.inputAccessoryView = startToolbar
+        self.startDateTextField.inputView = startDatePicker
+        self.startDateTextField.inputAccessoryView = startToolbar
         
         
         useupDatePicker.preferredDatePickerStyle = .wheels
@@ -52,27 +59,38 @@ class DesignAddView {
         let useupSpacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let useupDoneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(useupDoneDate))
         let useupCancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(useupCancelDate))
-        useupToolbar.setItems([useupSpacelItem, useupDoneItem], animated: true)
+        useupToolbar.setItems([useupCancelItem, useupSpacelItem, useupDoneItem], animated: true)
         
-        useupDateTextField.inputView = useupDatePicker
-        useupDateTextField.inputAccessoryView = useupToolbar
+        self.useupDateTextField.inputView = useupDatePicker
+        self.useupDateTextField.inputAccessoryView = useupToolbar
     }
     
     //完了ボタンを押した時の処理
     @objc func startDoneDate(){
+        self.startDateTextField.endEditing(true)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ja_JP")
+        self.startDateTextField.text = "\(formatter.string(from: startDatePicker.date))"
     
     }
     
     @objc func startCancelDate(){
-        
+        self.startDateTextField.endEditing(true)
     }
     
     //完了ボタンを押した時の処理
     @objc func useupDoneDate(){
-    
+        self.useupDateTextField.endEditing(true)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ja_JP")
+        self.useupDateTextField.text = "\(formatter.string(from: useupDatePicker.date))"
     }
     
     @objc func useupCancelDate(){
-        
+        self.useupDateTextField.endEditing(true)
     }
 }
