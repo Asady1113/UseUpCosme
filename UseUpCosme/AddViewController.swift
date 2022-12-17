@@ -124,14 +124,24 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         } else if selectedCategory == nil {
             KRProgressHUD.showError(withMessage: "カテゴリを登録してください")
         } else {
+            //画像調整
             UIGraphicsBeginImageContext(resizedImage.size)
             let rect = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
             resizedImage.draw(in: rect)
             resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            //コスメの登録から
+            //日付をDate型に変換する（エラー中）
+            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy/MM/dd")!
+            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy/MM/dd")!
+            print(startDate)
             
+            //通知はまだ
+            let notificationId = ""
+            
+            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+            
+            function.addCosme(cosme: cosme, resizedImage: resizedImage)
             
         }
     }

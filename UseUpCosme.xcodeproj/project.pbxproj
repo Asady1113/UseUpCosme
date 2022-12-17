@@ -20,6 +20,8 @@
 		9403CDBD2891778F00243A79 /* UseUpCosmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */; };
 		9403CDBF2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */; };
 		9408525628E87A700093987A /* default-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9408525528E87A700093987A /* default-placeholder.png */; };
+		940F2EE8294E0F0800700453 /* Cosme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE7294E0F0800700453 /* Cosme.swift */; };
+		940F2EEA294E133B00700453 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE9294E133B00700453 /* DateUtils.swift */; };
 		944E8C1928BC75F50024F9BE /* archiveicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1828BC75F50024F9BE /* archiveicon@2x.png */; };
 		944E8C1B28BC75F90024F9BE /* homeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1A28BC75F90024F9BE /* homeicon@2x.png */; };
 		944E8C1D28BC75FF0024F9BE /* plusicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1C28BC75FF0024F9BE /* plusicon@2x.png */; };
@@ -78,6 +80,8 @@
 		9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITests.swift; sourceTree = "<group>"; };
 		9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9408525528E87A700093987A /* default-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder.png"; sourceTree = "<group>"; };
+		940F2EE7294E0F0800700453 /* Cosme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosme.swift; sourceTree = "<group>"; };
+		940F2EE9294E133B00700453 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		944E8C1828BC75F50024F9BE /* archiveicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "archiveicon@2x.png"; sourceTree = "<group>"; };
 		944E8C1A28BC75F90024F9BE /* homeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeicon@2x.png"; sourceTree = "<group>"; };
 		944E8C1C28BC75FF0024F9BE /* plusicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plusicon@2x.png"; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				9403CD9F2891778E00243A79 /* ViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
+				940F2EE9294E133B00700453 /* DateUtils.swift */,
+				940F2EE7294E0F0800700453 /* Cosme.swift */,
 				9403CDA12891778E00243A79 /* Main.storyboard */,
 				94AE16F22891955A00E3DA12 /* SignIn */,
 				94AE16F32891957100E3DA12 /* Design */,
@@ -512,11 +518,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
+				940F2EEA294E133B00700453 /* DateUtils.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* ViewController.swift in Sources */,
 				94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
+				940F2EE8294E0F0800700453 /* Cosme.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
 				94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */,
