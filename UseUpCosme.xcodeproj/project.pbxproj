@@ -41,6 +41,7 @@
 		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
 		94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */; };
 		94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94D7B19728CDE6470053A5F4 /* editButton.jpeg */; };
+		94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */; };
 		94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDDFE92938C09800BBC400 /* DesignAddView.swift */; };
 		94FDDFEE2938C40600BBC400 /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FDDFED2938C40600BBC400 /* foundation.png */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
 		94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMBFunction.swift; sourceTree = "<group>"; };
 		94D7B19728CDE6470053A5F4 /* editButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = editButton.jpeg; sourceTree = "<group>"; };
+		94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificateFunction.swift; sourceTree = "<group>"; };
 		94FDDFE92938C09800BBC400 /* DesignAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignAddView.swift; sourceTree = "<group>"; };
 		94FDDFED2938C40600BBC400 /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
 		A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,14 +178,8 @@
 			children = (
 				9403CD9B2891778E00243A79 /* AppDelegate.swift */,
 				9403CD9D2891778E00243A79 /* SceneDelegate.swift */,
-				9403CD9F2891778E00243A79 /* ViewController.swift */,
-				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
-				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
-				940F2EE9294E133B00700453 /* DateUtils.swift */,
-				940F2EE7294E0F0800700453 /* Cosme.swift */,
-				9403CDA12891778E00243A79 /* Main.storyboard */,
+				94FD05302950CCC9003B7FA6 /* Main */,
 				94AE16F22891955A00E3DA12 /* SignIn */,
-				94AE16F32891957100E3DA12 /* Design */,
 				94AE16F62891989B00E3DA12 /* Images */,
 				9403CDA42891778F00243A79 /* Assets.xcassets */,
 				9403CDA62891778F00243A79 /* LaunchScreen.storyboard */,
@@ -215,7 +211,7 @@
 				94AE16FB28919FD700E3DA12 /* HomeViewController.swift */,
 				94AE16EE2891914F00E3DA12 /* SignInViewController.swift */,
 				94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */,
-				94AE16EC289190B200E3DA12 /* SignIn.storyboard */,
+				94FD052F2950CC9C003B7FA6 /* Design */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -223,7 +219,7 @@
 		94AE16F32891957100E3DA12 /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				94AE16F4289195A300E3DA12 /* CustomButton.swift */,
+				9403CDA12891778E00243A79 /* Main.storyboard */,
 				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
 			);
 			path = Design;
@@ -248,6 +244,45 @@
 				944E8C1E28BC77D80024F9BE /* cancelButton.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		94FD052F2950CC9C003B7FA6 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				94AE16F4289195A300E3DA12 /* CustomButton.swift */,
+				94AE16EC289190B200E3DA12 /* SignIn.storyboard */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		94FD05302950CCC9003B7FA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9403CD9F2891778E00243A79 /* ViewController.swift */,
+				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
+				94FD05322950CD1C003B7FA6 /* Function */,
+				94FD05312950CCFF003B7FA6 /* Model */,
+				94AE16F32891957100E3DA12 /* Design */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		94FD05312950CCFF003B7FA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				940F2EE7294E0F0800700453 /* Cosme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94FD05322950CD1C003B7FA6 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
+				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
+				940F2EE9294E133B00700453 /* DateUtils.swift */,
+			);
+			path = Function;
 			sourceTree = "<group>";
 		};
 		C54581C8E18A110ECA725CEA /* Pods */ = {
@@ -519,6 +554,7 @@
 			files = (
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* DateUtils.swift in Sources */,
+				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* ViewController.swift in Sources */,

@@ -68,12 +68,7 @@ class DesignAddView {
     //完了ボタンを押した時の処理
     @objc func startDoneDate(){
         self.startDateTextField.endEditing(true)
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        formatter.locale = Locale(identifier: "ja_JP")
-        self.startDateTextField.text = "\(formatter.string(from: startDatePicker.date))"
-    
+        self.startDateTextField.text = DateUtils.dateToString(dateString: startDatePicker.date, format: "yyyy-MM-dd")
     }
     
     @objc func startCancelDate(){
@@ -83,11 +78,7 @@ class DesignAddView {
     //完了ボタンを押した時の処理
     @objc func useupDoneDate(){
         self.useupDateTextField.endEditing(true)
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        formatter.locale = Locale(identifier: "ja_JP")
-        self.useupDateTextField.text = "\(formatter.string(from: useupDatePicker.date))"
+        self.useupDateTextField.text = DateUtils.dateToString(dateString: useupDatePicker.date, format: "yyyy-MM-dd")
     }
     
     @objc func useupCancelDate(){

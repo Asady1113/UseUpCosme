@@ -112,6 +112,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     
     
     @IBAction func add() {
+        
         if cosmeImageView.image == UIImage(named: "default-placeholder") {
             KRProgressHUD.showError(withMessage: "画像を登録してください")
             
@@ -131,18 +132,31 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            //日付をDate型に変換する（エラー中）
-            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy/MM/dd")!
-            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy/MM/dd")!
-            print(startDate)
+            //日付をDate型に変換する
+            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy-MM-dd")!
+            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy-MM-dd")!
             
-            //通知はまだ
-            let notificationId = ""
+            //設定日付が正しいかを判定
+            let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
+            let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
             
+            print(dateSubtractionFromStart)
+            if dateSubtractionFromToday < 0 {
+                KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
+                return
+            } else if dateSubtractionFromStart < 0 {
+                KRProgressHUD.showError(withMessage: "使用開始時に期限が切れているようです")
+                return
+            }
+            
+            //通知設定
+            let notificateFunc = NotificateFunction()
+            let notificationId = notificateFunc.makenotification(name: cosmeNameTextField.text!, limitDate: limitDate)
+            
+            //モデル化
             let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
             
             function.addCosme(cosme: cosme, resizedImage: resizedImage)
-            
         }
     }
     

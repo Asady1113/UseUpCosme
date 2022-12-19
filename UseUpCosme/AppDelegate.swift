@@ -7,6 +7,7 @@
 
 import UIKit
 import NCMB
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // プッシュ通知の許可を依頼する際のコード
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            // [.alert, .badge, .sound]と指定されているので、「アラート、バッジ、サウンド」の3つに対しての許可をリクエストした
+            if granted {
+                // 「許可」が押された場合
+                UNUserNotificationCenter.current().delegate = self
+            } else {
+                // 「許可しない」が押された場合
+                print("permission error")
+            }
+        }
+        
         
         let appkey = "4d004da513367730b66fcd621049793b7ede170c7d5486a6fbaa4c27f8ad5c5a"
         let clientKey = "e37c2cce7350c6ef86ec21b166d1c5c2fb335b9ffc82475ed171b9cba492888e"
@@ -40,4 +54,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+extension AppDelegate: UNUserNotificationCenterDelegate{
+    
+    func userNotificationCenter
+    (_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // アプリ起動中でもアラートと音で通知
+        completionHandler([.alert, .sound])
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+        
+    }
+}
+
+
 
