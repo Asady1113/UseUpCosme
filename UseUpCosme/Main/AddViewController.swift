@@ -13,13 +13,15 @@ import NYXImagesKit
 class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let function = NCMBFunction()
+    let design = DesignAddView()
     var resizedImage: UIImage!
+    var selectedCategory: String!
     
     @IBOutlet weak var cosmeImageView: UIImageView!
-    @IBOutlet weak var pencilImage: UIImageView!
+    @IBOutlet weak var pencilImageView: UIImageView!
     
     @IBOutlet weak var cosmeNameTextField: UITextField!
-    @IBOutlet weak var startTextField: UITextField!
+    @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var useupDateTextField: UITextField!
     
     @IBOutlet weak var category1: UIButton!
@@ -33,11 +35,17 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         
         function.judgeLogin()
         
-        pencilImage.layer.cornerRadius = 15
-        pencilImage.clipsToBounds = true
+        //ボタンに写真をセット(カテゴリー1のみ）
+        design.setImage(button: category1)
+        
+        //pickerの設定
+        design.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
+        
+        //鉛筆の画像を丸くする
+        design.designImage(image: pencilImageView)
 
         cosmeNameTextField.delegate = self
-        startTextField.delegate = self
+        startDateTextField.delegate = self
         useupDateTextField.delegate = self
     }
     
@@ -98,33 +106,57 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     //カテゴリ選択関数
     @IBAction func selectCategory(_sender: UIButton) {
         
+        let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
+        selectedCategory = category[_sender.tag]
     }
     
     
     @IBAction func add() {
+        
         if cosmeImageView.image == UIImage(named: "default-placeholder") {
             KRProgressHUD.showError(withMessage: "画像を登録してください")
             
         } else if cosmeNameTextField.text?.count == 0{
             KRProgressHUD.showError(withMessage: "名前を登録してください")
-        } else if startTextField.text?.count == 0{
+        } else if startDateTextField.text?.count == 0{
             KRProgressHUD.showError(withMessage: "使用開始日を登録してください")
         } else if useupDateTextField.text?.count == 0 {
             KRProgressHUD.showError(withMessage: "使用期限を登録してください")
-        } //else if category == nil {
-            //カテゴリーは一旦保留
-       // }
-        
-        else {
+        } else if selectedCategory == nil {
+            KRProgressHUD.showError(withMessage: "カテゴリを登録してください")
+        } else {
+            //画像調整
             UIGraphicsBeginImageContext(resizedImage.size)
             let rect = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
             resizedImage.draw(in: rect)
             resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            //コスメの登録から
+            //日付をDate型に変換する
+            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy-MM-dd")!
+            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy-MM-dd")!
             
+            //設定日付が正しいかを判定
+            let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
+            let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
             
+            print(dateSubtractionFromStart)
+            if dateSubtractionFromToday < 0 {
+                KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
+                return
+            } else if dateSubtractionFromStart < 0 {
+                KRProgressHUD.showError(withMessage: "使用開始時に期限が切れているようです")
+                return
+            }
+            
+            //通知設定
+            let notificateFunc = NotificateFunction()
+            let notificationId = notificateFunc.makenotification(name: cosmeNameTextField.text!, limitDate: limitDate)
+            
+            //モデル化
+            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+            
+            function.addCosme(cosme: cosme, resizedImage: resizedImage)
         }
     }
     
