@@ -39,6 +39,9 @@
 		94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16FD2891A47F00E3DA12 /* peopleImage.png */; };
 		94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */; };
 		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
+		94D4726A29518FB600873FDF /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726929518FB600873FDF /* search@2x.png */; };
+		94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4726B2951904900873FDF /* CosmeTableViewCell.swift */; };
+		94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726C2951904900873FDF /* CosmeTableViewCell.xib */; };
 		94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */; };
 		94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94D7B19728CDE6470053A5F4 /* editButton.jpeg */; };
 		94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */; };
@@ -100,6 +103,9 @@
 		94AE16FD2891A47F00E3DA12 /* peopleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peopleImage.png; sourceTree = "<group>"; };
 		94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
+		94D4726929518FB600873FDF /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		94D4726B2951904900873FDF /* CosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeTableViewCell.swift; sourceTree = "<group>"; };
+		94D4726C2951904900873FDF /* CosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmeTableViewCell.xib; sourceTree = "<group>"; };
 		94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMBFunction.swift; sourceTree = "<group>"; };
 		94D7B19728CDE6470053A5F4 /* editButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = editButton.jpeg; sourceTree = "<group>"; };
 		94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificateFunction.swift; sourceTree = "<group>"; };
@@ -220,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				9403CDA12891778E00243A79 /* Main.storyboard */,
+				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
+				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
 				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
 			);
 			path = Design;
@@ -242,6 +250,7 @@
 				94D069F82892525700755C92 /* emailImage.png */,
 				94AE16FD2891A47F00E3DA12 /* peopleImage.png */,
 				944E8C1E28BC77D80024F9BE /* cancelButton.png */,
+				94D4726929518FB600873FDF /* search@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -417,12 +426,14 @@
 				94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */,
 				944E8C2B28BD1C820024F9BE /* category2.png in Resources */,
 				944E8C1D28BC75FF0024F9BE /* plusicon@2x.png in Resources */,
+				94D4726A29518FB600873FDF /* search@2x.png in Resources */,
 				944E8C2728BD1BB40024F9BE /* textField.png in Resources */,
 				944E8C1B28BC75F90024F9BE /* homeicon@2x.png in Resources */,
 				94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */,
 				944E8C2F28BD1C8E0024F9BE /* category4.png in Resources */,
 				94FDDFEE2938C40600BBC400 /* foundation.png in Resources */,
 				9408525628E87A700093987A /* default-placeholder.png in Resources */,
+				94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */,
 				94D069F92892525700755C92 /* emailImage.png in Resources */,
 				94AE16FA2891991400E3DA12 /* titleImage.png in Resources */,
 			);
@@ -565,6 +576,7 @@
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
 				94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */,
 				94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */,
+				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
