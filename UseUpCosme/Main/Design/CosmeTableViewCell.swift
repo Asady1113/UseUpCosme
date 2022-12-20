@@ -8,10 +8,40 @@
 import UIKit
 
 class CosmeTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var cosmeImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    //@IBOutlet weak var brandLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var limitLabel: UILabel!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var LimitDateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        countLabel.layer.cornerRadius = 6
+        countLabel.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        countLabel.clipsToBounds = true
+        
+        cosmeImageView.layer.cornerRadius = 6
+        cosmeImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        cosmeImageView.clipsToBounds = true
+        
+        startLabel.layer.cornerRadius = 6
+        startLabel.clipsToBounds = true
+        
+        limitLabel.layer.cornerRadius = 6
+        limitLabel.clipsToBounds = true
+        
+        startDateLabel.layer.cornerRadius = 6
+        startDateLabel.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        startDateLabel.clipsToBounds = true
+        
+        LimitDateLabel.layer.cornerRadius = 6
+        LimitDateLabel.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        LimitDateLabel.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

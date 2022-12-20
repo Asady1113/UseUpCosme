@@ -12,7 +12,7 @@
 		742B48E852DD1B4132633CC2 /* Pods_UseUpCosmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */; };
 		9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9B2891778E00243A79 /* AppDelegate.swift */; };
 		9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9D2891778E00243A79 /* SceneDelegate.swift */; };
-		9403CDA02891778E00243A79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9F2891778E00243A79 /* ViewController.swift */; };
+		9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9F2891778E00243A79 /* MainHomeViewController.swift */; };
 		9403CDA32891778E00243A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403CDA12891778E00243A79 /* Main.storyboard */; };
 		9403CDA52891778F00243A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9403CDA42891778F00243A79 /* Assets.xcassets */; };
 		9403CDA82891778F00243A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403CDA62891778F00243A79 /* LaunchScreen.storyboard */; };
@@ -73,7 +73,7 @@
 		9403CD982891778E00243A79 /* UseUpCosme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UseUpCosme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9403CD9B2891778E00243A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9403CD9D2891778E00243A79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9403CD9F2891778E00243A79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9403CD9F2891778E00243A79 /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		9403CDA22891778E00243A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9403CDA42891778F00243A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9403CDA72891778F00243A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		94FD05302950CCC9003B7FA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9403CD9F2891778E00243A79 /* ViewController.swift */,
+				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 				94FD05322950CD1C003B7FA6 /* Function */,
 				94FD05312950CCFF003B7FA6 /* Model */,
@@ -568,7 +568,7 @@
 				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
-				9403CDA02891778E00243A79 /* ViewController.swift in Sources */,
+				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
 				94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				940F2EE8294E0F0800700453 /* Cosme.swift in Sources */,
