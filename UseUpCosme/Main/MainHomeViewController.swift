@@ -7,6 +7,7 @@
 
 import UIKit
 import NCMB
+import KRProgressHUD
 
 class MainHomeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -53,9 +54,49 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
     
     
     func loadCosme() {
-        //Cosmeの読み込み
-        cosmes = function.loadCosme(user: NCMBUser.current(), category: selectedCategory)
-        listTableView.reloadData()
+        //Cosmeの読み込み(モデル化断念）
+//          cosmes = function.loadCosme(user: NCMBUser.current(), category: selectedCategory)
+//          listTableView.reloadData()
+        
+        KRProgressHUD.show()
+
+        cosmes = [Cosme]()
+
+        let query = NCMBQuery(className: "Cosme")
+        query?.includeKey("user")
+        // 自分の投稿だけ持ってくる
+        query?.whereKey("user", equalTo: NCMBUser.current())
+
+        //カテゴリー縛りがあれば
+        if selectedCategory != "ALL" {
+            query?.whereKey("category", equalTo: selectedCategory)
+        }
+
+        query?.findObjectsInBackground({ result, error in
+            if error != nil {
+                KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
+            } else {
+
+                for object in result as! [NCMBObject] {
+                    let user = object.object(forKey: "user") as! NCMBUser
+                    let name = object.object(forKey: "name") as! String
+                    let category = object.object(forKey: "category") as! String
+                    let startDate = object.object(forKey: "startDate") as! Date
+                    let limitDate = object.object(forKey: "limitDate") as! Date
+                    let imageUrl = object.object(forKey: "imageUrl") as! String
+                    let notificationId = object.object(forKey: "notificationId") as! String
+
+                    let cosme = Cosme(user: user, name: name, category: category, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+                    cosme.objectId = object.objectId
+                    cosme.imageUrl = imageUrl
+
+                    self.cosmes.append(cosme)
+                }
+
+                KRProgressHUD.dismiss()
+                self.listTableView.reloadData()
+            }
+        })
     }
 }
 

@@ -59,6 +59,7 @@ class NCMBFunction {
         }
     }
     
+    //コスメ読み込み（非同期処理できず、モデル化断念）
     func loadCosme(user: NCMBUser,category: String) -> [Cosme] {
         KRProgressHUD.show()
         
@@ -74,7 +75,6 @@ class NCMBFunction {
             query?.whereKey("category", equalTo: category)
         }
         
-        let semaphore = DispatchSemaphore(value: 1)
         query?.findObjectsInBackground({ result, error in
             if error != nil {
                 KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
@@ -95,12 +95,10 @@ class NCMBFunction {
                     
                     cosmes.append(cosme)
                 }
+                
+                KRProgressHUD.dismiss()
             }
-            KRProgressHUD.dismiss()
-            semaphore.signal()
         })
-        
-        semaphore.wait()
         return cosmes
     }
 }
