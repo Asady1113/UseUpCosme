@@ -39,6 +39,9 @@
 		94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16FD2891A47F00E3DA12 /* peopleImage.png */; };
 		94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */; };
 		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
+		94D0B0142953635000A1FC70 /* DesignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B0132953635000A1FC70 /* DesignMainView.swift */; };
+		94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B015295364EA00A1FC70 /* UIColorHex.swift */; };
+		94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B01729536B4300A1FC70 /* DetailViewController.swift */; };
 		94D4726A29518FB600873FDF /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726929518FB600873FDF /* search@2x.png */; };
 		94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4726B2951904900873FDF /* CosmeTableViewCell.swift */; };
 		94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726C2951904900873FDF /* CosmeTableViewCell.xib */; };
@@ -103,6 +106,9 @@
 		94AE16FD2891A47F00E3DA12 /* peopleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peopleImage.png; sourceTree = "<group>"; };
 		94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
+		94D0B0132953635000A1FC70 /* DesignMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignMainView.swift; sourceTree = "<group>"; };
+		94D0B015295364EA00A1FC70 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		94D0B01729536B4300A1FC70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		94D4726929518FB600873FDF /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		94D4726B2951904900873FDF /* CosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeTableViewCell.swift; sourceTree = "<group>"; };
 		94D4726C2951904900873FDF /* CosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmeTableViewCell.xib; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
 				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
 				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
+				94D0B0132953635000A1FC70 /* DesignMainView.swift */,
+				94D0B015295364EA00A1FC70 /* UIColorHex.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 			children = (
 				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
+				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
 				94FD05322950CD1C003B7FA6 /* Function */,
 				94FD05312950CCFF003B7FA6 /* Model */,
 				94AE16F32891957100E3DA12 /* Design */,
@@ -564,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
+				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* DateUtils.swift in Sources */,
 				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
@@ -576,6 +586,8 @@
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
 				94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */,
 				94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */,
+				94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */,
+				94D0B0142953635000A1FC70 /* DesignMainView.swift in Sources */,
 				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

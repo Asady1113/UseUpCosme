@@ -8,11 +8,13 @@
 import UIKit
 import NCMB
 import KRProgressHUD
+import Kingfisher
 
 class MainHomeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var listTableView: UITableView!
-    var function = NCMBFunction()
+    //var function = NCMBFunction()
+    var design = DesignMainView()
     var cosmes = [Cosme]()
     var selectedCategory: String = "ALL"
     var isOrdered: Bool = false
@@ -39,10 +41,38 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CosmeTableViewCell
         
+        cell.nameLabel.text = cosmes[indexPath.row].name
+        
+        let startDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
+        let limitDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].limitDate, format: "yyyy / MM / dd")
+
+        cell.startDateLabel.text = startDateString
+        cell.LimitDateLabel.text = limitDateString
+        
+        let countDate = DateUtils.dateFromStartDate(limitDate: cosmes[indexPath.row].limitDate)
+        cell.countLabel.text = String(countDate)
+        design.changeCountColor(count: countDate, view: cell.countView)
+        
+        let imageUrl = cosmes[indexPath.row].imageUrl
+        cell.cosmeImageView.kf.setImage(with: URL(string: imageUrl!))
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toDetail", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectedIndex = listTableView.indexPathForSelectedRow!
+        let detailVC = segue.destination as! DetailViewController
+        detailVC.cosme = cosmes[selectedIndex.row]
+    }
+    
+    
+    //ボタンによる操作（カテゴリーや期限順）
     @IBAction func options(_sender: UIButton) {
         if _sender.tag == 8 {
             isOrdered = true

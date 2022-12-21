@@ -53,6 +53,7 @@ class NCMBFunction {
                         KRProgressHUD.showError(withMessage: "保存に失敗しました")
                     } else {
                         KRProgressHUD.dismiss()
+                        KRProgressHUD.showMessage("登録が完了しました")
                     }
                 })
             }

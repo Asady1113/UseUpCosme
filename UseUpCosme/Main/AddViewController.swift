@@ -133,8 +133,8 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             UIGraphicsEndImageContext()
             
             //日付をDate型に変換する
-            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy-MM-dd")!
-            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy-MM-dd")!
+            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy / MM / dd")!
+            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy / MM / dd")!
             
             //設定日付が正しいかを判定
             let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
@@ -156,7 +156,13 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             //モデル化
             let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
             
+            //追加
             function.addCosme(cosme: cosme, resizedImage: resizedImage)
+            
+            //初期化
+            design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
+            selectedCategory = nil
+            
         }
     }
     

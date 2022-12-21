@@ -9,6 +9,7 @@ import UIKit
 
 class CosmeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var countView: UIView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var cosmeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,9 +22,9 @@ class CosmeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        countLabel.layer.cornerRadius = 6
-        countLabel.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        countLabel.clipsToBounds = true
+        countView.layer.cornerRadius = 6
+        countView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        countView.clipsToBounds = true
         
         cosmeImageView.layer.cornerRadius = 6
         cosmeImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
