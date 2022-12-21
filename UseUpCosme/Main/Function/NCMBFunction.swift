@@ -58,4 +58,49 @@ class NCMBFunction {
             }
         }
     }
+    
+    func loadCosme(user: NCMBUser,category: String) -> [Cosme] {
+        KRProgressHUD.show()
+        
+        var cosmes = [Cosme]()
+        
+        let query = NCMBQuery(className: "Cosme")
+        query?.includeKey("user")
+        // 自分の投稿だけ持ってくる
+        query?.whereKey("user", equalTo: user)
+        
+        //カテゴリー縛りがあれば
+        if category != "ALL" {
+            query?.whereKey("category", equalTo: category)
+        }
+        
+        let semaphore = DispatchSemaphore(value: 1)
+        query?.findObjectsInBackground({ result, error in
+            if error != nil {
+                KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
+            } else {
+                
+                for object in result as! [NCMBObject] {
+                    let user = object.object(forKey: "user") as! NCMBUser
+                    let name = object.object(forKey: "name") as! String
+                    let category = object.object(forKey: "category") as! String
+                    let startDate = object.object(forKey: "startDate") as! Date
+                    let limitDate = object.object(forKey: "limitDate") as! Date
+                    let imageUrl = object.object(forKey: "imageUrl") as! String
+                    let notificationId = object.object(forKey: "notificationId") as! String
+                    
+                    let cosme = Cosme(user: user, name: name, category: category, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+                    cosme.objectId = object.objectId
+                    cosme.imageUrl = imageUrl
+                    
+                    cosmes.append(cosme)
+                }
+            }
+            KRProgressHUD.dismiss()
+            semaphore.signal()
+        })
+        
+        semaphore.wait()
+        return cosmes
+    }
 }
