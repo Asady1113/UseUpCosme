@@ -54,6 +54,7 @@ class DetailViewController: UIViewController {
         query?.findObjectsInBackground({ result, error in
             let object = result?.first as! NCMBObject
             object.setObject(cosme.useup, forKey: "useup")
+            object.setObject(Date(), forKey: "useupDate")
             
             object.saveInBackground({ error in
                 if error != nil {

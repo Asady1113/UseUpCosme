@@ -18,6 +18,7 @@ class Cosme: NSObject {
     var imageUrl: String?
     var notificationId: String
     var useup: Bool?
+    var useupDate: Date?
     
     init(user: NCMBUser, name: String, category: String, startDate: Date, limitDate: Date, notificationId: String, useup: Bool) {
 

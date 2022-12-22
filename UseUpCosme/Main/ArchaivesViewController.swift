@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  ArchaivesViewController.swift
 //  UseUpCosme
 //
-//  Created by 浅田智哉 on 2022/07/27.
+//  Created by 浅田智哉 on 2022/12/23.
 //
 
 import UIKit
@@ -10,37 +10,36 @@ import NCMB
 import KRProgressHUD
 import Kingfisher
 
-class MainHomeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ArchaivesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var listTableView: UITableView!
     //var function = NCMBFunction()
-    var design = DesignMainView()
     var cosmes = [Cosme]()
     var selectedCategory: String = "ALL"
     var isOrdered: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         listTableView.dataSource = self
         listTableView.delegate = self
         listTableView.separatorStyle = .none
         
-        let nib = UINib(nibName: "CosmeTableViewCell", bundle: Bundle.main)
-        listTableView.register(nib, forCellReuseIdentifier: "Cell")
+        let nib = UINib(nibName: "UseUpCosmeTableViewCell", bundle: Bundle.main)
+        listTableView.register(nib, forCellReuseIdentifier: "UseUpCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadCosme()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return cosmes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CosmeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UseUpCell") as! UseUpCosmeTableViewCell
         
         cell.nameLabel.text = cosmes[indexPath.row].name
         
@@ -50,30 +49,21 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
         cell.startDateLabel.text = startDateString
         cell.LimitDateLabel.text = limitDateString
         
-        let countDate = DateUtils.dateFromStartDate(limitDate: cosmes[indexPath.row].limitDate)
-        cell.countLabel.text = String(countDate)
-        design.changeCountColor(count: countDate, view: cell.countView)
+        cell.useupYearLabel.text = DateUtils.dateToString(dateString: cosmes[indexPath.row].useupDate!, format: "yyyy")
+        cell.useupDateLabel.text = DateUtils.dateToString(dateString: cosmes[indexPath.row].useupDate!, format: "MM/dd")
         
         let imageUrl = cosmes[indexPath.row].imageUrl
         cell.cosmeImageView.kf.setImage(with: URL(string: imageUrl!))
         
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let selectedIndex = listTableView.indexPathForSelectedRow!
-        let detailVC = segue.destination as! DetailViewController
-        detailVC.cosme = cosmes[selectedIndex.row]
-    }
-    
-    
-    //ボタンによる操作（カテゴリーや期限順）
+    //ボタンによる操作（カテゴリーや終了日順）
     @IBAction func options(_sender: UIButton) {
         if _sender.tag == 8 {
             isOrdered = true
@@ -99,8 +89,8 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
         query?.includeKey("user")
         // 自分の投稿だけ持ってくる
         query?.whereKey("user", equalTo: NCMBUser.current())
-        //使い切られていないもの
-        query?.whereKey("useup", equalTo: false)
+        //使い切られているもの
+        query?.whereKey("useup", equalTo: true)
 
         //カテゴリー縛りがあれば
         if selectedCategory != "ALL" {
@@ -108,7 +98,7 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
         }
         //期限順なら
         if isOrdered == true {
-            query?.order(byAscending: "limitDate")
+            query?.order(byAscending: "useupDate")
         }
 
         query?.findObjectsInBackground({ result, error in
@@ -125,10 +115,12 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
                     let imageUrl = object.object(forKey: "imageUrl") as! String
                     let notificationId = object.object(forKey: "notificationId") as! String
                     let useup = object.object(forKey: "useup") as! Bool
+                    let useupDate = object.object(forKey: "useupDate") as! Date
 
                     let cosme = Cosme(user: user, name: name, category: category, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: useup)
                     cosme.objectId = object.objectId
                     cosme.imageUrl = imageUrl
+                    cosme.useupDate = useupDate
 
                     self.cosmes.append(cosme)
                 }
@@ -138,5 +130,5 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
             }
         })
     }
+  
 }
-
