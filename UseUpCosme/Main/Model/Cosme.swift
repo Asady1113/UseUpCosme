@@ -17,8 +17,9 @@ class Cosme: NSObject {
     var limitDate: Date
     var imageUrl: String?
     var notificationId: String
+    var useup: Bool?
     
-    init(user: NCMBUser, name: String, category: String, startDate: Date, limitDate: Date, notificationId: String) {
+    init(user: NCMBUser, name: String, category: String, startDate: Date, limitDate: Date, notificationId: String, useup: Bool) {
 
         self.user = user
         self.name = name
@@ -26,6 +27,7 @@ class Cosme: NSObject {
         self.startDate = startDate
         self.limitDate = limitDate
         self.notificationId = notificationId
+        self.useup = useup
         
     }
     

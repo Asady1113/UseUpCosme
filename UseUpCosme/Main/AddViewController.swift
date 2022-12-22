@@ -154,7 +154,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             let notificationId = notificateFunc.makenotification(name: cosmeNameTextField.text!, limitDate: limitDate)
             
             //モデル化
-            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: false)
             
             //追加
             function.addCosme(cosme: cosme, resizedImage: resizedImage)
@@ -162,7 +162,6 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             //初期化
             design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
             selectedCategory = nil
-            
         }
     }
     

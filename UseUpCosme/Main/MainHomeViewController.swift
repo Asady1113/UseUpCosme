@@ -76,9 +76,11 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
     @IBAction func options(_sender: UIButton) {
         if _sender.tag == 8 {
             isOrdered = true
+            loadCosme()
         } else {
             let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
             selectedCategory = category[_sender.tag]
+            loadCosme()
         }
     }
     
@@ -96,10 +98,16 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
         query?.includeKey("user")
         // 自分の投稿だけ持ってくる
         query?.whereKey("user", equalTo: NCMBUser.current())
+        //使い切られていないもの
+        query?.whereKey("useup", equalTo: false)
 
         //カテゴリー縛りがあれば
         if selectedCategory != "ALL" {
             query?.whereKey("category", equalTo: selectedCategory)
+        }
+        //期限順なら
+        if isOrdered == true {
+            query?.order(byAscending: "limitDate")
         }
 
         query?.findObjectsInBackground({ result, error in
@@ -115,8 +123,9 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
                     let limitDate = object.object(forKey: "limitDate") as! Date
                     let imageUrl = object.object(forKey: "imageUrl") as! String
                     let notificationId = object.object(forKey: "notificationId") as! String
+                    let useup = object.object(forKey: "useup") as! Bool
 
-                    let cosme = Cosme(user: user, name: name, category: category, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+                    let cosme = Cosme(user: user, name: name, category: category, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: useup)
                     cosme.objectId = object.objectId
                     cosme.imageUrl = imageUrl
 
