@@ -63,6 +63,49 @@ class NCMBFunction {
         }
     }
     
+    //編集
+    func editCosme(cosme: Cosme, resizedImage: UIImage) {
+        KRProgressHUD.show()
+        
+        let query = NCMBQuery(className: "Cosme")
+        query?.whereKey("objectId", equalTo: cosme.objectId)
+        
+        query?.findObjectsInBackground({ result, error in
+            let object = result?.first as! NCMBObject
+            
+            let data = resizedImage.pngData()
+            let file = NCMBFile.file(with: data) as! NCMBFile
+            file.saveInBackground { error in
+                if error != nil {
+                    KRProgressHUD.showError(withMessage: "画像の保存に失敗しました")
+                } else {
+                    
+                    object.setObject(cosme.user, forKey: "user")
+                    object.setObject(cosme.name, forKey: "name")
+                    object.setObject(cosme.category, forKey: "category")
+                    object.setObject(cosme.startDate, forKey: "startDate")
+                    object.setObject(cosme.limitDate, forKey: "limitDate")
+                    object.setObject(cosme.notificationId, forKey: "notificationId")
+                    object.setObject(cosme.useup, forKey: "useup")
+                    
+                    let url = "https://mbaas.api.nifcloud.com/2013-09-01/applications/132O6QPULPxxmgG/publicFiles/" + file.name
+                    
+                    object.setObject(url, forKey: "imageUrl")
+                    
+                    object.saveInBackground({ error in
+                        if error != nil {
+                            KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                        } else {
+                            KRProgressHUD.dismiss()
+                            KRProgressHUD.showMessage("登録が完了しました")
+                        }
+                    })
+                }
+            }
+        })
+    }
+    
+    
     //使い切り（モデル化失敗）
     func useupCosme(cosme: Cosme) -> Int {
         let query = NCMBQuery(className: "Cosme")

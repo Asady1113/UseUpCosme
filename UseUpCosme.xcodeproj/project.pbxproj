@@ -31,6 +31,7 @@
 		944E8C2D28BD1C890024F9BE /* category3.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2C28BD1C890024F9BE /* category3.png */; };
 		944E8C2F28BD1C8E0024F9BE /* category4.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2E28BD1C8E0024F9BE /* category4.png */; };
 		944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E8C3028BD1D1B0024F9BE /* AddViewController.swift */; };
+		9493065929598BAC0075694C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493065829598BAC0075694C /* EditViewController.swift */; };
 		94AE16ED289190B200E3DA12 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16EC289190B200E3DA12 /* SignIn.storyboard */; };
 		94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16EE2891914F00E3DA12 /* SignInViewController.swift */; };
 		94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16F4289195A300E3DA12 /* CustomButton.swift */; };
@@ -101,6 +102,7 @@
 		944E8C2C28BD1C890024F9BE /* category3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category3.png; sourceTree = "<group>"; };
 		944E8C2E28BD1C8E0024F9BE /* category4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category4.png; sourceTree = "<group>"; };
 		944E8C3028BD1D1B0024F9BE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		9493065829598BAC0075694C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		94AE16EC289190B200E3DA12 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		94AE16EE2891914F00E3DA12 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		94AE16F4289195A300E3DA12 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
+				9493065829598BAC0075694C /* EditViewController.swift */,
 				94FD05322950CD1C003B7FA6 /* Function */,
 				94FD05312950CCFF003B7FA6 /* Model */,
 				94AE16F32891957100E3DA12 /* Design */,
@@ -582,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9493065929598BAC0075694C /* EditViewController.swift in Sources */,
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
 				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* DateUtils.swift in Sources */,

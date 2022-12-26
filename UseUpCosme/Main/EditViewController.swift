@@ -1,20 +1,23 @@
 //
-//  AddViewController.swift
+//  EditViewController.swift
 //  UseUpCosme
 //
-//  Created by 浅田智哉 on 2022/08/30.
+//  Created by 浅田智哉 on 2022/12/26.
 //
 
 import UIKit
 import NCMB
 import KRProgressHUD
 import NYXImagesKit
+import Kingfisher
 
-class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let function = NCMBFunction()
     let design = DesignAddView()
     var resizedImage: UIImage!
+    
+    var selectedCosme: Cosme!
     var selectedCategory: String!
     
     @IBOutlet weak var cosmeImageView: UIImageView!
@@ -28,32 +31,37 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     @IBOutlet weak var category2: UIButton!
     @IBOutlet weak var category3: UIButton!
     @IBOutlet weak var category4: UIButton!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         function.judgeLogin()
-        
         //ボタンに写真をセット(カテゴリー1のみ）
         design.setImage(button: category1)
-        
         //pickerの設定
         design.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
-        
         //鉛筆の画像を丸くする
         design.designImage(image: pencilImageView)
 
         cosmeNameTextField.delegate = self
         startDateTextField.delegate = self
         useupDateTextField.delegate = self
+        
+        //情報の表示
+        cosmeImageView.kf.setImage(with: URL(string: selectedCosme.imageUrl!))
+        resizedImage = cosmeImageView.image
+        cosmeNameTextField.text = selectedCosme.name
+        startDateTextField.text = DateUtils.dateToString(dateString: selectedCosme.startDate, format: "yyyy / MM / dd")
+        useupDateTextField.text = DateUtils.dateToString(dateString: selectedCosme.limitDate, format: "yyyy / MM / dd")
+        
+        selectedCategory = selectedCosme.category
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
     
     @IBAction func selectImage(){
         let actionController = UIAlertController(title: "画像の選択", message: nil, preferredStyle: .actionSheet)
@@ -149,25 +157,24 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
                 return
             }
             
-            //通知設定
+            //通知設定（まだ）
             let notificateFunc = NotificateFunction()
             let notificationId = notificateFunc.makenotification(name: cosmeNameTextField.text!, limitDate: limitDate)
             
             //モデル化
             let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: false)
+            cosme.objectId = selectedCosme.objectId
             
             //追加
-            function.addCosme(cosme: cosme, resizedImage: resizedImage)
+            function.editCosme(cosme: cosme, resizedImage: resizedImage)
             
-            //初期化
-            design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
-            selectedCategory = nil
+            //元の画面へ
+            self.dismiss(animated: true)
         }
     }
     
-    @IBAction func delete() {
-        //初期化
-        design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
+    
+    @IBAction func back() {
+        self.dismiss(animated: true)
     }
-
 }

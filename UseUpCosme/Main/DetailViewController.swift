@@ -90,6 +90,12 @@ class DetailViewController: UIViewController {
     }
     
     
+    //編集画面へ
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let editVC = segue.destination as! EditViewController
+        editVC.selectedCosme = cosme
+    }
+    
     @IBAction func back() {
         self.dismiss(animated: true)
     }
