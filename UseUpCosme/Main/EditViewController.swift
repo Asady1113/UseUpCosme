@@ -148,7 +148,6 @@ class EditViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
             let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
             let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
             
-            print(dateSubtractionFromStart)
             if dateSubtractionFromToday < 0 {
                 KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
                 return
@@ -157,12 +156,12 @@ class EditViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
                 return
             }
             
-            //通知設定（まだ）
+            //通知を更新
             let notificateFunc = NotificateFunction()
-            let notificationId = notificateFunc.makenotification(name: cosmeNameTextField.text!, limitDate: limitDate)
+            notificateFunc.editNotification(name: selectedCosme.name, limitDate: limitDate, id: selectedCosme.notificationId)
             
             //モデル化
-            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: false)
+            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: selectedCosme.notificationId, useup: false)
             cosme.objectId = selectedCosme.objectId
             
             //追加
