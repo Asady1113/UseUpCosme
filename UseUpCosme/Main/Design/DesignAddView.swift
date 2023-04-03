@@ -68,7 +68,7 @@ class DesignAddView {
     //完了ボタンを押した時の処理
     @objc func startDoneDate(){
         self.startDateTextField.endEditing(true)
-        self.startDateTextField.text = DateUtils.dateToString(dateString: startDatePicker.date, format: "yyyy-MM-dd")
+        self.startDateTextField.text = DateUtils.dateToString(dateString: startDatePicker.date, format: "yyyy / MM / dd")
     }
     
     @objc func startCancelDate(){
@@ -78,10 +78,19 @@ class DesignAddView {
     //完了ボタンを押した時の処理
     @objc func useupDoneDate(){
         self.useupDateTextField.endEditing(true)
-        self.useupDateTextField.text = DateUtils.dateToString(dateString: useupDatePicker.date, format: "yyyy-MM-dd")
+        self.useupDateTextField.text = DateUtils.dateToString(dateString: useupDatePicker.date, format: "yyyy / MM / dd")
     }
     
     @objc func useupCancelDate(){
         self.useupDateTextField.endEditing(true)
+    }
+    
+    //初期化
+    func delete(cosmeImageView: UIImageView, cosmeNameTextField: UITextField, startDateTextField: UITextField, useupDateTextField: UITextField) {
+        
+        cosmeImageView.image = UIImage(named: "default-placeholder")
+        cosmeNameTextField.text = nil
+        startDateTextField.text = nil
+        useupDateTextField.text = nil
     }
 }

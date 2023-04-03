@@ -21,4 +21,11 @@ class DateUtils {
         formatter.dateFormat = fromFormat
         return formatter.date(from: dateString)
     }
+    
+    //使用開始日からの経過日数
+    class func dateFromStartDate(limitDate: Date) -> Int {
+        let dateSubtraction = Calendar.current.dateComponents([.day], from: Date(), to: limitDate).day
+        
+        return dateSubtraction!
+    }
 }
