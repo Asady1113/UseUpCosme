@@ -13,7 +13,7 @@ import Kingfisher
 class MainHomeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var listTableView: UITableView!
-    //var function = NCMBFunction()
+    var function = NCMBFunction()
     var design = DesignMainView()
     var cosmes = [Cosme]()
     var selectedCategory: String = "ALL"
@@ -31,11 +31,16 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        function.judgeLogin()
         loadCosme()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //メールアドレス認証の有無
+        function.isMailAdressConfirm(view: self)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return cosmes.count
     }
     

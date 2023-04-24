@@ -7,6 +7,7 @@
 
 import UIKit
 import NCMB
+import KRProgressHUD
 
 class SignInViewController: UIViewController,UITextFieldDelegate {
     
@@ -32,7 +33,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
             
             NCMBUser.logInWithUsername(inBackground: userNameTextField.text, password: passwordTextField.text) { user, error in
                 if error != nil {
-                    print("サインイン失敗")
+                    KRProgressHUD.showMessage(error!.localizedDescription)
                     
                 } else {
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -47,7 +48,26 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-
+    //パスワード忘れ
+    @IBAction func forgerPassword() {
+        var alertTextField: UITextField!
+        let alert = UIAlertController(title: "メールアドレスを入力してください", message: "メールアドレス認証を行なっていない場合、パスワードの変更はできません", preferredStyle: .alert)
+        alert.addTextField { textField in
+            alertTextField = textField
+            alertTextField.returnKeyType = .done
+        }
+        let doneAction = UIAlertAction(title: "送信", style: .default) { action in
+            //再設定用のメールを送信
+            NCMBUser.requestPasswordReset(forEmail: alertTextField.text, error: nil)
+            KRProgressHUD.showMessage("再設定用のメールを送信しました")
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { action in
+            alert.dismiss(animated: true)
+        }
+        alert.addAction(doneAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
    
 
 }

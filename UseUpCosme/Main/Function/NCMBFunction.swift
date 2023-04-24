@@ -13,7 +13,6 @@ import UIKit
 class NCMBFunction {
     
     func judgeLogin() {
-        
         guard let currentUser = NCMBUser.current() else{
             //ログアウト成功
             let storyboard = UIStoryboard(name: "SignIn",bundle: Bundle.main)
@@ -24,7 +23,19 @@ class NCMBFunction {
             ud.set(false, forKey: "isLogin")
             return
         }
-        
+    }
+    
+    //メールアドレス認証
+    func isMailAdressConfirm(view: UIViewController) {
+        let currentUser = NCMBUser.current()
+        if currentUser!.isMailAddressConfirm() == false {
+            let alert = UIAlertController(title: "メールアドレスの認証を行なってください", message: "認証を行なっていない場合、パスワードの変更はできません", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { action in
+                alert.dismiss(animated: true)
+            }
+            alert.addAction(okAction)
+            view.present(alert, animated: true)
+        }
     }
     
     //登録
