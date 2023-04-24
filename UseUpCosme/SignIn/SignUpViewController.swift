@@ -7,6 +7,7 @@
 
 import UIKit
 import NCMB
+import KRProgressHUD
 
 class SignUpViewController: UIViewController,UITextFieldDelegate {
     
@@ -33,17 +34,17 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         let user = NCMBUser()
         
         if userNameTextField.text!.count <= 3 {
-            print("ユーザー名の文字数が足りません")
+            KRProgressHUD.showMessage("ユーザー名の文字数が足りません")
             return
         }
         
         if passwordTextField.text!.count <= 3 {
-            print("パスワードの文字数が足りません")
+            KRProgressHUD.showMessage("パスワードの文字数が足りません")
             return
         }
         
         if emailTextField.text!.count == 0 {
-            print("メールアドレスが入力されていません")
+            KRProgressHUD.showMessage("メールアドレスが入力されていません")
             return
         }
     
@@ -54,9 +55,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         
         user.signUpInBackground { error in
             if error != nil {
-                print("サインイン失敗")
+                KRProgressHUD.showMessage(error!.localizedDescription)
             } else {
-                
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
                 UIApplication.shared.keyWindow?.rootViewController = mainViewController
