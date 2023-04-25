@@ -58,8 +58,13 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         }
         let doneAction = UIAlertAction(title: "送信", style: .default) { action in
             //再設定用のメールを送信
-            NCMBUser.requestPasswordReset(forEmail: alertTextField.text, error: nil)
-            KRProgressHUD.showMessage("再設定用のメールを送信しました")
+            var error: NSError?
+            NCMBUser.requestPasswordReset(forEmail: alertTextField.text, error: &error)
+            if let error = error {
+                KRProgressHUD.showMessage(error.localizedDescription)
+            } else {
+                KRProgressHUD.showMessage("再設定用のメールを送信しました")
+            }
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { action in
             alert.dismiss(animated: true)
