@@ -18,6 +18,9 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
     var cosmes = [Cosme]()
     var selectedCategory: String = "ALL"
     var isOrdered: Bool = false
+    
+    //メールアドレス催促をしたかどうか
+    var isRecommendedMailAdress: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,7 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         //メールアドレス認証の有無
-        function.isMailAdressConfirm(view: self)
+        isRecommendedMailAdress = function.isMailAdressConfirm(view: self, isRecommendedMailAdress: isRecommendedMailAdress)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

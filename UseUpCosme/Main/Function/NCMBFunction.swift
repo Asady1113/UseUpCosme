@@ -26,9 +26,9 @@ class NCMBFunction {
     }
     
     //メールアドレス認証
-    func isMailAdressConfirm(view: UIViewController) {
+    func isMailAdressConfirm(view: UIViewController, isRecommendedMailAdress: Bool) -> Bool {
         let currentUser = NCMBUser.current()
-        if currentUser!.isMailAddressConfirm() == false {
+        if currentUser!.isMailAddressConfirm() == false && isRecommendedMailAdress == false {
             let alert = UIAlertController(title: "メールアドレスの認証を行なってください", message: "認証を行なっていない場合、パスワードの変更はできません", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { action in
                 alert.dismiss(animated: true)
@@ -36,6 +36,7 @@ class NCMBFunction {
             alert.addAction(okAction)
             view.present(alert, animated: true)
         }
+        return true
     }
     
     //登録
