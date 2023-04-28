@@ -22,10 +22,13 @@ class DesignAddView {
     }
     
     //ボタンの画像セット
-    func setImage(button: UIButton) {
+    func setImage(buttonArray: [UIButton]) {
         //画像をセット
-        let picture = UIImage(named: "foundation.png")
-        button.setImage(picture, for: .normal)
+        let picture = [UIImage(named: "foundation.png"),UIImage(named: "lips"),UIImage(named: "cheek"),UIImage(named: "mascara"),UIImage(named: "eyebrow"),UIImage(named: "eyeliner"),UIImage(named: "eyeshadow"),UIImage(named: "skincare")]
+        
+        for i in 0...buttonArray.count-1 {
+            buttonArray[i].setImage(picture[i], for: .normal)
+        }
     }
     
     

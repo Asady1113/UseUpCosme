@@ -372,65 +372,65 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3P-XB-nuQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="100"/>
-                                                        <color key="backgroundColor" red="0.4196078479" green="0.41568624970000001" blue="0.41568624970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="U8X-dp-hMr"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujy-4R-GcN">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujy-4R-GcN">
                                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="100"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="xK5-hP-aNA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-oz-jBX">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-oz-jBX">
                                                         <rect key="frame" x="207" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="チーク"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="Adw-Ho-m4v"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEh-qv-Lbe">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEh-qv-Lbe">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="マスカラ"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7X8-ni-7Mg"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQy-NP-Rh5">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQy-NP-Rh5">
                                                         <rect key="frame" x="414" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="アイブロウ"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7Nk-FV-Q1v"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-SS-Y8c">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-SS-Y8c">
                                                         <rect key="frame" x="517.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナ-"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="アイライナ-"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="hcr-Gp-PQX"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-3W-waI">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-3W-waI">
                                                         <rect key="frame" x="621" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="アイシャドウ"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="wuh-Vj-7KF"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHF-Rr-6xV">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHF-Rr-6xV">
                                                         <rect key="frame" x="724.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="スキンケア"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="NPE-Zf-0Qy"/>
                                                         </connections>
@@ -510,6 +510,13 @@
                     <tabBarItem key="tabBarItem" title="追加" image="plusicon.png" id="AUV-8O-4eo"/>
                     <connections>
                         <outlet property="category1" destination="a3P-XB-nuQ" id="Urp-2y-qWy"/>
+                        <outlet property="category2" destination="ujy-4R-GcN" id="3ah-tl-mcg"/>
+                        <outlet property="category3" destination="dbp-oz-jBX" id="ARk-wx-NNl"/>
+                        <outlet property="category4" destination="FEh-qv-Lbe" id="fce-ap-9he"/>
+                        <outlet property="category5" destination="fQy-NP-Rh5" id="7lm-vz-Yzc"/>
+                        <outlet property="category6" destination="o0V-SS-Y8c" id="x8X-LY-ju3"/>
+                        <outlet property="category7" destination="w7I-3W-waI" id="WNn-Ow-nGn"/>
+                        <outlet property="category8" destination="XHF-Rr-6xV" id="KGp-sb-TJr"/>
                         <outlet property="cosmeImageView" destination="Eh9-Se-znx" id="k3K-qv-1LA"/>
                         <outlet property="cosmeNameTextField" destination="IAg-Zl-b2B" id="Scx-OF-t1H"/>
                         <outlet property="pencilImageView" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
@@ -1197,65 +1204,65 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwD-Be-zVP">
                                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="100"/>
-                                                        <color key="backgroundColor" red="0.4196078479" green="0.41568624970000001" blue="0.41568624970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="PdB-a5-nAx"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-lt-dN1">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-lt-dN1">
                                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="口紅"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="SSb-aD-qOa"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEO-kc-qzZ">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEO-kc-qzZ">
                                                         <rect key="frame" x="207" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="チーク"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="jyt-Y7-KCn"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSK-Wm-HId">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSK-Wm-HId">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="マスカラ"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="671-g6-LMK"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICM-2n-hhw">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICM-2n-hhw">
                                                         <rect key="frame" x="414" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="アイブロウ"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="yA8-2I-14m"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-qd-aot">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-qd-aot">
                                                         <rect key="frame" x="517.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナ-"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="アイライナ-"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="iOk-Fj-B1B"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-Qi-v6L">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-Qi-v6L">
                                                         <rect key="frame" x="621" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="アイシャドウ"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="l2Y-fz-8ek"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HQ-n9-ZGc">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HQ-n9-ZGc">
                                                         <rect key="frame" x="724.5" y="0.0" width="103.5" height="100"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="スキンケア"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="iCE-g0-IeB"/>
                                                         </connections>
@@ -1335,6 +1342,13 @@
                     <tabBarItem key="tabBarItem" title="追加" image="plusicon.png" id="Evy-nA-fAN"/>
                     <connections>
                         <outlet property="category1" destination="KwD-Be-zVP" id="lEH-b3-0aC"/>
+                        <outlet property="category2" destination="6Lp-lt-dN1" id="Koi-7V-uce"/>
+                        <outlet property="category3" destination="hEO-kc-qzZ" id="rmR-Ga-7dB"/>
+                        <outlet property="category4" destination="pSK-Wm-HId" id="oTG-Y3-BOf"/>
+                        <outlet property="category5" destination="ICM-2n-hhw" id="Uxp-RJ-Ivv"/>
+                        <outlet property="category6" destination="WjU-qd-aot" id="jNa-hh-cZO"/>
+                        <outlet property="category7" destination="FFC-Qi-v6L" id="grh-H1-iFu"/>
+                        <outlet property="category8" destination="4HQ-n9-ZGc" id="7bK-LW-usO"/>
                         <outlet property="cosmeImageView" destination="QoD-1b-fxy" id="O5D-ei-yBB"/>
                         <outlet property="cosmeNameTextField" destination="uyt-E2-90z" id="J8y-fB-9Wz"/>
                         <outlet property="pencilImageView" destination="l1s-RA-DFt" id="rbA-Dz-Wwx"/>

@@ -28,15 +28,16 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     @IBOutlet weak var category2: UIButton!
     @IBOutlet weak var category3: UIButton!
     @IBOutlet weak var category4: UIButton!
+    @IBOutlet weak var category5: UIButton!
+    @IBOutlet weak var category6: UIButton!
+    @IBOutlet weak var category7: UIButton!
+    @IBOutlet weak var category8: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        function.judgeLogin()
-        
-        //ボタンに写真をセット(カテゴリー1のみ）
-        design.setImage(button: category1)
+        //ボタンに写真をセット
+        design.setImage(buttonArray: [category1,category2,category3,category4,category5,category6,category7,category8])
         
         //pickerの設定
         design.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
@@ -47,6 +48,10 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         cosmeNameTextField.delegate = self
         startDateTextField.delegate = self
         useupDateTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        function.judgeLogin()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
