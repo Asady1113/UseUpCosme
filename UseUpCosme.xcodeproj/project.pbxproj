@@ -36,6 +36,14 @@
 		946C4E9C29FB7A080030DA62 /* eyeshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4E9B29FB7A080030DA62 /* eyeshadow.png */; };
 		946C4E9E29FB7A170030DA62 /* skincare.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4E9D29FB7A170030DA62 /* skincare.png */; };
 		946C4EA029FB7A3D0030DA62 /* eyeliner.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4E9F29FB7A3D0030DA62 /* eyeliner.png */; };
+		946C4EA229FCEB0D0030DA62 /* foundation_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EA129FCEB0D0030DA62 /* foundation_selected.png */; };
+		946C4EA429FCEB170030DA62 /* lips_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EA329FCEB170030DA62 /* lips_selected.png */; };
+		946C4EA629FCEB220030DA62 /* cheek_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EA529FCEB220030DA62 /* cheek_selected.png */; };
+		946C4EA829FCEB2A0030DA62 /* mascara_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EA729FCEB2A0030DA62 /* mascara_selected.png */; };
+		946C4EAA29FCEB310030DA62 /* eyebrow_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EA929FCEB310030DA62 /* eyebrow_selected.png */; };
+		946C4EAC29FCEB370030DA62 /* eyeliner_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EAB29FCEB370030DA62 /* eyeliner_selected.png */; };
+		946C4EAE29FCEB3E0030DA62 /* eyeshadow_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EAD29FCEB3E0030DA62 /* eyeshadow_selected.png */; };
+		946C4EB029FCEB440030DA62 /* skincare_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 946C4EAF29FCEB440030DA62 /* skincare_selected.png */; };
 		9493065929598BAC0075694C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493065829598BAC0075694C /* EditViewController.swift */; };
 		94AE16ED289190B200E3DA12 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16EC289190B200E3DA12 /* SignIn.storyboard */; };
 		94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16EE2891914F00E3DA12 /* SignInViewController.swift */; };
@@ -111,6 +119,14 @@
 		946C4E9B29FB7A080030DA62 /* eyeshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeshadow.png; sourceTree = "<group>"; };
 		946C4E9D29FB7A170030DA62 /* skincare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skincare.png; sourceTree = "<group>"; };
 		946C4E9F29FB7A3D0030DA62 /* eyeliner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeliner.png; sourceTree = "<group>"; };
+		946C4EA129FCEB0D0030DA62 /* foundation_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation_selected.png; sourceTree = "<group>"; };
+		946C4EA329FCEB170030DA62 /* lips_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lips_selected.png; sourceTree = "<group>"; };
+		946C4EA529FCEB220030DA62 /* cheek_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cheek_selected.png; sourceTree = "<group>"; };
+		946C4EA729FCEB2A0030DA62 /* mascara_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mascara_selected.png; sourceTree = "<group>"; };
+		946C4EA929FCEB310030DA62 /* eyebrow_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyebrow_selected.png; sourceTree = "<group>"; };
+		946C4EAB29FCEB370030DA62 /* eyeliner_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeliner_selected.png; sourceTree = "<group>"; };
+		946C4EAD29FCEB3E0030DA62 /* eyeshadow_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeshadow_selected.png; sourceTree = "<group>"; };
+		946C4EAF29FCEB440030DA62 /* skincare_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skincare_selected.png; sourceTree = "<group>"; };
 		9493065829598BAC0075694C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		94AE16EC289190B200E3DA12 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		94AE16EE2891914F00E3DA12 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +286,14 @@
 				946C4E9F29FB7A3D0030DA62 /* eyeliner.png */,
 				946C4E9B29FB7A080030DA62 /* eyeshadow.png */,
 				946C4E9D29FB7A170030DA62 /* skincare.png */,
+				946C4EA129FCEB0D0030DA62 /* foundation_selected.png */,
+				946C4EA329FCEB170030DA62 /* lips_selected.png */,
+				946C4EA529FCEB220030DA62 /* cheek_selected.png */,
+				946C4EA729FCEB2A0030DA62 /* mascara_selected.png */,
+				946C4EA929FCEB310030DA62 /* eyebrow_selected.png */,
+				946C4EAB29FCEB370030DA62 /* eyeliner_selected.png */,
+				946C4EAD29FCEB3E0030DA62 /* eyeshadow_selected.png */,
+				946C4EAF29FCEB440030DA62 /* skincare_selected.png */,
 				9408525528E87A700093987A /* default-placeholder.png */,
 				944E8C2628BD1BB40024F9BE /* textField.png */,
 				94D7B19728CDE6470053A5F4 /* editButton.jpeg */,
@@ -458,21 +482,29 @@
 				9403CDA32891778E00243A79 /* Main.storyboard in Resources */,
 				944E8C1F28BC77D80024F9BE /* cancelButton.png in Resources */,
 				94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */,
+				946C4EA629FCEB220030DA62 /* cheek_selected.png in Resources */,
+				946C4EB029FCEB440030DA62 /* skincare_selected.png in Resources */,
 				946C4E9A29FB79F30030DA62 /* mascara.png in Resources */,
 				944E8C1D28BC75FF0024F9BE /* plusicon@2x.png in Resources */,
+				946C4EAA29FCEB310030DA62 /* eyebrow_selected.png in Resources */,
 				94D4726A29518FB600873FDF /* search@2x.png in Resources */,
 				946C4E9229FB75640030DA62 /* eyebrow.png in Resources */,
+				946C4EA429FCEB170030DA62 /* lips_selected.png in Resources */,
 				944E8C2728BD1BB40024F9BE /* textField.png in Resources */,
 				944E8C1B28BC75F90024F9BE /* homeicon@2x.png in Resources */,
+				946C4EA229FCEB0D0030DA62 /* foundation_selected.png in Resources */,
 				946C4E9E29FB7A170030DA62 /* skincare.png in Resources */,
 				946C4E9829FB79CF0030DA62 /* cheek.png in Resources */,
 				946C4EA029FB7A3D0030DA62 /* eyeliner.png in Resources */,
 				94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */,
 				9408525628E87A700093987A /* default-placeholder.png in Resources */,
+				946C4EA829FCEB2A0030DA62 /* mascara_selected.png in Resources */,
 				94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */,
+				946C4EAE29FCEB3E0030DA62 /* eyeshadow_selected.png in Resources */,
 				946C4E9629FB79B20030DA62 /* lips.png in Resources */,
 				94D069F92892525700755C92 /* emailImage.png in Resources */,
 				94AE16FA2891991400E3DA12 /* titleImage.png in Resources */,
+				946C4EAC29FCEB370030DA62 /* eyeliner_selected.png in Resources */,
 				94ED1F502954B39700BE4215 /* UseUpCosmeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

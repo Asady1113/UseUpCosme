@@ -120,6 +120,7 @@ class EditViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
         
         let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
         selectedCategory = category[_sender.tag]
+        design.setSelectedImage(_sender: _sender.tag)
     }
     
     

@@ -113,6 +113,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
         
         let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
         selectedCategory = category[_sender.tag]
+        design.setSelectedImage(_sender: _sender.tag)
     }
     
     
@@ -173,6 +174,7 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
     @IBAction func delete() {
         //初期化
         design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
+        selectedCategory = nil
     }
 
 }

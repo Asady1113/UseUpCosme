@@ -15,6 +15,12 @@ class DesignAddView {
     let startDatePicker: UIDatePicker = UIDatePicker()
     let useupDatePicker: UIDatePicker = UIDatePicker()
     
+    
+    var buttonArray = [UIButton]()
+    let categoryPicture = [UIImage(named: "foundation.png"),UIImage(named: "lips"),UIImage(named: "cheek"),UIImage(named: "mascara"),UIImage(named: "eyebrow"),UIImage(named: "eyeliner"),UIImage(named: "eyeshadow"),UIImage(named: "skincare")]
+    let selectedCategoryPicture = [UIImage(named: "foundation_selected.png"),UIImage(named: "lips_selected"),UIImage(named: "cheek_selected"),UIImage(named: "mascara_selected"),UIImage(named: "eyebrow_selected"),UIImage(named: "eyeliner_selected"),UIImage(named: "eyeshadow_selected"),UIImage(named: "skincare_selected")]
+    
+    
     //画像を丸くする処理
     func designImage(image: UIImageView) {
         image.layer.cornerRadius = 15
@@ -23,14 +29,27 @@ class DesignAddView {
     
     //ボタンの画像セット
     func setImage(buttonArray: [UIButton]) {
+        self.buttonArray = buttonArray
         //画像をセット
-        let picture = [UIImage(named: "foundation.png"),UIImage(named: "lips"),UIImage(named: "cheek"),UIImage(named: "mascara"),UIImage(named: "eyebrow"),UIImage(named: "eyeliner"),UIImage(named: "eyeshadow"),UIImage(named: "skincare")]
-        
         for i in 0...buttonArray.count-1 {
-            buttonArray[i].setImage(picture[i], for: .normal)
+            buttonArray[i].setImage(categoryPicture[i], for: .normal)
         }
     }
     
+    //選択されたボタンの画像を変更する
+    func setSelectedImage(_sender: Int) {
+        resetImage()
+        let selectedButton = buttonArray[_sender]
+        selectedButton.setImage(selectedCategoryPicture[_sender], for: .normal)
+    }
+    
+    //画像をリセットする
+    func resetImage() {
+        //画像をセット
+        for i in 0...buttonArray.count-1 {
+            buttonArray[i].setImage(categoryPicture[i], for: .normal)
+        }
+    }
     
     //日付のテキストフィールドを設定する
     func makeDatePicker(startDateTextField: UITextField,useupDateTextField: UITextField,view: UIView) {
@@ -95,5 +114,7 @@ class DesignAddView {
         cosmeNameTextField.text = nil
         startDateTextField.text = nil
         useupDateTextField.text = nil
+        
+        resetImage()
     }
 }
