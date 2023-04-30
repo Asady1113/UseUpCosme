@@ -146,7 +146,6 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
             let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
             
-            print(dateSubtractionFromStart)
             if dateSubtractionFromToday < 0 {
                 KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
                 return
@@ -162,8 +161,18 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             //モデル化
             let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: false)
             
-            //追加
-            function.addCosme(cosme: cosme, resizedImage: resizedImage)
+            //追加（期限が7日以内の場合は警告する）
+            if dateSubtractionFromToday >= 0 && dateSubtractionFromToday <= 604800 {
+                let alert = UIAlertController(title: "期限が1週間を切っています", message: "早めに使い切りましょう", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { action in
+                    self.function.addCosme(cosme: cosme, resizedImage: self.resizedImage)
+                    alert.dismiss(animated: true)
+                }
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+            } else {
+                function.addCosme(cosme: cosme, resizedImage: resizedImage)
+            }
             
             //初期化
             design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)

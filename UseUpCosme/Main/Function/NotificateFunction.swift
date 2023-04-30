@@ -21,8 +21,17 @@ class NotificateFunction {
         "\(String(describing: name))が使用期限まで残り一週間です。今週中に使い切りましょう！"
         content.badge = 1
         
+       //テスト用コード
+//        let calendar = Calendar(identifier: .gregorian)
+//        let date = Date()
+//        let modifiedDate = calendar.date(byAdding: .minute, value: 1, to: date)!
+        
+        //期限日の7日前に通知する
+        let calendar = Calendar(identifier: .gregorian)
+        let modifiedDate = calendar.date(byAdding: .day, value: -7, to: limitDate)!
+        
         //日付を設定して、通知に入れる
-        let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
+        let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: modifiedDate)
         //ローカル通知リクエストを作成
         let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
         //IDを作成
