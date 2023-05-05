@@ -165,13 +165,13 @@ class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerContr
             if dateSubtractionFromToday >= 0 && dateSubtractionFromToday <= 604800 {
                 let alert = UIAlertController(title: "期限が1週間を切っています", message: "早めに使い切りましょう", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default) { action in
-                    self.function.addCosme(cosme: cosme, resizedImage: self.resizedImage)
+                    self.function.addCosme(cosme: cosme, resizedImage: self.resizedImage, tabBarController: self.tabBarController!)
                     alert.dismiss(animated: true)
                 }
                 alert.addAction(okAction)
                 self.present(alert, animated: true)
             } else {
-                function.addCosme(cosme: cosme, resizedImage: resizedImage)
+                function.addCosme(cosme: cosme, resizedImage: resizedImage, tabBarController: self.tabBarController!)
             }
             
             //初期化

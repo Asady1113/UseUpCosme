@@ -40,8 +40,8 @@ class NCMBFunction {
     }
     
     //登録
-    func addCosme(cosme: Cosme, resizedImage: UIImage) {
-        KRProgressHUD.show()
+    func addCosme(cosme: Cosme, resizedImage: UIImage, tabBarController: UITabBarController) {
+        KRProgressHUD.show(withMessage: "登録中です")
         
         let data = resizedImage.pngData()
         let file = NCMBFile.file(with: data) as! NCMBFile
@@ -59,7 +59,7 @@ class NCMBFunction {
                 object?.setObject(cosme.notificationId, forKey: "notificationId")
                 object?.setObject(cosme.useup, forKey: "useup")
                 
-                let url = "https://mbaas.api.nifcloud.com/2013-09-01/applications/132O6QPULPxxmgG/publicFiles/" + file.name
+                let url = "https://mbaas.api.nifcloud.com/2013-09-01/applications/SUnZVh0IRGNLmepj/publicFiles/" + file.name
                 
                 object?.setObject(url, forKey: "imageUrl")
                 
@@ -68,7 +68,10 @@ class NCMBFunction {
                         KRProgressHUD.showError(withMessage: "保存に失敗しました")
                     } else {
                         KRProgressHUD.dismiss()
-                        KRProgressHUD.showMessage("登録が完了しました")
+                        
+                        //登録が完了したら、画面遷移
+                        let UINavigationController = tabBarController.viewControllers?[0];
+                        tabBarController.selectedViewController = UINavigationController;
                     }
                 })
             }
