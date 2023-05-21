@@ -146,5 +146,48 @@ class MainHomeViewController: UIViewController,UITableViewDataSource,UITableView
             }
         })
     }
+    
+    @IBAction func showmMenu() {
+        let alert = UIAlertController(title: "会員情報管理", message: "退会する場合、アカウントは復元できません", preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "ログアウト", style: .default) { action in
+            NCMBUser.logOutInBackground { error in
+                if error != nil {
+                    KRProgressHUD.showMessage(error!.localizedDescription)
+                } else {
+                    let storyboard = UIStoryboard(name: "SignIn",bundle: Bundle.main)
+                    let rootViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+                    UIApplication.shared.keyWindow?.rootViewController = rootViewController
+                    //ログアウト情報の保持
+                    let ud = UserDefaults.standard
+                    ud.set(false, forKey: "isLogin")
+                    return
+                }
+            }
+        }
+        let deleteAction = UIAlertAction(title: "退会", style: .default) { action in
+            let user = NCMBUser.current()
+            user?.deleteInBackground({ error in
+                if error != nil {
+                    KRProgressHUD.showError(withMessage: error?.localizedDescription)
+                } else {
+                    //アカウント削除成功
+                    let storyboard = UIStoryboard(name: "SignIn",bundle: Bundle.main)
+                    let rootViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+                    UIApplication.shared.keyWindow?.rootViewController = rootViewController
+                    //ログアウト情報の保持
+                    let ud = UserDefaults.standard
+                    ud.set(false, forKey: "isLogin")
+                    return
+                }
+            })
+        }
+        let caneclAction = UIAlertAction(title: "キャンセル", style: .cancel) { action in
+            alert.dismiss(animated: true)
+        }
+        alert.addAction(logoutAction)
+        alert.addAction(deleteAction)
+        alert.addAction(caneclAction)
+        self.present(alert, animated: true)
+    }
 }
 
