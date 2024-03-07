@@ -1,0 +1,957 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B63F060461E0281171E7C11 /* Pods_UseUpCosme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */; };
+		51A751B868EC01BE78845899 /* Pods_UseUpCosme_UseUpCosmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23B1EDA1053D4DE7EB957DF /* Pods_UseUpCosme_UseUpCosmeUITests.framework */; };
+		742B48E852DD1B4132633CC2 /* Pods_UseUpCosmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */; };
+		9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9B2891778E00243A79 /* AppDelegate.swift */; };
+		9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9D2891778E00243A79 /* SceneDelegate.swift */; };
+		9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CD9F2891778E00243A79 /* MainHomeViewController.swift */; };
+		9403CDA32891778E00243A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403CDA12891778E00243A79 /* Main.storyboard */; };
+		9403CDA52891778F00243A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9403CDA42891778F00243A79 /* Assets.xcassets */; };
+		9403CDA82891778F00243A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403CDA62891778F00243A79 /* LaunchScreen.storyboard */; };
+		9403CDB32891778F00243A79 /* UseUpCosmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDB22891778F00243A79 /* UseUpCosmeTests.swift */; };
+		9403CDBD2891778F00243A79 /* UseUpCosmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */; };
+		9403CDBF2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */; };
+		9408525628E87A700093987A /* default-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9408525528E87A700093987A /* default-placeholder.png */; };
+		940F2EE8294E0F0800700453 /* Cosme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE7294E0F0800700453 /* Cosme.swift */; };
+		940F2EEA294E133B00700453 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE9294E133B00700453 /* DateUtils.swift */; };
+		944E8C1928BC75F50024F9BE /* archiveicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1828BC75F50024F9BE /* archiveicon@2x.png */; };
+		944E8C1B28BC75F90024F9BE /* homeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1A28BC75F90024F9BE /* homeicon@2x.png */; };
+		944E8C1D28BC75FF0024F9BE /* plusicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1C28BC75FF0024F9BE /* plusicon@2x.png */; };
+		944E8C1F28BC77D80024F9BE /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1E28BC77D80024F9BE /* cancelButton.png */; };
+		944E8C2728BD1BB40024F9BE /* textField.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2628BD1BB40024F9BE /* textField.png */; };
+		944E8C2B28BD1C820024F9BE /* category2.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2A28BD1C820024F9BE /* category2.png */; };
+		944E8C2D28BD1C890024F9BE /* category3.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2C28BD1C890024F9BE /* category3.png */; };
+		944E8C2F28BD1C8E0024F9BE /* category4.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2E28BD1C8E0024F9BE /* category4.png */; };
+		944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E8C3028BD1D1B0024F9BE /* AddViewController.swift */; };
+		9493065929598BAC0075694C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493065829598BAC0075694C /* EditViewController.swift */; };
+		94AE16ED289190B200E3DA12 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16EC289190B200E3DA12 /* SignIn.storyboard */; };
+		94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16EE2891914F00E3DA12 /* SignInViewController.swift */; };
+		94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16F4289195A300E3DA12 /* CustomButton.swift */; };
+		94AE16FA2891991400E3DA12 /* titleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16F92891991400E3DA12 /* titleImage.png */; };
+		94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FB28919FD700E3DA12 /* HomeViewController.swift */; };
+		94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE16FD2891A47F00E3DA12 /* peopleImage.png */; };
+		94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */; };
+		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
+		94D0B0142953635000A1FC70 /* DesignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B0132953635000A1FC70 /* DesignMainView.swift */; };
+		94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B015295364EA00A1FC70 /* UIColorHex.swift */; };
+		94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B01729536B4300A1FC70 /* DetailViewController.swift */; };
+		94D4726A29518FB600873FDF /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726929518FB600873FDF /* search@2x.png */; };
+		94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4726B2951904900873FDF /* CosmeTableViewCell.swift */; };
+		94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726C2951904900873FDF /* CosmeTableViewCell.xib */; };
+		94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */; };
+		94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94D7B19728CDE6470053A5F4 /* editButton.jpeg */; };
+		94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */; };
+		94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */; };
+		94ED1F502954B39700BE4215 /* UseUpCosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */; };
+		94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */; };
+		94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDDFE92938C09800BBC400 /* DesignAddView.swift */; };
+		94FDDFEE2938C40600BBC400 /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FDDFED2938C40600BBC400 /* foundation.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9403CDAF2891778F00243A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9403CD902891778E00243A79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9403CD972891778E00243A79;
+			remoteInfo = UseUpCosme;
+		};
+		9403CDB92891778F00243A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9403CD902891778E00243A79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9403CD972891778E00243A79;
+			remoteInfo = UseUpCosme;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseUpCosme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C97CF778AE84433C36775DE /* Pods-UseUpCosmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosmeTests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosmeTests/Pods-UseUpCosmeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		525905A68590518F3B3102FA /* Pods-UseUpCosme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.debug.xcconfig"; sourceTree = "<group>"; };
+		9403CD982891778E00243A79 /* UseUpCosme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UseUpCosme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9403CD9B2891778E00243A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9403CD9D2891778E00243A79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9403CD9F2891778E00243A79 /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
+		9403CDA22891778E00243A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9403CDA42891778F00243A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9403CDA72891778F00243A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9403CDA92891778F00243A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9403CDAE2891778F00243A79 /* UseUpCosmeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseUpCosmeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9403CDB22891778F00243A79 /* UseUpCosmeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeTests.swift; sourceTree = "<group>"; };
+		9403CDB82891778F00243A79 /* UseUpCosmeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseUpCosmeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITests.swift; sourceTree = "<group>"; };
+		9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9408525528E87A700093987A /* default-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder.png"; sourceTree = "<group>"; };
+		940F2EE7294E0F0800700453 /* Cosme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosme.swift; sourceTree = "<group>"; };
+		940F2EE9294E133B00700453 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		944E8C1828BC75F50024F9BE /* archiveicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "archiveicon@2x.png"; sourceTree = "<group>"; };
+		944E8C1A28BC75F90024F9BE /* homeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeicon@2x.png"; sourceTree = "<group>"; };
+		944E8C1C28BC75FF0024F9BE /* plusicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plusicon@2x.png"; sourceTree = "<group>"; };
+		944E8C1E28BC77D80024F9BE /* cancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelButton.png; sourceTree = "<group>"; };
+		944E8C2628BD1BB40024F9BE /* textField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField.png; sourceTree = "<group>"; };
+		944E8C2A28BD1C820024F9BE /* category2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category2.png; sourceTree = "<group>"; };
+		944E8C2C28BD1C890024F9BE /* category3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category3.png; sourceTree = "<group>"; };
+		944E8C2E28BD1C8E0024F9BE /* category4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category4.png; sourceTree = "<group>"; };
+		944E8C3028BD1D1B0024F9BE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		9493065829598BAC0075694C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		94AE16EC289190B200E3DA12 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		94AE16EE2891914F00E3DA12 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		94AE16F4289195A300E3DA12 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		94AE16F92891991400E3DA12 /* titleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImage.png; sourceTree = "<group>"; };
+		94AE16FB28919FD700E3DA12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		94AE16FD2891A47F00E3DA12 /* peopleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peopleImage.png; sourceTree = "<group>"; };
+		94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
+		94D0B0132953635000A1FC70 /* DesignMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignMainView.swift; sourceTree = "<group>"; };
+		94D0B015295364EA00A1FC70 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		94D0B01729536B4300A1FC70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		94D4726929518FB600873FDF /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		94D4726B2951904900873FDF /* CosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeTableViewCell.swift; sourceTree = "<group>"; };
+		94D4726C2951904900873FDF /* CosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmeTableViewCell.xib; sourceTree = "<group>"; };
+		94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMBFunction.swift; sourceTree = "<group>"; };
+		94D7B19728CDE6470053A5F4 /* editButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = editButton.jpeg; sourceTree = "<group>"; };
+		94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchaivesViewController.swift; sourceTree = "<group>"; };
+		94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeTableViewCell.swift; sourceTree = "<group>"; };
+		94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UseUpCosmeTableViewCell.xib; sourceTree = "<group>"; };
+		94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificateFunction.swift; sourceTree = "<group>"; };
+		94FDDFE92938C09800BBC400 /* DesignAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignAddView.swift; sourceTree = "<group>"; };
+		94FDDFED2938C40600BBC400 /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
+		A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.release.xcconfig"; sourceTree = "<group>"; };
+		B99EFAA45BD0C539268FB429 /* Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C23B1EDA1053D4DE7EB957DF /* Pods_UseUpCosme_UseUpCosmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseUpCosme_UseUpCosmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B8281BC7303E04CE174225 /* Pods-UseUpCosmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosmeTests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosmeTests/Pods-UseUpCosmeTests.release.xcconfig"; sourceTree = "<group>"; };
+		FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseUpCosmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9403CD952891778E00243A79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B63F060461E0281171E7C11 /* Pods_UseUpCosme.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9403CDAB2891778F00243A79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				742B48E852DD1B4132633CC2 /* Pods_UseUpCosmeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9403CDB52891778F00243A79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51A751B868EC01BE78845899 /* Pods_UseUpCosme_UseUpCosmeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EB2FEC80595A3E41FB0AE37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */,
+				C23B1EDA1053D4DE7EB957DF /* Pods_UseUpCosme_UseUpCosmeUITests.framework */,
+				FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9403CD8F2891778E00243A79 = {
+			isa = PBXGroup;
+			children = (
+				9403CD9A2891778E00243A79 /* UseUpCosme */,
+				9403CDB12891778F00243A79 /* UseUpCosmeTests */,
+				9403CDBB2891778F00243A79 /* UseUpCosmeUITests */,
+				9403CD992891778E00243A79 /* Products */,
+				C54581C8E18A110ECA725CEA /* Pods */,
+				1EB2FEC80595A3E41FB0AE37 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9403CD992891778E00243A79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9403CD982891778E00243A79 /* UseUpCosme.app */,
+				9403CDAE2891778F00243A79 /* UseUpCosmeTests.xctest */,
+				9403CDB82891778F00243A79 /* UseUpCosmeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9403CD9A2891778E00243A79 /* UseUpCosme */ = {
+			isa = PBXGroup;
+			children = (
+				9403CD9B2891778E00243A79 /* AppDelegate.swift */,
+				9403CD9D2891778E00243A79 /* SceneDelegate.swift */,
+				94FD05302950CCC9003B7FA6 /* Main */,
+				94AE16F22891955A00E3DA12 /* SignIn */,
+				94AE16F62891989B00E3DA12 /* Images */,
+				9403CDA42891778F00243A79 /* Assets.xcassets */,
+				9403CDA62891778F00243A79 /* LaunchScreen.storyboard */,
+				9403CDA92891778F00243A79 /* Info.plist */,
+			);
+			path = UseUpCosme;
+			sourceTree = "<group>";
+		};
+		9403CDB12891778F00243A79 /* UseUpCosmeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9403CDB22891778F00243A79 /* UseUpCosmeTests.swift */,
+			);
+			path = UseUpCosmeTests;
+			sourceTree = "<group>";
+		};
+		9403CDBB2891778F00243A79 /* UseUpCosmeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */,
+				9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */,
+			);
+			path = UseUpCosmeUITests;
+			sourceTree = "<group>";
+		};
+		94AE16F22891955A00E3DA12 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				94AE16FB28919FD700E3DA12 /* HomeViewController.swift */,
+				94AE16EE2891914F00E3DA12 /* SignInViewController.swift */,
+				94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */,
+				94FD052F2950CC9C003B7FA6 /* Design */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		94AE16F32891957100E3DA12 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				9403CDA12891778E00243A79 /* Main.storyboard */,
+				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
+				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
+				94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */,
+				94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */,
+				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
+				94D0B0132953635000A1FC70 /* DesignMainView.swift */,
+				94D0B015295364EA00A1FC70 /* UIColorHex.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		94AE16F62891989B00E3DA12 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				94FDDFED2938C40600BBC400 /* foundation.png */,
+				9408525528E87A700093987A /* default-placeholder.png */,
+				944E8C2E28BD1C8E0024F9BE /* category4.png */,
+				944E8C2C28BD1C890024F9BE /* category3.png */,
+				944E8C2A28BD1C820024F9BE /* category2.png */,
+				944E8C2628BD1BB40024F9BE /* textField.png */,
+				94D7B19728CDE6470053A5F4 /* editButton.jpeg */,
+				944E8C1C28BC75FF0024F9BE /* plusicon@2x.png */,
+				944E8C1A28BC75F90024F9BE /* homeicon@2x.png */,
+				944E8C1828BC75F50024F9BE /* archiveicon@2x.png */,
+				94AE16F92891991400E3DA12 /* titleImage.png */,
+				94D069F82892525700755C92 /* emailImage.png */,
+				94AE16FD2891A47F00E3DA12 /* peopleImage.png */,
+				944E8C1E28BC77D80024F9BE /* cancelButton.png */,
+				94D4726929518FB600873FDF /* search@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		94FD052F2950CC9C003B7FA6 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				94AE16F4289195A300E3DA12 /* CustomButton.swift */,
+				94AE16EC289190B200E3DA12 /* SignIn.storyboard */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		94FD05302950CCC9003B7FA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
+				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
+				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
+				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
+				9493065829598BAC0075694C /* EditViewController.swift */,
+				94FD05322950CD1C003B7FA6 /* Function */,
+				94FD05312950CCFF003B7FA6 /* Model */,
+				94AE16F32891957100E3DA12 /* Design */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		94FD05312950CCFF003B7FA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				940F2EE7294E0F0800700453 /* Cosme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94FD05322950CD1C003B7FA6 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
+				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
+				940F2EE9294E133B00700453 /* DateUtils.swift */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		C54581C8E18A110ECA725CEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				525905A68590518F3B3102FA /* Pods-UseUpCosme.debug.xcconfig */,
+				AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */,
+				B99EFAA45BD0C539268FB429 /* Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig */,
+				A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */,
+				4C97CF778AE84433C36775DE /* Pods-UseUpCosmeTests.debug.xcconfig */,
+				E7B8281BC7303E04CE174225 /* Pods-UseUpCosmeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9403CD972891778E00243A79 /* UseUpCosme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9403CDC22891778F00243A79 /* Build configuration list for PBXNativeTarget "UseUpCosme" */;
+			buildPhases = (
+				0BE285DA2EADB4919814BDD7 /* [CP] Check Pods Manifest.lock */,
+				9403CD942891778E00243A79 /* Sources */,
+				9403CD952891778E00243A79 /* Frameworks */,
+				9403CD962891778E00243A79 /* Resources */,
+				0D56FBFE8DED5FB9031A4D44 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UseUpCosme;
+			productName = UseUpCosme;
+			productReference = 9403CD982891778E00243A79 /* UseUpCosme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9403CDAD2891778F00243A79 /* UseUpCosmeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9403CDC52891778F00243A79 /* Build configuration list for PBXNativeTarget "UseUpCosmeTests" */;
+			buildPhases = (
+				EC52F0BFC1FF674CA77C5F1B /* [CP] Check Pods Manifest.lock */,
+				9403CDAA2891778F00243A79 /* Sources */,
+				9403CDAB2891778F00243A79 /* Frameworks */,
+				9403CDAC2891778F00243A79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9403CDB02891778F00243A79 /* PBXTargetDependency */,
+			);
+			name = UseUpCosmeTests;
+			productName = UseUpCosmeTests;
+			productReference = 9403CDAE2891778F00243A79 /* UseUpCosmeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9403CDB72891778F00243A79 /* UseUpCosmeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9403CDC82891778F00243A79 /* Build configuration list for PBXNativeTarget "UseUpCosmeUITests" */;
+			buildPhases = (
+				B7970D0E4329C305273431BC /* [CP] Check Pods Manifest.lock */,
+				9403CDB42891778F00243A79 /* Sources */,
+				9403CDB52891778F00243A79 /* Frameworks */,
+				9403CDB62891778F00243A79 /* Resources */,
+				60DD26CEFCDBADE6EDB4B5A3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9403CDBA2891778F00243A79 /* PBXTargetDependency */,
+			);
+			name = UseUpCosmeUITests;
+			productName = UseUpCosmeUITests;
+			productReference = 9403CDB82891778F00243A79 /* UseUpCosmeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9403CD902891778E00243A79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					9403CD972891778E00243A79 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					9403CDAD2891778F00243A79 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 9403CD972891778E00243A79;
+					};
+					9403CDB72891778F00243A79 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 9403CD972891778E00243A79;
+					};
+				};
+			};
+			buildConfigurationList = 9403CD932891778E00243A79 /* Build configuration list for PBXProject "UseUpCosme" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9403CD8F2891778E00243A79;
+			productRefGroup = 9403CD992891778E00243A79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9403CD972891778E00243A79 /* UseUpCosme */,
+				9403CDAD2891778F00243A79 /* UseUpCosmeTests */,
+				9403CDB72891778F00243A79 /* UseUpCosmeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9403CD962891778E00243A79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94AE16ED289190B200E3DA12 /* SignIn.storyboard in Resources */,
+				944E8C2D28BD1C890024F9BE /* category3.png in Resources */,
+				9403CDA82891778F00243A79 /* LaunchScreen.storyboard in Resources */,
+				944E8C1928BC75F50024F9BE /* archiveicon@2x.png in Resources */,
+				9403CDA52891778F00243A79 /* Assets.xcassets in Resources */,
+				9403CDA32891778E00243A79 /* Main.storyboard in Resources */,
+				944E8C1F28BC77D80024F9BE /* cancelButton.png in Resources */,
+				94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */,
+				944E8C2B28BD1C820024F9BE /* category2.png in Resources */,
+				944E8C1D28BC75FF0024F9BE /* plusicon@2x.png in Resources */,
+				94D4726A29518FB600873FDF /* search@2x.png in Resources */,
+				944E8C2728BD1BB40024F9BE /* textField.png in Resources */,
+				944E8C1B28BC75F90024F9BE /* homeicon@2x.png in Resources */,
+				94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */,
+				944E8C2F28BD1C8E0024F9BE /* category4.png in Resources */,
+				94FDDFEE2938C40600BBC400 /* foundation.png in Resources */,
+				9408525628E87A700093987A /* default-placeholder.png in Resources */,
+				94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */,
+				94D069F92892525700755C92 /* emailImage.png in Resources */,
+				94AE16FA2891991400E3DA12 /* titleImage.png in Resources */,
+				94ED1F502954B39700BE4215 /* UseUpCosmeTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9403CDAC2891778F00243A79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9403CDB62891778F00243A79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BE285DA2EADB4919814BDD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UseUpCosme-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D56FBFE8DED5FB9031A4D44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60DD26CEFCDBADE6EDB4B5A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7970D0E4329C305273431BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UseUpCosme-UseUpCosmeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC52F0BFC1FF674CA77C5F1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UseUpCosmeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9403CD942891778E00243A79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9493065929598BAC0075694C /* EditViewController.swift in Sources */,
+				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
+				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
+				940F2EEA294E133B00700453 /* DateUtils.swift in Sources */,
+				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
+				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
+				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
+				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
+				94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */,
+				94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */,
+				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
+				94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */,
+				940F2EE8294E0F0800700453 /* Cosme.swift in Sources */,
+				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
+				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
+				94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */,
+				94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */,
+				94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */,
+				94D0B0142953635000A1FC70 /* DesignMainView.swift in Sources */,
+				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9403CDAA2891778F00243A79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9403CDB32891778F00243A79 /* UseUpCosmeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9403CDB42891778F00243A79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9403CDBD2891778F00243A79 /* UseUpCosmeUITests.swift in Sources */,
+				9403CDBF2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9403CDB02891778F00243A79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9403CD972891778E00243A79 /* UseUpCosme */;
+			targetProxy = 9403CDAF2891778F00243A79 /* PBXContainerItemProxy */;
+		};
+		9403CDBA2891778F00243A79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9403CD972891778E00243A79 /* UseUpCosme */;
+			targetProxy = 9403CDB92891778F00243A79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9403CDA12891778E00243A79 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9403CDA22891778E00243A79 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9403CDA62891778F00243A79 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9403CDA72891778F00243A79 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9403CDC02891778F00243A79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9403CDC12891778F00243A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9403CDC32891778F00243A79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 525905A68590518F3B3102FA /* Pods-UseUpCosme.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TZ5A5U924L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UseUpCosme/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Asady.UseUpCosme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9403CDC42891778F00243A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TZ5A5U924L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UseUpCosme/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Asady.UseUpCosme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9403CDC62891778F00243A79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C97CF778AE84433C36775DE /* Pods-UseUpCosmeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TZ5A5U924L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Asady.UseUpCosmeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UseUpCosme.app/UseUpCosme";
+			};
+			name = Debug;
+		};
+		9403CDC72891778F00243A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7B8281BC7303E04CE174225 /* Pods-UseUpCosmeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TZ5A5U924L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Asady.UseUpCosmeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UseUpCosme.app/UseUpCosme";
+			};
+			name = Release;
+		};
+		9403CDC92891778F00243A79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B99EFAA45BD0C539268FB429 /* Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TZ5A5U924L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Asady.UseUpCosmeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UseUpCosme;
+			};
+			name = Debug;
+		};
+		9403CDCA2891778F00243A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TZ5A5U924L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Asady.UseUpCosmeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UseUpCosme;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9403CD932891778E00243A79 /* Build configuration list for PBXProject "UseUpCosme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9403CDC02891778F00243A79 /* Debug */,
+				9403CDC12891778F00243A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9403CDC22891778F00243A79 /* Build configuration list for PBXNativeTarget "UseUpCosme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9403CDC32891778F00243A79 /* Debug */,
+				9403CDC42891778F00243A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9403CDC52891778F00243A79 /* Build configuration list for PBXNativeTarget "UseUpCosmeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9403CDC62891778F00243A79 /* Debug */,
+				9403CDC72891778F00243A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9403CDC82891778F00243A79 /* Build configuration list for PBXNativeTarget "UseUpCosmeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9403CDC92891778F00243A79 /* Debug */,
+				9403CDCA2891778F00243A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9403CD902891778E00243A79 /* Project object */;
+}
