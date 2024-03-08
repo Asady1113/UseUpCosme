@@ -7,10 +7,8 @@ target 'UseUpCosme' do
 
   # Pods for UseUpCosme
   pod 'NYXImagesKit'
-  pod 'NCMB', :git => 'https://github.com/NIFTYCloud-mbaas/ncmb_ios.git', :branch => 'develop'
+  pod 'RealmSwift'
   pod 'KRProgressHUD'
-  pod 'Kingfisher'
-
 
   target 'UseUpCosmeTests' do
     inherit! :search_paths

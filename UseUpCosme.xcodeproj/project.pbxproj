@@ -161,6 +161,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5C18882B9B0FBF00344C84 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				94FD05302950CCC9003B7FA6 /* Main */,
+				94AE16F62891989B00E3DA12 /* Images */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0B5C18892B9B10A300344C84 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
+				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
+				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0B5C188B2B9B10EA00344C84 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		0B5C188C2B9B110400344C84 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
+				94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */,
+				94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		0B5C188D2B9B112300344C84 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0B5C188E2B9B112B00344C84 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				9493065829598BAC0075694C /* EditViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		1EB2FEC80595A3E41FB0AE37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,9 +251,8 @@
 			children = (
 				9403CD9B2891778E00243A79 /* AppDelegate.swift */,
 				9403CD9D2891778E00243A79 /* SceneDelegate.swift */,
-				94FD05302950CCC9003B7FA6 /* Main */,
+				0B5C18882B9B0FBF00344C84 /* App */,
 				94AE16F22891955A00E3DA12 /* SignIn */,
-				94AE16F62891989B00E3DA12 /* Images */,
 				9403CDA42891778F00243A79 /* Assets.xcassets */,
 				9403CDA62891778F00243A79 /* LaunchScreen.storyboard */,
 				9403CDA92891778F00243A79 /* Info.plist */,
@@ -234,21 +286,6 @@
 				94FD052F2950CC9C003B7FA6 /* Design */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		94AE16F32891957100E3DA12 /* Design */ = {
-			isa = PBXGroup;
-			children = (
-				9403CDA12891778E00243A79 /* Main.storyboard */,
-				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
-				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
-				94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */,
-				94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */,
-				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
-				94D0B0132953635000A1FC70 /* DesignMainView.swift */,
-				94D0B015295364EA00A1FC70 /* UIColorHex.swift */,
-			);
-			path = Design;
 			sourceTree = "<group>";
 		};
 		94AE16F62891989B00E3DA12 /* Images */ = {
@@ -285,34 +322,21 @@
 		94FD05302950CCC9003B7FA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
-				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
-				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
-				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
-				9493065829598BAC0075694C /* EditViewController.swift */,
-				94FD05322950CD1C003B7FA6 /* Function */,
-				94FD05312950CCFF003B7FA6 /* Model */,
-				94AE16F32891957100E3DA12 /* Design */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		94FD05312950CCFF003B7FA6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
+				9403CDA12891778E00243A79 /* Main.storyboard */,
+				0B5C18892B9B10A300344C84 /* Home */,
+				0B5C188B2B9B10EA00344C84 /* Add */,
+				0B5C188C2B9B110400344C84 /* Archive */,
+				0B5C188D2B9B112300344C84 /* Detail */,
+				0B5C188E2B9B112B00344C84 /* Edit */,
 				940F2EE7294E0F0800700453 /* Cosme.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		94FD05322950CD1C003B7FA6 /* Function */ = {
-			isa = PBXGroup;
-			children = (
 				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
 				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
 				940F2EE9294E133B00700453 /* DateUtils.swift */,
+				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
+				94D0B0132953635000A1FC70 /* DesignMainView.swift */,
+				94D0B015295364EA00A1FC70 /* UIColorHex.swift */,
 			);
-			path = Function;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		C54581C8E18A110ECA725CEA /* Pods */ = {
