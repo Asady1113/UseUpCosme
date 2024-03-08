@@ -6,13 +6,10 @@
 //
 
 import UIKit
-import NCMB
 import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("permission error")
             }
         }
-        
-        
-        let appkey = "b18f3d2a90d836d37d51227a01d9c75665d529ee3882f91087c2621a26a15f28"
-        let clientKey = "485def6dbe484cdbba151acbbf4c5ca6e809f89ce2c52e0e491c4b5d0e25c2ce"
-        
-        NCMB.setApplicationKey(appkey, clientKey: clientKey)
         
         return true
     }

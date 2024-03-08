@@ -6,37 +6,19 @@
 //
 
 import UIKit
-import NCMB
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        
-        let ud = UserDefaults.standard
-        let isLogin = ud.bool(forKey: "isLogin")
-        
-        if isLogin == true{
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-            self.window?.rootViewController = mainViewController
-            self.window?.backgroundColor = UIColor.white
-            self.window?.makeKeyAndVisible()
-            
-            }else{
-                
-                let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main)
-                let rootViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-                self.window?.rootViewController = rootViewController
-                self.window?.backgroundColor = UIColor.white
-                self.window?.makeKeyAndVisible()
-            
-                }
-        
+        // 起動の際のコード
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbarController")
+        self.window?.rootViewController = mainViewController
+        self.window?.backgroundColor = UIColor.white
+        self.window?.makeKeyAndVisible()
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
