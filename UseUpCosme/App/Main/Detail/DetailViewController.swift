@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
-import NCMB
 import KRProgressHUD
 
 class DetailViewController: UIViewController {

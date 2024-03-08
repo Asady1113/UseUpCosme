@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NCMB
 
 class SignUpViewController: UIViewController,UITextFieldDelegate {
     

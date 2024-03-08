@@ -6,9 +6,7 @@
 //
 
 import UIKit
-import NCMB
 import KRProgressHUD
-import Kingfisher
 
 class ArchaivesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     

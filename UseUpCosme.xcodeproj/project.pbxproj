@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5734DC2B9B212A008BA71B /* RealmManager.swift */; };
+		0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C188F2B9B165500344C84 /* CosmeModel.swift */; };
 		1B63F060461E0281171E7C11 /* Pods_UseUpCosme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */; };
 		51A751B868EC01BE78845899 /* Pods_UseUpCosme_UseUpCosmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23B1EDA1053D4DE7EB957DF /* Pods_UseUpCosme_UseUpCosmeUITests.framework */; };
 		742B48E852DD1B4132633CC2 /* Pods_UseUpCosmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5734DC2B9B212A008BA71B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		0B5C188F2B9B165500344C84 /* CosmeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeModel.swift; sourceTree = "<group>"; };
 		47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseUpCosme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C97CF778AE84433C36775DE /* Pods-UseUpCosmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosmeTests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosmeTests/Pods-UseUpCosmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		525905A68590518F3B3102FA /* Pods-UseUpCosme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				0B5C188D2B9B112300344C84 /* Detail */,
 				0B5C188E2B9B112B00344C84 /* Edit */,
 				940F2EE7294E0F0800700453 /* Cosme.swift */,
+				0B5C188F2B9B165500344C84 /* CosmeModel.swift */,
+				0B5734DC2B9B212A008BA71B /* RealmManager.swift */,
 				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
 				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
 				940F2EE9294E133B00700453 /* DateUtils.swift */,
@@ -622,6 +628,7 @@
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */,
 				940F2EE8294E0F0800700453 /* Cosme.swift in Sources */,
+				0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
 				94FDDFEA2938C09800BBC400 /* DesignAddView.swift in Sources */,
@@ -629,6 +636,7 @@
 				94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */,
 				94D0B0142953635000A1FC70 /* DesignMainView.swift in Sources */,
 				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
+				0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

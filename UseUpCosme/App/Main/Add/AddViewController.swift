@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NCMB
 import KRProgressHUD
 import NYXImagesKit
 

@@ -6,10 +6,8 @@
 //
 
 import UIKit
-import NCMB
 import KRProgressHUD
 import NYXImagesKit
-import Kingfisher
 
 class EditViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NCMB
 import KRProgressHUD
 import UIKit
 
