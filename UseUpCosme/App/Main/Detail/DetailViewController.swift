@@ -10,7 +10,7 @@ import KRProgressHUD
 
 class DetailViewController: UIViewController {
     
-    var cosme: Cosme!
+    var cosme: CosmeModel!
     var selectedCategory: String!
     var useUpCosme: Int = 0
     //var function = NCMBFunction()

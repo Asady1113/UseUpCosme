@@ -11,8 +11,6 @@ import KRProgressHUD
 class MainHomeViewController: UIViewController {
     
     @IBOutlet private weak var listTableView: UITableView!
-    //var function = NCMBFunction()
-    private var design = DesignMainView()
     private var cosmes = [CosmeModel]()
     private var selectedCategory = "all"
     private var isOrdered: Bool = false
@@ -35,9 +33,9 @@ class MainHomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let selectedIndex = listTableView.indexPathForSelectedRow!
-        let detailVC = segue.destination as! DetailViewController
-        detailVC.cosme = cosmes[selectedIndex.row]
+        if let selectedIndex = listTableView.indexPathForSelectedRow, let detailVC = segue.destination as? DetailViewController {
+            detailVC.cosme = cosmes[selectedIndex.row]
+        }
     }
     
     //ボタンによる操作（カテゴリーや期限順）
@@ -53,54 +51,30 @@ class MainHomeViewController: UIViewController {
     }
     
     private func loadCosme() {
-        
         KRProgressHUD.show()
-
-        cosmes = [Cosme]()
-
-        let query = NCMBQuery(className: "Cosme")
-        query?.includeKey("user")
-        // 自分の投稿だけ持ってくる
-        query?.whereKey("user", equalTo: NCMBUser.current())
-        //使い切られていないもの
-        query?.whereKey("useup", equalTo: false)
-
-        //カテゴリー縛りがあれば
-        if selectedCategory != "all" {
-            query?.whereKey("category", equalTo: selectedCategory)
-        }
-        //期限順なら
-        if isOrdered == true {
-            query?.order(byAscending: "limitDate")
-        }
-
-        query?.findObjectsInBackground({ result, error in
-            if error != nil {
-                KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
-            } else {
-
-                for object in result as! [NCMBObject] {
-                    let user = object.object(forKey: "user") as! NCMBUser
-                    let name = object.object(forKey: "name") as! String
-                    let category = object.object(forKey: "category") as! String
-                    let startDate = object.object(forKey: "startDate") as! Date
-                    let limitDate = object.object(forKey: "limitDate") as! Date
-                    let imageUrl = object.object(forKey: "imageUrl") as! String
-                    let notificationId = object.object(forKey: "notificationId") as! String
-                    let useup = object.object(forKey: "useup") as! Bool
-
-                    let cosme = Cosme(user: user, name: name, category: category, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: useup)
-                    cosme.objectId = object.objectId
-                    cosme.imageUrl = imageUrl
-
-                    self.cosmes.append(cosme)
+       
+        RealmManager.loadCosme(selectedCategory: selectedCategory) { result in
+            switch result {
+            case .success(var cosmes):
+                // 期限が近い順に並び替える
+                if self.isOrdered == true {
+                    cosmes = self.sortCosmeModelsByLimitDate(cosmes: cosmes)
                 }
-
-                KRProgressHUD.dismiss()
                 self.listTableView.reloadData()
+                KRProgressHUD.dismiss()
+            case .failure(let error):
+                KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
             }
-        })
+        }
     }
+    
+    // 機嫌順に並べる関数
+    private func sortCosmeModelsByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel] {
+        // $0と$1にはそれぞれCosmeModelが入っている。それを比較する
+        return cosmes.sorted(by: { $0.limitDate > $1.limitDate })
+    }
+
+    
 }
 
 extension MainHomeViewController: UITableViewDataSource {
@@ -109,23 +83,27 @@ extension MainHomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CosmeTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CosmeTableViewCell else {
+            fatalError()
+        }
         
-        cell.nameLabel.text = cosmes[indexPath.row].name
+        cell.nameLabel.text = cosmes[indexPath.row].cosmeName
         
         let startDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
         let limitDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].limitDate, format: "yyyy / MM / dd")
-
         cell.startDateLabel.text = startDateString
         cell.LimitDateLabel.text = limitDateString
         
         let countDate = DateUtils.dateFromStartDate(limitDate: cosmes[indexPath.row].limitDate)
         cell.countLabel.text = String(countDate)
-        design.changeCountColor(count: countDate, view: cell.countView)
+        // 残り日数に応じてセルの色を変える
+        DesignMainView.changeCountColor(count: countDate, view: cell.countView)
         
-        let imageUrl = cosmes[indexPath.row].imageUrl
-        cell.cosmeImageView.kf.setImage(with: URL(string: imageUrl!))
-        
+        // 画像取得
+        let data = cosmes[indexPath.row].imageData
+        let image = UIImage(data: data)
+        cell.cosmeImageView.image = image
+    
         return cell
     }
 }

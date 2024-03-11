@@ -5,6 +5,7 @@
 //  Created by 浅田智哉 on 2022/12/17.
 //
 
+// 不要なクラス
 import Foundation
 
 class Cosme: NSObject {
