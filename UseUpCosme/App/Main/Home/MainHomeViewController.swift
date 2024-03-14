@@ -9,11 +9,10 @@ import UIKit
 import KRProgressHUD
 
 class MainHomeViewController: UIViewController {
-    
-    @IBOutlet private weak var listTableView: UITableView!
     private var cosmes = [CosmeModel]()
     private var selectedCategory = "all"
     private var isOrdered = false
+    @IBOutlet private weak var listTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +52,8 @@ class MainHomeViewController: UIViewController {
     private func loadCosme() {
         KRProgressHUD.show()
        
-        RealmManager.loadCosme(selectedCategory: selectedCategory) { result in
+        // 使い切られていないコスメを読み込む
+        RealmManager.loadCosme(selectedCategory: selectedCategory, useup: false) { result in
             switch result {
             case .success(var cosmes):
                 // 期限が近い順に並び替える
@@ -68,13 +68,11 @@ class MainHomeViewController: UIViewController {
         }
     }
     
-    // 機嫌順に並べる関数
+    // 期限が近い順に並べる関数
     private func sortCosmeModelsByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel] {
         // $0と$1にはそれぞれCosmeModelが入っている。それを比較する
         return cosmes.sorted(by: { $0.limitDate > $1.limitDate })
     }
-
-    
 }
 
 extension MainHomeViewController: UITableViewDataSource {
@@ -98,7 +96,7 @@ extension MainHomeViewController: UITableViewDataSource {
         cell.startDateLabel.text = startDateString
         cell.LimitDateLabel.text = limitDateString
         
-        let countDate = Date.dateFromStartDate(limitDate: cosmes[indexPath.row].limitDate)
+        let countDate = Date.dateToLimitDate(limitDate: cosmes[indexPath.row].limitDate)
         cell.countLabel.text = String(countDate)
         // 残り日数に応じてセルの色を変える
         DesignMainView.changeCountColor(count: countDate, view: cell.countView)

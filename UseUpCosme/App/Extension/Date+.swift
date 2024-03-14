@@ -27,10 +27,12 @@ extension Date {
         return formatter.string(from: date)
     }
     
-    // 使用開始日からの経過日数
-    static func dateFromStartDate(limitDate: Date) -> Int {
-        let dateSubtraction = Calendar.current.dateComponents([.day], from: Date(), to: limitDate).day
-        
-        return dateSubtraction!
+    // 使用期限までの残り日数
+    static func dateToLimitDate(limitDate: Date) -> Int {
+        guard let dateSubtraction = Calendar.current.dateComponents([.day], from: Date(), to: limitDate).day else {
+            // バグだと気づけるように
+            return 999
+        }
+        return dateSubtraction
     }
 }

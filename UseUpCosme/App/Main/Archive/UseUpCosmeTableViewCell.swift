@@ -22,34 +22,39 @@ class UseUpCosmeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-       
-        countView.layer.cornerRadius = 6
-        countView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        countView.clipsToBounds = true
-        
-        cosmeImageView.layer.cornerRadius = 6
-        cosmeImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        cosmeImageView.clipsToBounds = true
-        
-        startLabel.layer.cornerRadius = 6
-        startLabel.clipsToBounds = true
-        
-        limitLabel.layer.cornerRadius = 6
-        limitLabel.clipsToBounds = true
-        
-        startDateLabel.layer.cornerRadius = 6
-        startDateLabel.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        startDateLabel.clipsToBounds = true
-        
-        LimitDateLabel.layer.cornerRadius = 6
-        LimitDateLabel.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        LimitDateLabel.clipsToBounds = true
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        configureUI()
     }
     
+    private func configureUI() {
+        configureView(view: countView)
+        configureImageView(imageView: cosmeImageView)
+        configureLabel(label: startLabel)
+        configureLabel(label: limitLabel)
+        configureDateLabel(label: startDateLabel)
+        configureDateLabel(label: LimitDateLabel)
+    }
+    
+    private func configureView(view: UIView) {
+        view.layer.cornerRadius = 6
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        view.clipsToBounds = true
+    }
+    
+    private func configureImageView(imageView: UIImageView) {
+        imageView.layer.cornerRadius = 6
+        imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        imageView.clipsToBounds = true
+    }
+    
+    private func configureLabel(label: UILabel) {
+        label.layer.cornerRadius = 6
+        label.clipsToBounds = true
+    }
+    
+    private func configureDateLabel(label: UILabel) {
+        label.layer.cornerRadius = 6
+        label.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        label.clipsToBounds = true
+    }
+
 }
