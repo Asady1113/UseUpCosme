@@ -86,7 +86,11 @@ extension MainHomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CosmeTableViewCell else {
             fatalError()
         }
-        
+        configureCell(cell: cell, indexPath: indexPath)
+        return cell
+    }
+    
+    private func configureCell(cell: CosmeTableViewCell, indexPath: IndexPath) {
         cell.nameLabel.text = cosmes[indexPath.row].cosmeName
         
         let startDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
@@ -103,8 +107,6 @@ extension MainHomeViewController: UITableViewDataSource {
         let data = cosmes[indexPath.row].imageData
         let image = UIImage(data: data)
         cell.cosmeImageView.image = image
-    
-        return cell
     }
 }
 
