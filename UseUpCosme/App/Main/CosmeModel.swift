@@ -18,7 +18,7 @@ class CosmeModel: Object {
     @objc dynamic var useup: Bool
     @objc dynamic var useupDate: Date?
     
-    init(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, useup: Bool, useupDate: Date) {
+    init(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, useup: Bool) {
         self.objectId = objectId
         self.cosmeName = cosmeName
         self.category = category
@@ -26,6 +26,5 @@ class CosmeModel: Object {
         self.limitDate = limitDate
         self.imageData = imageData
         self.useup = useup
-        self.useupDate = useupDate
     }
 }

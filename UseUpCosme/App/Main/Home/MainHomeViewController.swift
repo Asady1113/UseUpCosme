@@ -13,7 +13,7 @@ class MainHomeViewController: UIViewController {
     @IBOutlet private weak var listTableView: UITableView!
     private var cosmes = [CosmeModel]()
     private var selectedCategory = "all"
-    private var isOrdered: Bool = false
+    private var isOrdered = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +39,12 @@ class MainHomeViewController: UIViewController {
     }
     
     //ボタンによる操作（カテゴリーや期限順）
-    @IBAction func options(_sender: UIButton) {
+    @IBAction private func options(_sender: UIButton) {
         if _sender.tag == 8 {
             isOrdered = true
             loadCosme()
         } else {
-            let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
+            let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
             selectedCategory = category[_sender.tag]
             loadCosme()
         }
@@ -93,12 +93,12 @@ extension MainHomeViewController: UITableViewDataSource {
     private func configureCell(cell: CosmeTableViewCell, indexPath: IndexPath) {
         cell.nameLabel.text = cosmes[indexPath.row].cosmeName
         
-        let startDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
-        let limitDateString = DateUtils.dateToString(dateString: cosmes[indexPath.row].limitDate, format: "yyyy / MM / dd")
+        let startDateString = Date.stringFromDate(date: cosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
+        let limitDateString = Date.stringFromDate(date: cosmes[indexPath.row].limitDate, format: "yyyy / MM / dd")
         cell.startDateLabel.text = startDateString
         cell.LimitDateLabel.text = limitDateString
         
-        let countDate = DateUtils.dateFromStartDate(limitDate: cosmes[indexPath.row].limitDate)
+        let countDate = Date.dateFromStartDate(limitDate: cosmes[indexPath.row].limitDate)
         cell.countLabel.text = String(countDate)
         // 残り日数に応じてセルの色を変える
         DesignMainView.changeCountColor(count: countDate, view: cell.countView)

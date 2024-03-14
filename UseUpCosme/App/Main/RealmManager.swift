@@ -33,4 +33,17 @@ class RealmManager {
             completion?(.success(cosmes))
         }
     }
+    
+    // コスメの追加
+    static func uploadCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        
+        try? realm.write {
+            realm.add(cosme)
+            completion?(.success(()))
+        }
+    }
 }

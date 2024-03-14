@@ -8,29 +8,28 @@
 import UIKit
 
 class DesignAddView {
+    static var startDateTextField: UITextField!
+    static var useupDateTextField: UITextField!
     
-    var startDateTextField: UITextField!
-    var useupDateTextField: UITextField!
+    static let startDatePicker = UIDatePicker()
+    static let useupDatePicker = UIDatePicker()
     
-    let startDatePicker: UIDatePicker = UIDatePicker()
-    let useupDatePicker: UIDatePicker = UIDatePicker()
-    
-    //画像を丸くする処理
-    func designImage(image: UIImageView) {
+    // 画像を丸くする処理
+    static func designImage(image: UIImageView) {
         image.layer.cornerRadius = 15
         image.clipsToBounds = true
     }
     
-    //ボタンの画像セット
-    func setImage(button: UIButton) {
+    // ボタンの画像セット
+    static func setImage(button: UIButton) {
         //画像をセット
         let picture = UIImage(named: "foundation.png")
         button.setImage(picture, for: .normal)
     }
     
     
-    //日付のテキストフィールドを設定する
-    func makeDatePicker(startDateTextField: UITextField,useupDateTextField: UITextField,view: UIView) {
+    // 日付のテキストフィールドを設定する
+    static func makeDatePicker(startDateTextField: UITextField,useupDateTextField: UITextField,view: UIView) {
         
         self.startDateTextField = startDateTextField
         self.useupDateTextField = useupDateTextField
@@ -66,28 +65,27 @@ class DesignAddView {
     }
     
     //完了ボタンを押した時の処理
-    @objc func startDoneDate(){
+    @objc static func startDoneDate(){
         self.startDateTextField.endEditing(true)
-        self.startDateTextField.text = DateUtils.dateToString(dateString: startDatePicker.date, format: "yyyy / MM / dd")
+        self.startDateTextField.text = Date.stringFromDate(date: startDatePicker.date, format: "yyyy / MM / dd")
     }
     
-    @objc func startCancelDate(){
+    @objc static func startCancelDate(){
         self.startDateTextField.endEditing(true)
     }
     
     //完了ボタンを押した時の処理
-    @objc func useupDoneDate(){
+    @objc static func useupDoneDate(){
         self.useupDateTextField.endEditing(true)
-        self.useupDateTextField.text = DateUtils.dateToString(dateString: useupDatePicker.date, format: "yyyy / MM / dd")
+        self.useupDateTextField.text = Date.stringFromDate(date: useupDatePicker.date, format: "yyyy / MM / dd")
     }
     
-    @objc func useupCancelDate(){
+    @objc static func useupCancelDate(){
         self.useupDateTextField.endEditing(true)
     }
     
     //初期化
-    func delete(cosmeImageView: UIImageView, cosmeNameTextField: UITextField, startDateTextField: UITextField, useupDateTextField: UITextField) {
-        
+    static func delete(cosmeImageView: UIImageView, cosmeNameTextField: UITextField, startDateTextField: UITextField, useupDateTextField: UITextField) {
         cosmeImageView.image = UIImage(named: "default-placeholder")
         cosmeNameTextField.text = nil
         startDateTextField.text = nil

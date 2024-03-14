@@ -9,164 +9,161 @@ import UIKit
 import KRProgressHUD
 import NYXImagesKit
 
-class AddViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddViewController: UIViewController {
+    private var resizedImage: UIImage?
+    private var selectedCategory: String?
     
-    let function = NCMBFunction()
-    let design = DesignAddView()
-    var resizedImage: UIImage!
-    var selectedCategory: String!
+    @IBOutlet private weak var cosmeImageView: UIImageView!
+    @IBOutlet private weak var pencilImageView: UIImageView!
+    @IBOutlet private weak var cosmeNameTextField: UITextField!
+    @IBOutlet private weak var startDateTextField: UITextField!
+    @IBOutlet private weak var useupDateTextField: UITextField!
     
-    @IBOutlet weak var cosmeImageView: UIImageView!
-    @IBOutlet weak var pencilImageView: UIImageView!
-    
-    @IBOutlet weak var cosmeNameTextField: UITextField!
-    @IBOutlet weak var startDateTextField: UITextField!
-    @IBOutlet weak var useupDateTextField: UITextField!
-    
-    @IBOutlet weak var category1: UIButton!
-    @IBOutlet weak var category2: UIButton!
-    @IBOutlet weak var category3: UIButton!
-    @IBOutlet weak var category4: UIButton!
-    
+    @IBOutlet private weak var category1: UIButton!
+    @IBOutlet private weak var category2: UIButton!
+    @IBOutlet private weak var category3: UIButton!
+    @IBOutlet private weak var category4: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        function.judgeLogin()
-        
-        //ボタンに写真をセット(カテゴリー1のみ）
-        design.setImage(button: category1)
-        
-        //pickerの設定
-        design.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
-        
-        //鉛筆の画像を丸くする
-        design.designImage(image: pencilImageView)
+        configureUI()
+    }
+    
+    private func configureUI() {
+        // ボタンに写真をセット(カテゴリー1のみ）
+        DesignAddView.setImage(button: category1)
+        // pickerの設定
+        DesignAddView.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
+        // 鉛筆の画像を丸くする
+        DesignAddView.designImage(image: pencilImageView)
+    }
+    
+    // 入力されたデータを削除する
+    private func deleteInputData() {
+        DesignAddView.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
+        selectedCategory = nil
+    }
 
-        cosmeNameTextField.delegate = self
-        startDateTextField.delegate = self
-        useupDateTextField.delegate = self
+    // 画像選択の処理
+    @IBAction private func selectImage(){
+        self.showImagePicker()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    
-    @IBAction func selectImage(){
-        let actionController = UIAlertController(title: "画像の選択", message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "カメラで撮影", style: .default) { (action) in
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera) == true {
-                    let picker = UIImagePickerController()
-                    picker.sourceType = .camera
-                    picker.delegate = self
-                    self.present(picker, animated: true, completion:  nil)
-            }else{
-                    KRProgressHUD.showMessage("この携帯ではカメラは使えません")
-                           
-                  }
-        }
-        
-        let albumAction = UIAlertAction(title: "ライブラリから選択", style: .default) { (action) in
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) == true {
-                    let picker = UIImagePickerController()
-                    picker.sourceType = .photoLibrary
-                    picker.delegate = self
-                    self.present(picker, animated: true, completion:  nil)
-            }else{
-                    KRProgressHUD.showMessage("この携帯ではアルバムは使えません")
-                       
-                   }
-        }
-        
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
-            actionController.dismiss(animated: true, completion: nil)
-        }
-       
-        actionController.addAction(cameraAction)
-        actionController.addAction(albumAction)
-        actionController.addAction(cancelAction)
-        self.present(actionController, animated: true, completion: nil)
-        
-    }
-    
-    //PickerViewに写真を表示する
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        resizedImage = selectedImage.scale(byFactor: 0.3)
-       
+    // ImagePickerViewに写真を表示する
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        resizedImage = selectedImage?.scale(byFactor: 0.3)
         cosmeImageView.image = resizedImage
         picker.dismiss(animated: true, completion: nil)
     }
     
-    //カテゴリ選択関数
-    @IBAction func selectCategory(_sender: UIButton) {
-        
-        let category: [String] = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
+    // カテゴリ選択関数
+    @IBAction private func selectCategory(_sender: UIButton) {
+        let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
         selectedCategory = category[_sender.tag]
     }
     
-    
-    @IBAction func add() {
-        
-        if cosmeImageView.image == UIImage(named: "default-placeholder") {
+    // コスメを追加する
+    @IBAction private func add() {
+        KRProgressHUD.show()
+        // 画像が選択されていなければリターン
+        guard let resizedImage = resizedImage else {
             KRProgressHUD.showError(withMessage: "画像を登録してください")
-            
-        } else if cosmeNameTextField.text?.count == 0{
+            return
+        }
+        // 各項目が入力されているか
+        guard let cosmeName = cosmeNameTextField.text else {
             KRProgressHUD.showError(withMessage: "名前を登録してください")
-        } else if startDateTextField.text?.count == 0{
+            return
+        }
+        guard let startDateText = startDateTextField.text else {
             KRProgressHUD.showError(withMessage: "使用開始日を登録してください")
-        } else if useupDateTextField.text?.count == 0 {
+            return
+        }
+        guard let useupDateText = useupDateTextField.text else {
             KRProgressHUD.showError(withMessage: "使用期限を登録してください")
-        } else if selectedCategory == nil {
+            return
+        }
+        guard let selectedCategory = selectedCategory else {
             KRProgressHUD.showError(withMessage: "カテゴリを登録してください")
-        } else {
-            //画像調整
-            UIGraphicsBeginImageContext(resizedImage.size)
-            let rect = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
-            resizedImage.draw(in: rect)
-            resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            //日付をDate型に変換する
-            let startDate = DateUtils.stringToDate(dateString: startDateTextField.text!, fromFormat: "yyyy / MM / dd")!
-            let limitDate = DateUtils.stringToDate(dateString: useupDateTextField.text!, fromFormat: "yyyy / MM / dd")!
-            
-            //設定日付が正しいかを判定
-            let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
-            let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
-            
-            print(dateSubtractionFromStart)
-            if dateSubtractionFromToday < 0 {
-                KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
-                return
-            } else if dateSubtractionFromStart < 0 {
-                KRProgressHUD.showError(withMessage: "使用開始時に期限が切れているようです")
-                return
+            return
+        }
+        // モデル化してDBに保存する
+        let cosme = createCosmeModel(cosmeName: cosmeName, selectedCategory: selectedCategory, resizedImage: resizedImage, startDateText: startDateText, useupDateText: useupDateText)
+        
+        RealmManager.uploadCosme(cosme: cosme) { result in
+            switch result {
+            case .success():
+                self.deleteInputData()
+                KRProgressHUD.dismiss()
+            case .failure(let error):
+                KRProgressHUD.showError(withMessage: "保存に失敗しました")
             }
-            
-            //通知設定
-            let notificateFunc = NotificateFunction()
-            let notificationId = notificateFunc.makenotification(name: cosmeNameTextField.text!, limitDate: limitDate)
-            
-            //モデル化
-            let cosme = Cosme(user: NCMBUser.current(), name: cosmeNameTextField.text!, category: selectedCategory, startDate: startDate, limitDate: limitDate, notificationId: notificationId, useup: false)
-            
-            //追加
-            function.addCosme(cosme: cosme, resizedImage: resizedImage)
-            
-            //初期化
-            design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
-            selectedCategory = nil
         }
     }
     
-    @IBAction func delete() {
-        //初期化
-        design.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
+    // 保存するコスメをモデル化する
+    private func createCosmeModel(cosmeName: String, selectedCategory: String, resizedImage: UIImage, startDateText: String, useupDateText: String) -> CosmeModel {
+        // オブジェクトIDを任意で作成
+        let objectId = NSUUID().uuidString
+        // 画像の調整とData化
+        let imageData = arrangeImageToData(image: resizedImage)
+        // 日付をDate型に変換する
+        let startDate = Date.dateFromString(string: startDateText, format: "yyyy / MM / dd")
+        let limitDate = Date.dateFromString(string: useupDateText, format: "yyyy / MM / dd")
+        // 設定日付が正しいかを判定
+        validateDate(startDate: startDate, limitDate: limitDate)
+        // 通知を設定する
+        NotificateFunction.makenotification(objectId: objectId, name: cosmeName, limitDate: limitDate)
+        
+        // モデル化
+        let cosme = CosmeModel(objectId: objectId, cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, useup: false)
+        return cosme
+    }
+    
+    // 画像の調整とデータ化
+    private func arrangeImageToData(image: UIImage) -> Data {
+        // 画像を調整
+        UIGraphicsBeginImageContext(image.size)
+        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        image.draw(in: rect)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return Data()
+        }
+        UIGraphicsEndImageContext()
+        // pngに変換
+        guard let imageData = image.pngData() else {
+            return Data()
+        }
+        return imageData
+    }
+    
+    // 使用期限の設定が正しいかどうか
+    private func validateDate(startDate: Date, limitDate: Date) {
+        // 使用期限と本日の差分
+        let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
+        // 使用期限と使用開始日の差分
+        let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
+        
+        if dateSubtractionFromToday < 0 {
+            KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
+            return
+        } else if dateSubtractionFromStart < 0 {
+            KRProgressHUD.showError(withMessage: "使用開始時に期限が切れているようです")
+            return
+        }
+    }
+    
+    @IBAction private func delete() {
+        deleteInputData()
     }
 
+}
+
+extension AddViewController: UITextFieldDelegate {
+    // キーボードを下げる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
