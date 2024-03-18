@@ -15,7 +15,7 @@ class EditViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
     let design = DesignAddView()
     var resizedImage: UIImage!
     
-    var selectedCosme: Cosme!
+    var selectedCosme: CosmeModel!
     var selectedCategory: String!
     
     @IBOutlet weak var cosmeImageView: UIImageView!

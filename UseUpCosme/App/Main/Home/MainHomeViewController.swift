@@ -33,7 +33,7 @@ class MainHomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedIndex = listTableView.indexPathForSelectedRow, let detailVC = segue.destination as? DetailViewController {
-            detailVC.cosme = cosmes[selectedIndex.row]
+            detailVC.setCosme(cosmes[selectedIndex.row])
         }
     }
     
@@ -51,9 +51,11 @@ class MainHomeViewController: UIViewController {
     
     private func loadCosme() {
         KRProgressHUD.show()
-       
         // 使い切られていないコスメを読み込む
-        RealmManager.loadCosme(selectedCategory: selectedCategory, useup: false) { result in
+        RealmManager.loadCosme(selectedCategory: selectedCategory, useup: false) { [weak self] result in
+            guard let self else {
+                return
+            }
             switch result {
             case .success(var cosmes):
                 // 期限が近い順に並び替える

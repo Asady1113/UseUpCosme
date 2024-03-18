@@ -47,7 +47,10 @@ class ArchaivesViewController: UIViewController {
         KRProgressHUD.show()
         cosmes = [CosmeModel]()
         // 使い切られているコスメを読み込む
-        RealmManager.loadCosme(selectedCategory: selectedCategory, useup: true) { result in
+        RealmManager.loadCosme(selectedCategory: selectedCategory, useup: true) { [weak self] result in
+            guard let self else {
+                return
+            }
             switch result {
             case .success(var cosmes):
                 // 使い切った日が早い順に並び替える

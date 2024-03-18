@@ -91,7 +91,10 @@ class AddViewController: UIViewController {
         // モデル化してDBに保存する
         let cosme = createCosmeModel(cosmeName: cosmeName, selectedCategory: selectedCategory, resizedImage: resizedImage, startDateText: startDateText, useupDateText: useupDateText)
         
-        RealmManager.uploadCosme(cosme: cosme) { result in
+        RealmManager.uploadCosme(cosme: cosme) { [weak self] result in
+            guard let self else {
+                return
+            }
             switch result {
             case .success():
                 self.deleteInputData()

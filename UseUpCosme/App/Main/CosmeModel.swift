@@ -27,4 +27,13 @@ class CosmeModel: Object {
         self.imageData = imageData
         self.useup = useup
     }
+    
+    func edit(cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, useup: Bool) {
+        self.cosmeName = cosmeName
+        self.category = category
+        self.startDate = startDate
+        self.limitDate = limitDate
+        self.imageData = imageData
+        self.useup = useup
+    }
 }

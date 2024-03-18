@@ -46,4 +46,35 @@ class RealmManager {
             completion?(.success(()))
         }
     }
+    
+    // コスメの使い切り
+    static func useUpCosme(selectedCosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        
+        let result = realm.objects(CosmeModel.self).filter("objectId== %@", selectedCosme.objectId)
+        //resultを配列化する
+        let object = Array(result)
+        
+        try? realm.write {
+            // 使い切りに関するデータを登録する
+            object.first?.useup = selectedCosme.useup
+            object.first?.useupDate = Date()
+            completion?(.success(()))
+        }
+    }
+    
+    // 使い切られたコスメの数を返す
+    static func countUseUpCosme(completion: ((Result<Int, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        let result = realm.objects(CosmeModel.self).filter("useup== %@", true)
+        completion?(.success(result.count))
+    }
+    
+//    object.first?.edit(cosmeName: selectedCosme.cosmeName, category: selectedCosme.category, startDate: selectedCosme.startDate, limitDate: selectedCosme.limitDate, imageData: selectedCosme.imageData, useup: selectedCosme.useup)
 }
