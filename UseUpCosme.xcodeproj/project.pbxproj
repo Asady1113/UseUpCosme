@@ -23,7 +23,6 @@
 		9403CDBD2891778F00243A79 /* UseUpCosmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */; };
 		9403CDBF2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */; };
 		9408525628E87A700093987A /* default-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9408525528E87A700093987A /* default-placeholder.png */; };
-		940F2EE8294E0F0800700453 /* Cosme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE7294E0F0800700453 /* Cosme.swift */; };
 		940F2EEA294E133B00700453 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE9294E133B00700453 /* Date+.swift */; };
 		944E8C1928BC75F50024F9BE /* archiveicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1828BC75F50024F9BE /* archiveicon@2x.png */; };
 		944E8C1B28BC75F90024F9BE /* homeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1A28BC75F90024F9BE /* homeicon@2x.png */; };
@@ -49,7 +48,6 @@
 		94D4726A29518FB600873FDF /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726929518FB600873FDF /* search@2x.png */; };
 		94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4726B2951904900873FDF /* CosmeTableViewCell.swift */; };
 		94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726C2951904900873FDF /* CosmeTableViewCell.xib */; };
-		94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */; };
 		94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94D7B19728CDE6470053A5F4 /* editButton.jpeg */; };
 		94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */; };
 		94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */; };
@@ -97,7 +95,6 @@
 		9403CDBC2891778F00243A79 /* UseUpCosmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITests.swift; sourceTree = "<group>"; };
 		9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9408525528E87A700093987A /* default-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder.png"; sourceTree = "<group>"; };
-		940F2EE7294E0F0800700453 /* Cosme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosme.swift; sourceTree = "<group>"; };
 		940F2EE9294E133B00700453 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		944E8C1828BC75F50024F9BE /* archiveicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "archiveicon@2x.png"; sourceTree = "<group>"; };
 		944E8C1A28BC75F90024F9BE /* homeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeicon@2x.png"; sourceTree = "<group>"; };
@@ -123,7 +120,6 @@
 		94D4726929518FB600873FDF /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		94D4726B2951904900873FDF /* CosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeTableViewCell.swift; sourceTree = "<group>"; };
 		94D4726C2951904900873FDF /* CosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmeTableViewCell.xib; sourceTree = "<group>"; };
-		94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMBFunction.swift; sourceTree = "<group>"; };
 		94D7B19728CDE6470053A5F4 /* editButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = editButton.jpeg; sourceTree = "<group>"; };
 		94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchaivesViewController.swift; sourceTree = "<group>"; };
 		94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeTableViewCell.swift; sourceTree = "<group>"; };
@@ -345,10 +341,8 @@
 				0B5C188C2B9B110400344C84 /* Archive */,
 				0B5C188D2B9B112300344C84 /* Detail */,
 				0B5C188E2B9B112B00344C84 /* Edit */,
-				940F2EE7294E0F0800700453 /* Cosme.swift */,
 				0B5C188F2B9B165500344C84 /* CosmeModel.swift */,
 				0B5734DC2B9B212A008BA71B /* RealmManager.swift */,
-				94D7B19528CDE0AD0053A5F4 /* NCMBFunction.swift */,
 				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
 				94FDDFE92938C09800BBC400 /* DesignAddView.swift */,
 				94D0B0132953635000A1FC70 /* DesignMainView.swift */,
@@ -635,10 +629,8 @@
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
 				94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */,
-				94D7B19628CDE0AD0053A5F4 /* NCMBFunction.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */,
-				940F2EE8294E0F0800700453 /* Cosme.swift in Sources */,
 				0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */,
 				0B7008102BA2CAF400D63E22 /* UIViewController+.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,

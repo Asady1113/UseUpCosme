@@ -28,14 +28,14 @@ class NotificateFunction {
         
         // ローカル通知リクエストを登録
         UNUserNotificationCenter.current().add(request){ (error : Error?) in
-            if let error = error {
+            if let error {
                 KRProgressHUD.showMessage(error.localizedDescription)
             }
         }
     }
     
     //通知の編集
-    static func editNotification(name: String, limitDate: Date, id: String) {
+    static func editNotification(objectId: String, name: String, limitDate: Date) {
         // ローカル通知の内容
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
@@ -45,15 +45,15 @@ class NotificateFunction {
         "\(String(describing: name))が使用期限まで残り一週間です。今週中に使い切りましょう！"
         content.badge = 1
         
-        //日付を設定して、通知に入れる
+        // 日付を設定して、通知に入れる
         let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
-        //ローカル通知リクエストを作成
+        // ローカル通知リクエストを作成
         let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
-        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: objectId, content: content, trigger: trigger)
         
         // ローカル通知リクエストを登録
         UNUserNotificationCenter.current().add(request){ (error : Error?) in
-            if let error = error {
+            if let error {
                 KRProgressHUD.showMessage(error.localizedDescription)
             }
         }

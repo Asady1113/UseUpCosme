@@ -76,5 +76,20 @@ class RealmManager {
         completion?(.success(result.count))
     }
     
-//    object.first?.edit(cosmeName: selectedCosme.cosmeName, category: selectedCosme.category, startDate: selectedCosme.startDate, limitDate: selectedCosme.limitDate, imageData: selectedCosme.imageData, useup: selectedCosme.useup)
+    // コスメの編集
+    static func editCosme(selectedCosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        let result = realm.objects(CosmeModel.self).filter("objectId== %@", selectedCosme.objectId)
+        //resultを配列化する
+        let object = Array(result)
+        
+        try? realm.write {
+            object.first?.edit(cosmeName: selectedCosme.cosmeName, category: selectedCosme.category, startDate: selectedCosme.startDate, limitDate: selectedCosme.limitDate, imageData: selectedCosme.imageData, useup: selectedCosme.useup)
+            completion?(.success(()))
+        }
+    }
+
 }

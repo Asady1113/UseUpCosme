@@ -112,8 +112,8 @@ class DetailViewController: UIViewController {
     
     //編集画面へ
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let editVC = segue.destination as? EditViewController {
-            editVC.selectedCosme = cosme
+        if let editVC = segue.destination as? EditViewController, let cosme {
+            editVC.setSelectedCosme(cosme)
         }
     }
     
