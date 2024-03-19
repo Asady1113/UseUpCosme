@@ -26,24 +26,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func signIn() {
-        
-        if userNameTextField.text!.count > 0 && passwordTextField.text!.count > 0 {
-            
-            NCMBUser.logInWithUsername(inBackground: userNameTextField.text, password: passwordTextField.text) { user, error in
-                if error != nil {
-                    print("サインイン失敗")
-                    
-                } else {
-                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                    let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
-                    UIApplication.shared.keyWindow?.rootViewController = mainViewController
-
-                    let ud = UserDefaults.standard
-                    ud.set(true, forKey: "isLogin")
-                    ud.synchronize()
-                }
-            }
-        }
     }
     
 

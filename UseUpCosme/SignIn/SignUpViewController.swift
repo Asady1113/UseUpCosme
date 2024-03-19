@@ -29,42 +29,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func signUp() {
         
-        let user = NCMBUser()
-        
-        if userNameTextField.text!.count <= 3 {
-            print("ユーザー名の文字数が足りません")
-            return
-        }
-        
-        if passwordTextField.text!.count <= 3 {
-            print("パスワードの文字数が足りません")
-            return
-        }
-        
-        if emailTextField.text!.count == 0 {
-            print("メールアドレスが入力されていません")
-            return
-        }
-    
-        user.mailAddress = emailTextField.text
-        user.userName = userNameTextField.text
-        user.password = passwordTextField.text
-        
-        
-        user.signUpInBackground { error in
-            if error != nil {
-                print("サインイン失敗")
-            } else {
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
-                UIApplication.shared.keyWindow?.rootViewController = mainViewController
-                
-                let ud = UserDefaults.standard
-                ud.set(true, forKey: "isLogin")
-                ud.synchronize()
-            }
-        }
+       
     }
     
     

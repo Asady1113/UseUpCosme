@@ -9,14 +9,18 @@ import RealmSwift
 import Foundation
 
 class CosmeModel: Object {
-    @objc dynamic var objectId: String
-    @objc dynamic var cosmeName: String
-    @objc dynamic var category: String
-    @objc dynamic var startDate: Date
-    @objc dynamic var limitDate: Date
-    @objc dynamic var imageData: Data
-    @objc dynamic var useup: Bool
+    @objc dynamic var objectId = ""
+    @objc dynamic var cosmeName = ""
+    @objc dynamic var category = ""
+    @objc dynamic var startDate = Date()
+    @objc dynamic var limitDate = Date()
+    @objc dynamic var imageData = Data()
+    @objc dynamic var useup = false
     @objc dynamic var useupDate: Date?
+    
+    override init() {
+        super.init()
+    }
     
     init(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, useup: Bool) {
         self.objectId = objectId
@@ -26,6 +30,8 @@ class CosmeModel: Object {
         self.limitDate = limitDate
         self.imageData = imageData
         self.useup = useup
+        
+        super.init()
     }
     
     func edit(cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, useup: Bool) {

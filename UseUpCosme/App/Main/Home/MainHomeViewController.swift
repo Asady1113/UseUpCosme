@@ -60,7 +60,9 @@ class MainHomeViewController: UIViewController {
             case .success(var cosmes):
                 // 期限が近い順に並び替える
                 if self.isOrdered == true {
-                    cosmes = self.sortCosmeModelsByLimitDate(cosmes: cosmes)
+                    self.cosmes = self.sortCosmeModelsByLimitDate(cosmes: cosmes)
+                } else {
+                    self.cosmes = cosmes
                 }
                 self.listTableView.reloadData()
                 KRProgressHUD.dismiss()
