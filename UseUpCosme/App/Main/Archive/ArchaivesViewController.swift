@@ -14,13 +14,30 @@ class ArchaivesViewController: UIViewController {
     private var isOrdered = false
     @IBOutlet private weak var listTableView: UITableView!
     
+    @IBOutlet private weak var clockButton: UIButton!
+    @IBOutlet private weak var foundationButton: UIButton!
+    @IBOutlet private weak var lipButton: UIButton!
+    @IBOutlet private weak var cheekButton: UIButton!
+    @IBOutlet private weak var mascaraButton: UIButton!
+    @IBOutlet private weak var eyebrowButton: UIButton!
+    @IBOutlet private weak var eyelinerButton: UIButton!
+    @IBOutlet private weak var eyeshadowButton: UIButton!
+    @IBOutlet private weak var skincareButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadCosme()
+    }
+    
+    private func configureUI() {
+        // ボタンに写真をセット
+        DesignView.setImage(images: [UIImage(named: "clock2.png"), UIImage(named: "foundation.png"), UIImage(named: "lip.png"), UIImage(named: "cheek.png"), UIImage(named: "mascara.png"), UIImage(named: "eyebrow.png"), UIImage(named: "eyeliner.png"), UIImage(named: "eyeshadow.png"), UIImage(named: "skincare.png")], buttons: [clockButton, foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton])
+        
+        setupTableView()
     }
     
     private func setupTableView() {

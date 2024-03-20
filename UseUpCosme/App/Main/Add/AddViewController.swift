@@ -19,10 +19,14 @@ class AddViewController: UIViewController {
     @IBOutlet private weak var startDateTextField: UITextField!
     @IBOutlet private weak var useupDateTextField: UITextField!
     
-    @IBOutlet private weak var category1: UIButton!
-    @IBOutlet private weak var category2: UIButton!
-    @IBOutlet private weak var category3: UIButton!
-    @IBOutlet private weak var category4: UIButton!
+    @IBOutlet private weak var foundationButton: UIButton!
+    @IBOutlet private weak var lipButton: UIButton!
+    @IBOutlet private weak var cheekButton: UIButton!
+    @IBOutlet private weak var mascaraButton: UIButton!
+    @IBOutlet private weak var eyebrowButton: UIButton!
+    @IBOutlet private weak var eyelinerButton: UIButton!
+    @IBOutlet private weak var eyeshadowButton: UIButton!
+    @IBOutlet private weak var skincareButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +34,17 @@ class AddViewController: UIViewController {
     }
     
     private func configureUI() {
-        // ボタンに写真をセット(カテゴリー1のみ）
-        DesignAddView.setImage(button: category1)
+        // ボタンに写真をセット
+        DesignView.setImage(images: [UIImage(named: "foundation.png"), UIImage(named: "lip.png"), UIImage(named: "cheek.png"), UIImage(named: "mascara.png"), UIImage(named: "eyebrow.png"), UIImage(named: "eyeliner.png"), UIImage(named: "eyeshadow.png"), UIImage(named: "skincare.png")], buttons: [foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton])
         // pickerの設定
-        DesignAddView.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
+        DesignView.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
         // 鉛筆の画像を丸くする
-        DesignAddView.designImage(image: pencilImageView)
+        DesignView.designImage(image: pencilImageView)
     }
     
     // 入力されたデータを削除する
     private func deleteInputData() {
-        DesignAddView.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
+        DesignView.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
         selectedCategory = nil
     }
 

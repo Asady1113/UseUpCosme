@@ -28,10 +28,14 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var useupDateTextField: UITextField!
     @IBOutlet private weak var useupButton: UIButton!
     
-    @IBOutlet private weak var category1: UIButton!
-    @IBOutlet private weak var category2: UIButton!
-    @IBOutlet private weak var category3: UIButton!
-    @IBOutlet private weak var category4: UIButton!
+    @IBOutlet private weak var foundationButton: UIButton!
+    @IBOutlet private weak var lipButton: UIButton!
+    @IBOutlet private weak var cheekButton: UIButton!
+    @IBOutlet private weak var mascaraButton: UIButton!
+    @IBOutlet private weak var eyebrowButton: UIButton!
+    @IBOutlet private weak var eyelinerButton: UIButton!
+    @IBOutlet private weak var eyeshadowButton: UIButton!
+    @IBOutlet private weak var skincareButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,9 @@ class DetailViewController: UIViewController {
     private func configureUI() {
         useupButton.layer.cornerRadius = 7
         useupButton.clipsToBounds = true
+        
+        // ボタンに写真をセット
+        DesignView.setImage(images: [UIImage(named: "foundation.png"), UIImage(named: "lip.png"), UIImage(named: "cheek.png"), UIImage(named: "mascara.png"), UIImage(named: "eyebrow.png"), UIImage(named: "eyeliner.png"), UIImage(named: "eyeshadow.png"), UIImage(named: "skincare.png")], buttons: [foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton])
     }
     
     private func showCosme() {

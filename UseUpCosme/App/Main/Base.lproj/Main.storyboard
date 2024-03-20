@@ -56,9 +56,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" systemColor="systemBlueColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="期限順">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q8T-Mj-wAJ"/>
                                                         </connections>
@@ -67,9 +65,7 @@
                                                         <rect key="frame" x="92" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="ファンデーション">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ccp-16-5Su"/>
                                                         </connections>
@@ -78,9 +74,7 @@
                                                         <rect key="frame" x="184" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dYw-2p-fSE"/>
                                                         </connections>
@@ -89,9 +83,7 @@
                                                         <rect key="frame" x="276" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NZ4-O2-T3e"/>
                                                         </connections>
@@ -100,9 +92,7 @@
                                                         <rect key="frame" x="368" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oLo-Sr-MyU"/>
                                                         </connections>
@@ -111,9 +101,7 @@
                                                         <rect key="frame" x="460" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jBU-sW-wqh"/>
                                                         </connections>
@@ -122,9 +110,7 @@
                                                         <rect key="frame" x="552" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナー">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gF-6u-kmv"/>
                                                         </connections>
@@ -133,9 +119,7 @@
                                                         <rect key="frame" x="644" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5RH-DE-zP2"/>
                                                         </connections>
@@ -144,9 +128,7 @@
                                                         <rect key="frame" x="736" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bNt-sx-bmv"/>
                                                         </connections>
@@ -191,7 +173,16 @@
                         <color key="badgeColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="cheekButton" destination="use-Gp-jbf" id="aX2-8p-reM"/>
+                        <outlet property="clockButton" destination="DSF-2O-efk" id="oLd-LK-Clg"/>
+                        <outlet property="eyebrowButton" destination="5dS-IN-dyH" id="OLw-ZA-0ha"/>
+                        <outlet property="eyelinerButton" destination="O63-2g-vHw" id="Act-eo-n64"/>
+                        <outlet property="eyeshadowButton" destination="ocX-9B-7NM" id="9e4-wp-SJO"/>
+                        <outlet property="foundationButton" destination="xjF-I0-zwo" id="8lx-sK-Nxm"/>
+                        <outlet property="lipButton" destination="hn3-GD-Fn2" id="KGX-Ge-QYO"/>
                         <outlet property="listTableView" destination="JVv-Sn-wyd" id="hKV-iF-bhn"/>
+                        <outlet property="mascaraButton" destination="oII-ed-Kzd" id="rJU-72-nsf"/>
+                        <outlet property="skincareButton" destination="jzS-M0-zrp" id="Nah-bN-bn2"/>
                         <segue destination="FzE-VR-CGz" kind="presentation" identifier="toDetail" id="oro-ws-n83"/>
                     </connections>
                 </viewController>
@@ -386,7 +377,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3P-XB-nuQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="100"/>
-                                                        <color key="backgroundColor" red="0.4196078479" green="0.41568624970000001" blue="0.41568624970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
@@ -395,56 +386,63 @@
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujy-4R-GcN">
                                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="xK5-hP-aNA"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-oz-jBX">
                                                         <rect key="frame" x="207" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="Adw-Ho-m4v"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEh-qv-Lbe">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7X8-ni-7Mg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQy-NP-Rh5">
                                                         <rect key="frame" x="414" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7Nk-FV-Q1v"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-SS-Y8c">
                                                         <rect key="frame" x="517.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナ-"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="hcr-Gp-PQX"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-3W-waI">
                                                         <rect key="frame" x="621" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="wuh-Vj-7KF"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHF-Rr-6xV">
                                                         <rect key="frame" x="724.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="NPE-Zf-0Qy"/>
                                                         </connections>
@@ -523,10 +521,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="追加" image="plusicon.png" id="AUV-8O-4eo"/>
                     <connections>
-                        <outlet property="category1" destination="a3P-XB-nuQ" id="Urp-2y-qWy"/>
+                        <outlet property="cheekButton" destination="dbp-oz-jBX" id="Hx0-T5-9Qc"/>
                         <outlet property="cosmeImageView" destination="Eh9-Se-znx" id="k3K-qv-1LA"/>
                         <outlet property="cosmeNameTextField" destination="IAg-Zl-b2B" id="Scx-OF-t1H"/>
+                        <outlet property="eyebrowButton" destination="fQy-NP-Rh5" id="7dT-kk-nax"/>
+                        <outlet property="eyelinerButton" destination="o0V-SS-Y8c" id="YBQ-wt-jGt"/>
+                        <outlet property="eyeshadowButton" destination="w7I-3W-waI" id="rbf-U2-gas"/>
+                        <outlet property="foundationButton" destination="a3P-XB-nuQ" id="Urp-2y-qWy"/>
+                        <outlet property="lipButton" destination="ujy-4R-GcN" id="Fe3-wA-sID"/>
+                        <outlet property="mascaraButton" destination="FEh-qv-Lbe" id="WHW-wl-RnP"/>
                         <outlet property="pencilImageView" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
+                        <outlet property="skincareButton" destination="XHF-Rr-6xV" id="V1e-yo-TRT"/>
                         <outlet property="startDateTextField" destination="iAF-kP-UMg" id="DAA-ZQ-1zs"/>
                         <outlet property="useupDateTextField" destination="7xJ-Rk-fIp" id="aSM-9e-RT2"/>
                     </connections>
@@ -545,6 +550,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="hda-dK-k3r"/>
@@ -678,44 +684,51 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvc-ud-Vyk">
                                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="100"/>
-                                                        <color key="backgroundColor" red="0.4196078479" green="0.41568624970000001" blue="0.41568624970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvq-r5-RTf">
                                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIX-Gz-v6d">
                                                         <rect key="frame" x="207" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="668-pC-PW8">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-Hd-24X">
                                                         <rect key="frame" x="414" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-oL-0jG">
                                                         <rect key="frame" x="517.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナ-"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viH-Kx-3ey">
                                                         <rect key="frame" x="621" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCL-UL-Q5g">
                                                         <rect key="frame" x="724.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -844,8 +857,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="追加" image="plusicon.png" id="R4g-ak-YJC"/>
                     <connections>
+                        <outlet property="cheekButton" destination="cIX-Gz-v6d" id="LqJ-Xn-0Hr"/>
                         <outlet property="cosmeImageView" destination="HNe-bR-ol7" id="p94-iO-bxf"/>
                         <outlet property="cosmeNameTextField" destination="MXD-hR-qXw" id="las-wp-wrx"/>
+                        <outlet property="eyebrowButton" destination="sDZ-Hd-24X" id="FHF-uH-CnB"/>
+                        <outlet property="eyelinerButton" destination="ehO-oL-0jG" id="ede-bf-M1n"/>
+                        <outlet property="eyeshadowButton" destination="viH-Kx-3ey" id="4c8-G5-XiB"/>
+                        <outlet property="foundationButton" destination="Pvc-ud-Vyk" id="ddF-yr-cT0"/>
+                        <outlet property="lipButton" destination="Tvq-r5-RTf" id="acj-zi-ieT"/>
+                        <outlet property="mascaraButton" destination="668-pC-PW8" id="1bA-TY-hQ8"/>
+                        <outlet property="skincareButton" destination="xCL-UL-Q5g" id="f0K-Ds-CxR"/>
                         <outlet property="startDateTextField" destination="LQr-1b-zlu" id="1dR-kx-PXe"/>
                         <outlet property="useupButton" destination="ACk-t6-XhI" id="QRW-oe-d5u"/>
                         <outlet property="useupDateTextField" destination="FpV-zl-ebN" id="e2W-Mr-0s1"/>
@@ -895,9 +916,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" systemColor="systemBlueColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="終了日順">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="6sG-9l-GC7"/>
                                                         </connections>
@@ -906,9 +925,7 @@
                                                         <rect key="frame" x="92" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="ファンデーション">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="XCZ-hP-7zL"/>
                                                         </connections>
@@ -917,9 +934,7 @@
                                                         <rect key="frame" x="184" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="bg2-lg-a8m"/>
                                                         </connections>
@@ -928,9 +943,7 @@
                                                         <rect key="frame" x="276" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="Cet-9N-f85"/>
                                                         </connections>
@@ -939,9 +952,7 @@
                                                         <rect key="frame" x="368" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="1it-zO-LOa"/>
                                                         </connections>
@@ -950,9 +961,7 @@
                                                         <rect key="frame" x="460" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="ICC-iw-gfW"/>
                                                         </connections>
@@ -961,9 +970,7 @@
                                                         <rect key="frame" x="552" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナー">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="BHO-61-fGe"/>
                                                         </connections>
@@ -972,9 +979,7 @@
                                                         <rect key="frame" x="644" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="3Jj-Ap-rVs"/>
                                                         </connections>
@@ -983,9 +988,7 @@
                                                         <rect key="frame" x="736" y="0.0" width="92" height="115"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="optionsWith_sender:" destination="JJQ-Ci-EwA" eventType="touchUpInside" id="JdI-XY-7I2"/>
                                                         </connections>
@@ -1026,11 +1029,20 @@
                             <constraint firstItem="vXV-5L-gc3" firstAttribute="leading" secondItem="Diw-ZQ-nCV" secondAttribute="leading" id="dPY-wT-7lb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="アーカイブ" image="archiveicon.png" id="7tn-a4-9de">
+                    <tabBarItem key="tabBarItem" title="アーカイブ" image="archivesicon.png" id="7tn-a4-9de">
                         <color key="badgeColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="cheekButton" destination="WZm-GR-wLP" id="DBL-ic-IIe"/>
+                        <outlet property="clockButton" destination="1Xd-10-La4" id="Ird-G2-Inj"/>
+                        <outlet property="eyebrowButton" destination="7aM-cp-Ew0" id="1Qp-dd-6eG"/>
+                        <outlet property="eyelinerButton" destination="ElH-dO-dGa" id="wbw-wH-IR1"/>
+                        <outlet property="eyeshadowButton" destination="43N-YW-rFT" id="ivx-Ee-3Dw"/>
+                        <outlet property="foundationButton" destination="7i7-ob-AhU" id="Pc7-oj-jla"/>
+                        <outlet property="lipButton" destination="q3w-gC-mz2" id="40e-ww-rKc"/>
                         <outlet property="listTableView" destination="avo-B6-OcW" id="5DS-BP-b0h"/>
+                        <outlet property="mascaraButton" destination="1qt-nP-Wvv" id="0wi-OW-7ij"/>
+                        <outlet property="skincareButton" destination="NE7-So-dCE" id="poP-7s-Tmc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bms-Lt-eEa" sceneMemberID="firstResponder"/>
@@ -1224,7 +1236,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwD-Be-zVP">
                                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="100"/>
-                                                        <color key="backgroundColor" red="0.4196078479" green="0.41568624970000001" blue="0.41568624970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
@@ -1233,56 +1245,63 @@
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-lt-dN1">
                                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="口紅"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="SSb-aD-qOa"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEO-kc-qzZ">
                                                         <rect key="frame" x="207" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="チーク"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="jyt-Y7-KCn"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSK-Wm-HId">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="マスカラ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="671-g6-LMK"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICM-2n-hhw">
                                                         <rect key="frame" x="414" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイブロウ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="yA8-2I-14m"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-qd-aot">
                                                         <rect key="frame" x="517.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイライナ-"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="iOk-Fj-B1B"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-Qi-v6L">
                                                         <rect key="frame" x="621" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="アイシャドウ"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="l2Y-fz-8ek"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HQ-n9-ZGc">
                                                         <rect key="frame" x="724.5" y="0.0" width="103.5" height="100"/>
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="スキンケア"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="selectCategoryWith_sender:" destination="HRR-X8-EwP" eventType="touchUpInside" id="iCE-g0-IeB"/>
                                                         </connections>
@@ -1361,10 +1380,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="追加" image="plusicon.png" id="Evy-nA-fAN"/>
                     <connections>
-                        <outlet property="category1" destination="KwD-Be-zVP" id="lEH-b3-0aC"/>
+                        <outlet property="cheekButton" destination="hEO-kc-qzZ" id="JxV-Hf-Hp5"/>
                         <outlet property="cosmeImageView" destination="QoD-1b-fxy" id="O5D-ei-yBB"/>
                         <outlet property="cosmeNameTextField" destination="uyt-E2-90z" id="J8y-fB-9Wz"/>
+                        <outlet property="eyebrowButton" destination="ICM-2n-hhw" id="FcL-MS-W5y"/>
+                        <outlet property="eyelinerButton" destination="WjU-qd-aot" id="ZV4-9V-7lO"/>
+                        <outlet property="eyeshadowButton" destination="FFC-Qi-v6L" id="V2s-yU-HNn"/>
+                        <outlet property="foundationButton" destination="KwD-Be-zVP" id="lEH-b3-0aC"/>
+                        <outlet property="lipButton" destination="6Lp-lt-dN1" id="fG8-ew-UNL"/>
+                        <outlet property="mascaraButton" destination="pSK-Wm-HId" id="fwl-kb-reK"/>
                         <outlet property="pencilImageView" destination="l1s-RA-DFt" id="rbA-Dz-Wwx"/>
+                        <outlet property="skincareButton" destination="4HQ-n9-ZGc" id="NGb-AI-vsm"/>
                         <outlet property="startDateTextField" destination="IZD-nA-6Uh" id="Wfg-Wn-OnA"/>
                         <outlet property="useupDateTextField" destination="A7s-Wj-Hjz" id="OuF-Ps-4Vr"/>
                     </connections>
@@ -1375,12 +1401,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="archiveicon.png" width="30" height="30"/>
+        <image name="archivesicon.png" width="24" height="24"/>
         <image name="cancelButton.png" width="19" height="22"/>
         <image name="default-placeholder.png" width="1500" height="1500"/>
         <image name="editButton.jpeg" width="360" height="360"/>
-        <image name="homeicon.png" width="30" height="30"/>
-        <image name="plusicon.png" width="30" height="30"/>
+        <image name="homeicon.png" width="25" height="25"/>
+        <image name="plusicon.png" width="25" height="25"/>
         <image name="search.png" width="35" height="36"/>
         <image name="textField.png" width="22" height="33"/>
         <namedColor name="AccentColor">

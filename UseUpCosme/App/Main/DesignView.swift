@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DesignAddView {
+class DesignView {
     static var startDateTextField: UITextField!
     static var useupDateTextField: UITextField!
     
@@ -21,12 +21,13 @@ class DesignAddView {
     }
     
     // ボタンの画像セット
-    static func setImage(button: UIButton) {
-        //画像をセット
-        let picture = UIImage(named: "foundation.png")
-        button.setImage(picture, for: .normal)
+    static func setImage(images: [UIImage?], buttons: [UIButton]) {
+        // 画像をセット
+        let loopCount = buttons.count - 1
+        for i in 0...loopCount {
+            buttons[i].setImage(images[i], for: .normal)
+        }
     }
-    
     
     // 日付のテキストフィールドを設定する
     static func makeDatePicker(startDateTextField: UITextField,useupDateTextField: UITextField,view: UIView) {
@@ -64,7 +65,7 @@ class DesignAddView {
         self.useupDateTextField.inputAccessoryView = useupToolbar
     }
     
-    //完了ボタンを押した時の処理
+    // 完了ボタンを押した時の処理
     @objc static func startDoneDate(){
         self.startDateTextField.endEditing(true)
         self.startDateTextField.text = Date.stringFromDate(date: startDatePicker.date, format: "yyyy / MM / dd")
@@ -74,7 +75,7 @@ class DesignAddView {
         self.startDateTextField.endEditing(true)
     }
     
-    //完了ボタンを押した時の処理
+    // 完了ボタンを押した時の処理
     @objc static func useupDoneDate(){
         self.useupDateTextField.endEditing(true)
         self.useupDateTextField.text = Date.stringFromDate(date: useupDatePicker.date, format: "yyyy / MM / dd")
@@ -84,11 +85,20 @@ class DesignAddView {
         self.useupDateTextField.endEditing(true)
     }
     
-    //初期化
+    // 初期化
     static func delete(cosmeImageView: UIImageView, cosmeNameTextField: UITextField, startDateTextField: UITextField, useupDateTextField: UITextField) {
         cosmeImageView.image = UIImage(named: "default-placeholder")
         cosmeNameTextField.text = nil
         startDateTextField.text = nil
         useupDateTextField.text = nil
+    }
+    
+    // 残り日数で色を変える
+    static func changeCountColor(count: Int, view: UIView) {
+        if count <= 5 {
+            view.backgroundColor = UIColor(hex: "EA9C8F")
+        } else if count > 5 && count <= 100 {
+            view.backgroundColor = UIColor(hex: "F7C8BC")
+        }
     }
 }
