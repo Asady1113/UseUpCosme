@@ -111,8 +111,6 @@ class AddViewController: UIViewController {
     
     // 保存するコスメをモデル化する
     private func createCosmeModel(cosmeName: String, selectedCategory: String, resizedImage: UIImage, startDateText: String, useupDateText: String) -> CosmeModel {
-        // オブジェクトIDを任意で作成
-        let objectId = NSUUID().uuidString
         // 画像の調整とData化
         let imageData = arrangeImageToData(image: resizedImage)
         // 日付をDate型に変換する
@@ -121,10 +119,10 @@ class AddViewController: UIViewController {
         // 設定日付が正しいかを判定
         validateDate(startDate: startDate, limitDate: limitDate)
         // 通知を設定する
-        NotificateFunction.makenotification(objectId: objectId, name: cosmeName, limitDate: limitDate)
+        let notificationId = NotificateFunction.makenotification(name: cosmeName, limitDate: limitDate)
         
         // モデル化
-        let cosme = CosmeModel(objectId: objectId, cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, useup: false)
+        let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, notificationId: notificationId, useup: false)
         return cosme
     }
     

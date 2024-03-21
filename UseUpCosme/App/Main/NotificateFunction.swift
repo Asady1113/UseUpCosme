@@ -10,7 +10,7 @@ import UserNotifications
 import KRProgressHUD
 
 class NotificateFunction {
-    static func makenotification(objectId: String, name: String, limitDate: Date) {
+    static func makenotification(name: String, limitDate: Date) -> String {
         // ローカル通知の内容
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
@@ -22,9 +22,10 @@ class NotificateFunction {
         
         // 日付を設定して、通知に入れる
         let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
-        // objectIDを用いて、ローカル通知リクエストを作成
+        // idを用いて、ローカル通知リクエストを作成
+        let id = UUID().uuidString
         let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
-        let request = UNNotificationRequest(identifier: objectId, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         // ローカル通知リクエストを登録
         UNUserNotificationCenter.current().add(request){ (error : Error?) in
@@ -32,10 +33,11 @@ class NotificateFunction {
                 KRProgressHUD.showMessage(error.localizedDescription)
             }
         }
+        return id
     }
     
     //通知の編集
-    static func editNotification(objectId: String, name: String, limitDate: Date) {
+    static func editNotification(notificationId: String, name: String, limitDate: Date) {
         // ローカル通知の内容
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
@@ -49,7 +51,7 @@ class NotificateFunction {
         let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
         // ローカル通知リクエストを作成
         let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
-        let request = UNNotificationRequest(identifier: objectId, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
         
         // ローカル通知リクエストを登録
         UNUserNotificationCenter.current().add(request){ (error : Error?) in

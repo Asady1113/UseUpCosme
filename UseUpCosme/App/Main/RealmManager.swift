@@ -10,6 +10,7 @@ import RealmSwift
 
 enum RealmError: Error {
     case realmFailedToStart
+    case objectNotFound
 }
 
 class RealmManager {
@@ -54,16 +55,20 @@ class RealmManager {
             return
         }
         
-        let result = realm.objects(CosmeModel.self).filter("objectId== %@", selectedCosme.objectId)
-        //resultを配列化する
-        let object = Array(result)
-        
-        try? realm.write {
-            // 使い切りに関するデータを登録する
-            object.first?.useup = selectedCosme.useup
-            object.first?.useupDate = Date()
-            completion?(.success(()))
-        }
+        if let object = realm.object(ofType: CosmeModel.self, forPrimaryKey: selectedCosme.objectId) {
+                do {
+                    try realm.write {
+                        // 取得したオブジェクトの状態を更新
+                        object.useup = true
+                        object.useupDate = Date()
+                        completion?(.success(()))
+                    }
+                } catch {
+                    completion?(.failure(error))
+                }
+            } else {
+                completion?(.failure(RealmError.objectNotFound))
+            }
     }
     
     // 使い切られたコスメの数を返す

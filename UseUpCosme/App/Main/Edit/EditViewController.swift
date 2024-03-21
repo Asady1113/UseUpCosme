@@ -139,8 +139,8 @@ class EditViewController: UIViewController {
         // 設定日付が正しいかを判定
         validateDate(startDate: startDate, limitDate: limitDate)
         // 通知を編集する
-        NotificateFunction.editNotification(objectId: selectedCosme.objectId, name: cosmeName, limitDate: limitDate)
-        let cosme = CosmeModel(objectId: selectedCosme.objectId, cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, useup: selectedCosme.useup)
+        NotificateFunction.editNotification(notificationId: selectedCosme.notificationId, name: cosmeName, limitDate: limitDate)
+        let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, notificationId: selectedCosme.notificationId, useup: selectedCosme.useup)
         return cosme
     }
     

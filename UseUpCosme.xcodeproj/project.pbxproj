@@ -33,6 +33,7 @@
 		0B7BB4DC2BAA8FCD009353CE /* plusicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4DB2BAA8FCD009353CE /* plusicon@2x.png */; };
 		0B7BB4DE2BAA9741009353CE /* clock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4DD2BAA9741009353CE /* clock2.png */; };
 		0B7BB4E02BAA9748009353CE /* clock2_tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4DF2BAA9748009353CE /* clock2_tapped.png */; };
+		0B7BB4E62BAA9BE1009353CE /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4E52BAA9BE1009353CE /* cancelButton.png */; };
 		1B63F060461E0281171E7C11 /* Pods_UseUpCosme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */; };
 		51A751B868EC01BE78845899 /* Pods_UseUpCosme_UseUpCosmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23B1EDA1053D4DE7EB957DF /* Pods_UseUpCosme_UseUpCosmeUITests.framework */; };
 		742B48E852DD1B4132633CC2 /* Pods_UseUpCosmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */; };
@@ -47,7 +48,6 @@
 		9403CDBF2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */; };
 		9408525628E87A700093987A /* default-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9408525528E87A700093987A /* default-placeholder.png */; };
 		940F2EEA294E133B00700453 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F2EE9294E133B00700453 /* Date+.swift */; };
-		944E8C1F28BC77D80024F9BE /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C1E28BC77D80024F9BE /* cancelButton.png */; };
 		944E8C2728BD1BB40024F9BE /* textField.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E8C2628BD1BB40024F9BE /* textField.png */; };
 		944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E8C3028BD1D1B0024F9BE /* AddViewController.swift */; };
 		9493065929598BAC0075694C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493065829598BAC0075694C /* EditViewController.swift */; };
@@ -116,6 +116,7 @@
 		0B7BB4DB2BAA8FCD009353CE /* plusicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plusicon@2x.png"; sourceTree = "<group>"; };
 		0B7BB4DD2BAA9741009353CE /* clock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock2.png; sourceTree = "<group>"; };
 		0B7BB4DF2BAA9748009353CE /* clock2_tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock2_tapped.png; sourceTree = "<group>"; };
+		0B7BB4E52BAA9BE1009353CE /* cancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelButton.png; sourceTree = "<group>"; };
 		47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseUpCosme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C97CF778AE84433C36775DE /* Pods-UseUpCosmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosmeTests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosmeTests/Pods-UseUpCosmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		525905A68590518F3B3102FA /* Pods-UseUpCosme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		9403CDBE2891778F00243A79 /* UseUpCosmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9408525528E87A700093987A /* default-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder.png"; sourceTree = "<group>"; };
 		940F2EE9294E133B00700453 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
-		944E8C1E28BC77D80024F9BE /* cancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelButton.png; sourceTree = "<group>"; };
 		944E8C2628BD1BB40024F9BE /* textField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField.png; sourceTree = "<group>"; };
 		944E8C3028BD1D1B0024F9BE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		9493065829598BAC0075694C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -378,8 +378,8 @@
 				0B1D21432BA9DE8F00257572 /* TabbarIcon */,
 				94AE16F92891991400E3DA12 /* titleImage.png */,
 				94D069F82892525700755C92 /* emailImage.png */,
+				0B7BB4E52BAA9BE1009353CE /* cancelButton.png */,
 				94AE16FD2891A47F00E3DA12 /* peopleImage.png */,
-				944E8C1E28BC77D80024F9BE /* cancelButton.png */,
 				94D4726929518FB600873FDF /* search@2x.png */,
 			);
 			path = Images;
@@ -555,10 +555,10 @@
 				0B7BB4DE2BAA9741009353CE /* clock2.png in Resources */,
 				9403CDA32891778E00243A79 /* Main.storyboard in Resources */,
 				0B7BB4E02BAA9748009353CE /* clock2_tapped.png in Resources */,
-				944E8C1F28BC77D80024F9BE /* cancelButton.png in Resources */,
 				94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */,
 				94D4726A29518FB600873FDF /* search@2x.png in Resources */,
 				0B7BB4D12BAA8747009353CE /* eyeshadow_tapped.png in Resources */,
+				0B7BB4E62BAA9BE1009353CE /* cancelButton.png in Resources */,
 				0B7BB4C52BAA8747009353CE /* mascara_tapped.png in Resources */,
 				944E8C2728BD1BB40024F9BE /* textField.png in Resources */,
 				94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */,

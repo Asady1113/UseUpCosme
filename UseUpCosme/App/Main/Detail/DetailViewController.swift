@@ -71,7 +71,6 @@ class DetailViewController: UIViewController {
         guard let cosme else {
             return
         }
-        cosme.useup = true
         useupCosme(cosme: cosme)
     }
     
@@ -87,7 +86,14 @@ class DetailViewController: UIViewController {
                 self.countUseUpCosme()
                 KRProgressHUD.dismiss()
             case .failure(let error):
-                KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                switch error {
+                case RealmError.realmFailedToStart:
+                    KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                case RealmError.objectNotFound:
+                    KRProgressHUD.showError(withMessage: "該当するコスメが見つかりません")
+                default:
+                    KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                }
             }
         }
     }
