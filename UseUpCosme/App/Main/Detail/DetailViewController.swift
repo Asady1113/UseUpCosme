@@ -88,11 +88,11 @@ class DetailViewController: UIViewController {
             case .failure(let error):
                 switch error {
                 case RealmError.realmFailedToStart:
-                    KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                    KRProgressHUD.showError(withMessage: "保存処理に失敗しました")
                 case RealmError.objectNotFound:
                     KRProgressHUD.showError(withMessage: "該当するコスメが見つかりません")
                 default:
-                    KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                    KRProgressHUD.showError(withMessage: error.localizedDescription)
                 }
             }
         }

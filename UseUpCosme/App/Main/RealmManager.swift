@@ -42,9 +42,13 @@ class RealmManager {
             return
         }
         
-        try? realm.write {
-            realm.add(cosme)
-            completion?(.success(()))
+        do {
+            try realm.write {
+                realm.add(cosme)
+                completion?(.success(()))
+            }
+        } catch {
+            completion?(.failure(error))
         }
     }
     
@@ -82,18 +86,23 @@ class RealmManager {
     }
     
     // コスメの編集
-    static func editCosme(selectedCosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+    static func editCosme(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, completion: ((Result<Void, Error>) -> Void)?) {
         guard let realm = try? Realm() else {
             completion?(.failure(RealmError.realmFailedToStart))
             return
         }
-        let result = realm.objects(CosmeModel.self).filter("objectId== %@", selectedCosme.objectId)
-        //resultを配列化する
-        let object = Array(result)
         
-        try? realm.write {
-            object.first?.edit(cosmeName: selectedCosme.cosmeName, category: selectedCosme.category, startDate: selectedCosme.startDate, limitDate: selectedCosme.limitDate, imageData: selectedCosme.imageData, useup: selectedCosme.useup)
-            completion?(.success(()))
+        if let object = realm.object(ofType: CosmeModel.self, forPrimaryKey: objectId) {
+            do {
+                try realm.write {
+                    object.edit(cosmeName: cosmeName, category: category, startDate: startDate, limitDate: limitDate, imageData: imageData)
+                    completion?(.success(()))
+                }
+            } catch {
+                completion?(.failure(error))
+            }
+        } else {
+            completion?(.failure(RealmError.objectNotFound))
         }
     }
 

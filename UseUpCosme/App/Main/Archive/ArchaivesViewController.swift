@@ -72,7 +72,9 @@ class ArchaivesViewController: UIViewController {
             case .success(var cosmes):
                 // 使い切った日が早い順に並び替える
                 if self.isOrdered == true {
-                    cosmes = self.sortCosmeModelsByUseUpDate(cosmes: cosmes)
+                    self.cosmes = self.sortCosmeModelsByUseUpDate(cosmes: cosmes)
+                } else {
+                    self.cosmes = cosmes
                 }
                 self.listTableView.reloadData()
                 KRProgressHUD.dismiss()

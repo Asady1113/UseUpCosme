@@ -125,6 +125,8 @@ extension MainHomeViewController: UITableViewDataSource {
         let data = cosmes[indexPath.row].imageData
         let image = UIImage(data: data)
         cell.cosmeImageView.image = image
+        
+        print(cosmes[indexPath.row].objectId,"aaaa")
     }
 }
 

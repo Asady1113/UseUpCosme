@@ -94,36 +94,48 @@ class AddViewController: UIViewController {
         }
         // モデル化してDBに保存する
         let cosme = createCosmeModel(cosmeName: cosmeName, selectedCategory: selectedCategory, resizedImage: resizedImage, startDateText: startDateText, useupDateText: useupDateText)
+        guard cosme.isDateValidate != false else {
+            return
+        }
         
-        RealmManager.uploadCosme(cosme: cosme) { [weak self] result in
+        RealmManager.uploadCosme(cosme: cosme.cosme) { [weak self] result in
             guard let self else {
                 return
             }
             switch result {
             case .success():
                 self.deleteInputData()
-                KRProgressHUD.dismiss()
+                KRProgressHUD.showMessage("保存が完了しました！")
             case .failure(let error):
-                KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                switch error {
+                case RealmError.realmFailedToStart:
+                    KRProgressHUD.showError(withMessage: "保存処理に失敗しました")
+                default:
+                    KRProgressHUD.showError(withMessage: error.localizedDescription)
+                }
             }
         }
     }
     
     // 保存するコスメをモデル化する
-    private func createCosmeModel(cosmeName: String, selectedCategory: String, resizedImage: UIImage, startDateText: String, useupDateText: String) -> CosmeModel {
+    private func createCosmeModel(cosmeName: String, selectedCategory: String, resizedImage: UIImage, startDateText: String, useupDateText: String) -> (cosme: CosmeModel, isDateValidate: Bool) {
         // 画像の調整とData化
         let imageData = arrangeImageToData(image: resizedImage)
         // 日付をDate型に変換する
         let startDate = Date.dateFromString(string: startDateText, format: "yyyy / MM / dd")
         let limitDate = Date.dateFromString(string: useupDateText, format: "yyyy / MM / dd")
         // 設定日付が正しいかを判定
-        validateDate(startDate: startDate, limitDate: limitDate)
+        let isDateValidate = validateDate(startDate: startDate, limitDate: limitDate)
+        if isDateValidate.bool == false {
+            KRProgressHUD.showError(withMessage: isDateValidate.message)
+            return (CosmeModel(), false)
+        }
         // 通知を設定する
         let notificationId = NotificateFunction.makenotification(name: cosmeName, limitDate: limitDate)
         
         // モデル化
         let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, notificationId: notificationId, useup: false)
-        return cosme
+        return (cosme,true)
     }
     
     // 画像の調整とデータ化
@@ -144,19 +156,18 @@ class AddViewController: UIViewController {
     }
     
     // 使用期限の設定が正しいかどうか
-    private func validateDate(startDate: Date, limitDate: Date) {
-        // 使用期限と本日の差分
+    private func validateDate(startDate: Date, limitDate: Date) -> (bool: Bool, message: String) {
+        // 使用期限と本日の差分)
         let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
         // 使用期限と使用開始日の差分
         let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
         
         if dateSubtractionFromToday < 0 {
-            KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
-            return
+            return (false,"すでに期限が切れているようです")
         } else if dateSubtractionFromStart < 0 {
-            KRProgressHUD.showError(withMessage: "使用開始時に期限が切れているようです")
-            return
+            return (false,"使用開始時に期限が切れているようです")
         }
+        return (true, "")
     }
     
     @IBAction private func delete() {

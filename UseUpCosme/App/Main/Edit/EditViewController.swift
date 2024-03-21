@@ -109,9 +109,25 @@ class EditViewController: UIViewController {
             KRProgressHUD.showError(withMessage: "カテゴリを登録してください")
             return
         }
-        // モデル化してDBに保存する
-        let cosme = createCosmeModel(cosmeName: cosmeName, selectedCategory: selectedCategory, resizedImage: resizedImage, startDateText: startDateText, useupDateText: useupDateText)
-        RealmManager.editCosme(selectedCosme: cosme) { [weak self] result in
+        guard let selectedCosme else {
+            return
+        }
+        // 画像の調整とData化
+        let imageData = arrangeImageToData(image: resizedImage)
+        // 日付をDate型に変換する
+        let startDate = Date.dateFromString(string: startDateText, format: "yyyy / MM / dd")
+        let limitDate = Date.dateFromString(string: useupDateText, format: "yyyy / MM / dd")
+        // 設定日付が正しいかを判定
+        let isDateValidate = validateDate(startDate: startDate, limitDate: limitDate)
+        if isDateValidate.bool == false {
+            KRProgressHUD.showError(withMessage: isDateValidate.message)
+            return
+        }
+        // 通知を編集する
+        NotificateFunction.editNotification(notificationId: selectedCosme.notificationId, name: cosmeName, limitDate: limitDate)
+        
+        // DBに保存する
+        RealmManager.editCosme(objectId: selectedCosme.objectId, cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData) { [weak self] result in
             guard let self else {
                 return
             }
@@ -121,27 +137,16 @@ class EditViewController: UIViewController {
                 // 元の画面へ
                 self.dismiss(animated: true)
             case .failure(let error):
-                KRProgressHUD.showError(withMessage: "保存に失敗しました")
+                switch error {
+                case RealmError.realmFailedToStart:
+                    KRProgressHUD.showError(withMessage: "保存処理に失敗しました")
+                case RealmError.objectNotFound:
+                    KRProgressHUD.showError(withMessage: "該当するコスメが見つかりませんでした")
+                default:
+                    KRProgressHUD.showError(withMessage: error.localizedDescription)
+                }
             }
         }
-    }
-    
-    // 保存するコスメをモデル化する
-    private func createCosmeModel(cosmeName: String, selectedCategory: String, resizedImage: UIImage, startDateText: String, useupDateText: String) -> CosmeModel {
-        guard let selectedCosme else {
-            return CosmeModel()
-        }
-        // 画像の調整とData化
-        let imageData = arrangeImageToData(image: resizedImage)
-        // 日付をDate型に変換する
-        let startDate = Date.dateFromString(string: startDateText, format: "yyyy / MM / dd")
-        let limitDate = Date.dateFromString(string: useupDateText, format: "yyyy / MM / dd")
-        // 設定日付が正しいかを判定
-        validateDate(startDate: startDate, limitDate: limitDate)
-        // 通知を編集する
-        NotificateFunction.editNotification(notificationId: selectedCosme.notificationId, name: cosmeName, limitDate: limitDate)
-        let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, notificationId: selectedCosme.notificationId, useup: selectedCosme.useup)
-        return cosme
     }
     
     // 画像の調整とデータ化
@@ -162,19 +167,18 @@ class EditViewController: UIViewController {
     }
     
     // 使用期限の設定が正しいかどうか
-    private func validateDate(startDate: Date, limitDate: Date) {
-        // 使用期限と本日の差分
+    private func validateDate(startDate: Date, limitDate: Date) -> (bool: Bool, message: String) {
+        // 使用期限と本日の差分)
         let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
         // 使用期限と使用開始日の差分
         let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
         
         if dateSubtractionFromToday < 0 {
-            KRProgressHUD.showError(withMessage: "すでに期限が切れているようです")
-            return
+            return (false,"すでに期限が切れているようです")
         } else if dateSubtractionFromStart < 0 {
-            KRProgressHUD.showError(withMessage: "使用開始時に期限が切れているようです")
-            return
+            return (false,"使用開始時に期限が切れているようです")
         }
+        return (true, "")
     }
     
     @IBAction private func back() {
