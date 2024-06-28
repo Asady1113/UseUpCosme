@@ -12,6 +12,9 @@ import NYXImagesKit
 class AddViewController: UIViewController {
     private var resizedImage: UIImage?
     private var selectedCategory: String?
+    // ボタンとイメージの配列
+    private var imagesArr = [UIImage]()
+    private var buttonsArr = [UIButton]()
     
     @IBOutlet private weak var cosmeImageView: UIImageView!
     @IBOutlet private weak var pencilImageView: UIImageView!
@@ -35,7 +38,9 @@ class AddViewController: UIViewController {
     
     private func configureUI() {
         // ボタンに写真をセット
-        DesignView.setImage(images: [UIImage(named: "foundation.png"), UIImage(named: "lip.png"), UIImage(named: "cheek.png"), UIImage(named: "mascara.png"), UIImage(named: "eyebrow.png"), UIImage(named: "eyeliner.png"), UIImage(named: "eyeshadow.png"), UIImage(named: "skincare.png")], buttons: [foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton])
+        imagesArr = [UIImage(named: "foundation.png")!, UIImage(named: "lip.png")!, UIImage(named: "cheek.png")!, UIImage(named: "mascara.png")!, UIImage(named: "eyebrow.png")!, UIImage(named: "eyeliner.png")!, UIImage(named: "eyeshadow.png")!, UIImage(named: "skincare.png")!]
+        buttonsArr = [foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton]
+        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
         // pickerの設定
         DesignView.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
         // 鉛筆の画像を丸くする
@@ -65,6 +70,17 @@ class AddViewController: UIViewController {
     @IBAction private func selectCategory(_sender: UIButton) {
         let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
         selectedCategory = category[_sender.tag]
+        changeImage(_sender: _sender.tag)
+    }
+    
+    // 選択されたボタンのイメージを変える
+    private func changeImage(_sender: Int) {
+        // 初期化
+        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+        
+        var tappedImageArr = [UIImage(named: "foundation_tapped"), UIImage(named: "lip_tapped"), UIImage(named: "cheek_tapped"), UIImage(named: "mascara_tapped"), UIImage(named: "eyebrow_tapped"), UIImage(named: "eyeliner_tapped"), UIImage(named: "eyeshadow_tapped"), UIImage(named: "skincare_tapped")]
+        
+        buttonsArr[_sender].setImage(tappedImageArr[_sender], for: .normal)
     }
     
     // コスメを追加する

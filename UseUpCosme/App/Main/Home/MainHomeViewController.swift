@@ -12,6 +12,10 @@ class MainHomeViewController: UIViewController {
     private var cosmes = [CosmeModel]()
     private var selectedCategory = "all"
     private var isOrdered = false
+    // ボタンとイメージの配列
+    private var imagesArr = [UIImage]()
+    private var buttonsArr = [UIButton]()
+    
     @IBOutlet private weak var listTableView: UITableView!
     
     @IBOutlet private weak var clockButton: UIButton!
@@ -36,7 +40,10 @@ class MainHomeViewController: UIViewController {
     // UI
     private func configureUI() {
         // ボタンに写真をセット
-        DesignView.setImage(images: [UIImage(named: "clock.png"), UIImage(named: "foundation.png"), UIImage(named: "lip.png"), UIImage(named: "cheek.png"), UIImage(named: "mascara.png"), UIImage(named: "eyebrow.png"), UIImage(named: "eyeliner.png"), UIImage(named: "eyeshadow.png"), UIImage(named: "skincare.png")], buttons: [clockButton, foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton])
+        imagesArr = [UIImage(named: "clock.png")!, UIImage(named: "foundation.png")!, UIImage(named: "lip.png")!, UIImage(named: "cheek.png")!, UIImage(named: "mascara.png")!, UIImage(named: "eyebrow.png")!, UIImage(named: "eyeliner.png")!, UIImage(named: "eyeshadow.png")!, UIImage(named: "skincare.png")!]
+        buttonsArr = [clockButton, foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton]
+        
+        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
         setUpTableView()
     }
     
@@ -55,14 +62,25 @@ class MainHomeViewController: UIViewController {
     
     //ボタンによる操作（カテゴリーや期限順）
     @IBAction private func options(_sender: UIButton) {
-        if _sender.tag == 8 {
+        if _sender.tag == 0 {
             isOrdered = true
             loadCosme()
         } else {
             let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
-            selectedCategory = category[_sender.tag]
+            selectedCategory = category[_sender.tag - 1]
             loadCosme()
         }
+        changeImage(_sender: _sender.tag)
+    }
+    
+    // 選択されたボタンのイメージを変える
+    private func changeImage(_sender: Int) {
+        // 初期化
+        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+        
+        var tappedImageArr = [UIImage(named: "clock_tapped"), UIImage(named: "foundation_tapped"), UIImage(named: "lip_tapped"), UIImage(named: "cheek_tapped"), UIImage(named: "mascara_tapped"), UIImage(named: "eyebrow_tapped"), UIImage(named: "eyeliner_tapped"), UIImage(named: "eyeshadow_tapped"), UIImage(named: "skincare_tapped")]
+        
+        buttonsArr[_sender].setImage(tappedImageArr[_sender], for: .normal)
     }
     
     private func loadCosme() {
