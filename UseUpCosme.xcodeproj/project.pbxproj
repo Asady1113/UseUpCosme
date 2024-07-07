@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B32F1872C3AE24600806688 /* MainHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* MainHomeService.swift */; };
+		0B32F18A2C3AE2D700806688 /* MainHomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */; };
 		0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5734DC2B9B212A008BA71B /* RealmManager.swift */; };
 		0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C188F2B9B165500344C84 /* CosmeModel.swift */; };
 		0B7008102BA2CAF400D63E22 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70080F2BA2CAF400D63E22 /* UIViewController+.swift */; };
@@ -90,6 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B32F1862C3AE24600806688 /* MainHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeService.swift; sourceTree = "<group>"; };
+		0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeServiceProtocol.swift; sourceTree = "<group>"; };
 		0B5734DC2B9B212A008BA71B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0B5C188F2B9B165500344C84 /* CosmeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeModel.swift; sourceTree = "<group>"; };
 		0B70080F2BA2CAF400D63E22 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -203,9 +207,85 @@
 			path = TabbarIcon;
 			sourceTree = "<group>";
 		};
+		0B32F17E2C3ADF1C00806688 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0B32F1832C3ADFD500806688 /* StoryBoard */,
+				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0B32F17F2C3ADF3000806688 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0B32F1812C3ADF8300806688 /* Application */,
+				0B32F1822C3ADF8D00806688 /* Domain */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0B32F1802C3ADF4A00806688 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		0B32F1812C3ADF8300806688 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0B32F1842C3AE20C00806688 /* DTOs */,
+				0B32F1882C3AE28400806688 /* protocols */,
+				0B32F1852C3AE21B00806688 /* Services */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0B32F1822C3ADF8D00806688 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0B32F1832C3ADFD500806688 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				9403CDA12891778E00243A79 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		0B32F1842C3AE20C00806688 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		0B32F1852C3AE21B00806688 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0B32F1862C3AE24600806688 /* MainHomeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0B32F1882C3AE28400806688 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		0B5C18882B9B0FBF00344C84 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0B32F17E2C3ADF1C00806688 /* UI */,
+				0B32F17F2C3ADF3000806688 /* Core */,
+				0B32F1802C3ADF4A00806688 /* Infrastructure */,
 				94FD05302950CCC9003B7FA6 /* Main */,
 				0B70080E2BA2CA6400D63E22 /* Extension */,
 				94AE16F62891989B00E3DA12 /* Images */,
@@ -216,7 +296,6 @@
 		0B5C18892B9B10A300344C84 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
 				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
 				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
 			);
@@ -397,7 +476,6 @@
 		94FD05302950CCC9003B7FA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9403CDA12891778E00243A79 /* Main.storyboard */,
 				0B5C18892B9B10A300344C84 /* Home */,
 				0B5C188B2B9B10EA00344C84 /* Add */,
 				0B5C188C2B9B110400344C84 /* Archive */,
@@ -701,10 +779,12 @@
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
 				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* Date+.swift in Sources */,
+				0B32F1872C3AE24600806688 /* MainHomeService.swift in Sources */,
 				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
+				0B32F18A2C3AE2D700806688 /* MainHomeServiceProtocol.swift in Sources */,
 				94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */,
