@@ -13,8 +13,19 @@ enum RealmError: Error {
     case objectNotFound
 }
 
-class RealmManager {
-    // コスメの読み込み
+class RealmManager: RealmManagerProtocol {
+    func loadCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+    
+        let result = realm.objects(CosmeModel.self).filter("useup== %@", useup)
+        let cosmes = Array(result)
+        completion?(.success(cosmes))
+    }
+    
+    // TODO: あとで削除
     static func loadCosme(selectedCategory: String, useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
         
         guard let realm = try? Realm() else {

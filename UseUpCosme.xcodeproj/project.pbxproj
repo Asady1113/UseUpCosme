@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */; };
 		0B32F1872C3AE24600806688 /* MainHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* MainHomeService.swift */; };
 		0B32F18A2C3AE2D700806688 /* MainHomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */; };
 		0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5734DC2B9B212A008BA71B /* RealmManager.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		0B32F1862C3AE24600806688 /* MainHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeService.swift; sourceTree = "<group>"; };
 		0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeServiceProtocol.swift; sourceTree = "<group>"; };
 		0B5734DC2B9B212A008BA71B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -207,11 +209,39 @@
 			path = TabbarIcon;
 			sourceTree = "<group>";
 		};
+		0B1ED68A2C98295A0012C903 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0B5C188F2B9B165500344C84 /* CosmeModel.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0B1ED68B2C98297B0012C903 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */,
+				0B5734DC2B9B212A008BA71B /* RealmManager.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		0B1ED68E2C983D000012C903 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
+				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
+				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0B32F17E2C3ADF1C00806688 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				0B32F1832C3ADFD500806688 /* StoryBoard */,
-				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
+				0B1ED68E2C983D000012C903 /* Main */,
+				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -220,33 +250,18 @@
 			isa = PBXGroup;
 			children = (
 				0B32F1812C3ADF8300806688 /* Application */,
-				0B32F1822C3ADF8D00806688 /* Domain */,
+				0B1ED68A2C98295A0012C903 /* Domain */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		0B32F1802C3ADF4A00806688 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		0B32F1812C3ADF8300806688 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				0B32F1842C3AE20C00806688 /* DTOs */,
 				0B32F1882C3AE28400806688 /* protocols */,
 				0B32F1852C3AE21B00806688 /* Services */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		0B32F1822C3ADF8D00806688 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		0B32F1832C3ADFD500806688 /* StoryBoard */ = {
@@ -255,13 +270,6 @@
 				9403CDA12891778E00243A79 /* Main.storyboard */,
 			);
 			path = StoryBoard;
-			sourceTree = "<group>";
-		};
-		0B32F1842C3AE20C00806688 /* DTOs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DTOs;
 			sourceTree = "<group>";
 		};
 		0B32F1852C3AE21B00806688 /* Services */ = {
@@ -285,29 +293,12 @@
 			children = (
 				0B32F17E2C3ADF1C00806688 /* UI */,
 				0B32F17F2C3ADF3000806688 /* Core */,
-				0B32F1802C3ADF4A00806688 /* Infrastructure */,
+				0B1ED68B2C98297B0012C903 /* Infrastructure */,
 				94FD05302950CCC9003B7FA6 /* Main */,
 				0B70080E2BA2CA6400D63E22 /* Extension */,
 				94AE16F62891989B00E3DA12 /* Images */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		0B5C18892B9B10A300344C84 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
-				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		0B5C188B2B9B10EA00344C84 /* Add */ = {
-			isa = PBXGroup;
-			children = (
-				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
-			);
-			path = Add;
 			sourceTree = "<group>";
 		};
 		0B5C188C2B9B110400344C84 /* Archive */ = {
@@ -476,13 +467,9 @@
 		94FD05302950CCC9003B7FA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0B5C18892B9B10A300344C84 /* Home */,
-				0B5C188B2B9B10EA00344C84 /* Add */,
 				0B5C188C2B9B110400344C84 /* Archive */,
 				0B5C188D2B9B112300344C84 /* Detail */,
 				0B5C188E2B9B112B00344C84 /* Edit */,
-				0B5C188F2B9B165500344C84 /* CosmeModel.swift */,
-				0B5734DC2B9B212A008BA71B /* RealmManager.swift */,
 				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
 				94FDDFE92938C09800BBC400 /* DesignView.swift */,
 			);
@@ -796,6 +783,7 @@
 				94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */,
 				94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */,
 				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
+				0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */,
 				0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

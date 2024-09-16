@@ -9,9 +9,9 @@ import UIKit
 import KRProgressHUD
 
 class MainHomeViewController: UIViewController {
+    // TODO: DIしたい
+    private let _mainHomeServiceProtocol: MainHomeServiceProtocol = MainHomeService()
     private var cosmes = [CosmeModel]()
-    private var selectedCategory = "all"
-    private var isOrdered = false
     // ボタンとイメージの配列
     private var imagesArr = [UIImage]()
     private var buttonsArr = [UIButton]()
@@ -37,7 +37,7 @@ class MainHomeViewController: UIViewController {
         loadCosme()
     }
     
-    // UI
+    // TODO: UIもいい感じに変更
     private func configureUI() {
         // ボタンに写真をセット
         imagesArr = [UIImage(named: "clock.png")!, UIImage(named: "foundation.png")!, UIImage(named: "lip.png")!, UIImage(named: "cheek.png")!, UIImage(named: "mascara.png")!, UIImage(named: "eyebrow.png")!, UIImage(named: "eyeliner.png")!, UIImage(named: "eyeshadow.png")!, UIImage(named: "skincare.png")!]
@@ -60,19 +60,6 @@ class MainHomeViewController: UIViewController {
         }
     }
     
-    //ボタンによる操作（カテゴリーや期限順）
-    @IBAction private func options(_sender: UIButton) {
-        if _sender.tag == 0 {
-            isOrdered = true
-            loadCosme()
-        } else {
-            let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
-            selectedCategory = category[_sender.tag - 1]
-            loadCosme()
-        }
-        changeImage(_sender: _sender.tag)
-    }
-    
     // 選択されたボタンのイメージを変える
     private func changeImage(_sender: Int) {
         // 初期化
@@ -83,33 +70,33 @@ class MainHomeViewController: UIViewController {
         buttonsArr[_sender].setImage(tappedImageArr[_sender], for: .normal)
     }
     
+    //ボタンによる操作（カテゴリーや期限順）
+    @IBAction private func selectFilterCategory(_sender: UIButton) {
+        if _sender.tag == 0 {
+            cosmes = _mainHomeServiceProtocol.sortCosmesByLimitDate(cosmes: cosmes)
+        } else {
+            cosmes = _mainHomeServiceProtocol.filterCosmesByCategory(_sender.tag, cosmes: cosmes)
+        }
+        self.listTableView.reloadData()
+        changeImage(_sender: _sender.tag)
+    }
+    
     private func loadCosme() {
         KRProgressHUD.show()
         // 使い切られていないコスメを読み込む
-        RealmManager.loadCosme(selectedCategory: selectedCategory, useup: false) { [weak self] result in
+        _mainHomeServiceProtocol.loadCosmesByUseupData(useup: false) { [weak self] result in
             guard let self else {
                 return
             }
             switch result {
-            case .success(var cosmes):
-                // 期限が近い順に並び替える
-                if self.isOrdered == true {
-                    self.cosmes = self.sortCosmeModelsByLimitDate(cosmes: cosmes)
-                } else {
-                    self.cosmes = cosmes
-                }
+            case .success(let cosmes):
+                self.cosmes = cosmes
                 self.listTableView.reloadData()
                 KRProgressHUD.dismiss()
             case .failure(let error):
                 KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
             }
         }
-    }
-    
-    // 期限が近い順に並べる関数
-    private func sortCosmeModelsByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel] {
-        // $0と$1にはそれぞれCosmeModelが入っている。それを比較する
-        return cosmes.sorted(by: { $0.limitDate > $1.limitDate })
     }
 }
 

@@ -9,6 +9,8 @@ import UIKit
 import KRProgressHUD
 import NYXImagesKit
 
+// TODO: ここからアーキテクチャ修正
+
 class AddViewController: UIViewController {
     private var resizedImage: UIImage?
     private var selectedCategory: String?

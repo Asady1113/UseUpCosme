@@ -8,5 +8,7 @@
 import Foundation
 
 protocol MainHomeServiceProtocol {
-    func selectCatgegory(_ tag: Int)
+    func sortCosmesByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel]
+    func filterCosmesByCategory(_ senderTag: Int, cosmes: [CosmeModel]) -> [CosmeModel]
+    func loadCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
 }
