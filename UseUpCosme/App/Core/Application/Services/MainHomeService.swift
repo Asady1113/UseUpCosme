@@ -16,10 +16,18 @@ class MainHomeService: MainHomeServiceProtocol {
     }
     
     func filterCosmesByCategory(_ senderTag: Int, cosmes: [CosmeModel]) -> [CosmeModel] {
-        // TODO: カテゴリ解除する機能つけたい
-        let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
+        let category: [CosmeCategory] = [
+            .foundation,
+            .lip, 
+            .cheek,
+            .mascara,
+            .eyebrow, 
+            .eyeliner,
+            .eyeshadow,
+            .skincare
+        ]
         let selectedCategory = category[senderTag - 1]
-        let filteredCosmeModels = cosmes.filter { $0.category == selectedCategory }
+        let filteredCosmeModels = cosmes.filter { $0.category == selectedCategory.rawValue }
         return filteredCosmeModels
     }
     

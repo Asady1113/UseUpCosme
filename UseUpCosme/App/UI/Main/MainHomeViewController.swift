@@ -10,14 +10,19 @@ import KRProgressHUD
 
 class MainHomeViewController: UIViewController {
     // TODO: DIしたい
-    private let _mainHomeServiceProtocol: MainHomeServiceProtocol = MainHomeService()
-    private var cosmes = [CosmeModel]()
+    private let mainHomeService: MainHomeServiceProtocol = MainHomeService()
+    // 全権取得したコスメ
+    private var allCosmes = [CosmeModel]()
+    // 表示用のコスメ
+    private var displayedCosmes = [CosmeModel]()
+    // 選択中カテゴリ
+    private var selectedFilterNum: Int?
+    
     // ボタンとイメージの配列
     private var imagesArr = [UIImage]()
     private var buttonsArr = [UIButton]()
     
     @IBOutlet private weak var listTableView: UITableView!
-    
     @IBOutlet private weak var clockButton: UIButton!
     @IBOutlet private weak var foundationButton: UIButton!
     @IBOutlet private weak var lipButton: UIButton!
@@ -27,7 +32,7 @@ class MainHomeViewController: UIViewController {
     @IBOutlet private weak var eyelinerButton: UIButton!
     @IBOutlet private weak var eyeshadowButton: UIButton!
     @IBOutlet private weak var skincareButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -56,7 +61,7 @@ class MainHomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedIndex = listTableView.indexPathForSelectedRow, let detailVC = segue.destination as? DetailViewController {
-            detailVC.setCosme(cosmes[selectedIndex.row])
+            detailVC.setCosme(displayedCosmes[selectedIndex.row])
         }
     }
     
@@ -72,10 +77,21 @@ class MainHomeViewController: UIViewController {
     
     //ボタンによる操作（カテゴリーや期限順）
     @IBAction private func selectFilterCategory(_sender: UIButton) {
-        if _sender.tag == 0 {
-            cosmes = _mainHomeServiceProtocol.sortCosmesByLimitDate(cosmes: cosmes)
+        // 選択中のボタンを押されたら初期化
+        if selectedFilterNum == _sender.tag {
+            // 初期化
+            DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+            displayedCosmes = allCosmes
+            selectedFilterNum = nil
+            self.listTableView.reloadData()
+            return
+        }
+        
+        selectedFilterNum = _sender.tag
+        if selectedFilterNum == 0 {
+            displayedCosmes = mainHomeService.sortCosmesByLimitDate(cosmes: displayedCosmes)
         } else {
-            cosmes = _mainHomeServiceProtocol.filterCosmesByCategory(_sender.tag, cosmes: cosmes)
+            displayedCosmes = mainHomeService.filterCosmesByCategory(_sender.tag, cosmes: allCosmes)
         }
         self.listTableView.reloadData()
         changeImage(_sender: _sender.tag)
@@ -84,13 +100,14 @@ class MainHomeViewController: UIViewController {
     private func loadCosme() {
         KRProgressHUD.show()
         // 使い切られていないコスメを読み込む
-        _mainHomeServiceProtocol.loadCosmesByUseupData(useup: false) { [weak self] result in
+        mainHomeService.loadCosmesByUseupData(useup: false) { [weak self] result in
             guard let self else {
                 return
             }
             switch result {
             case .success(let cosmes):
-                self.cosmes = cosmes
+                self.allCosmes = cosmes
+                self.displayedCosmes = allCosmes
                 self.listTableView.reloadData()
                 KRProgressHUD.dismiss()
             case .failure(let error):
@@ -102,7 +119,7 @@ class MainHomeViewController: UIViewController {
 
 extension MainHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cosmes.count
+        return displayedCosmes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,24 +131,22 @@ extension MainHomeViewController: UITableViewDataSource {
     }
     
     private func configureCell(cell: CosmeTableViewCell, indexPath: IndexPath) {
-        cell.nameLabel.text = cosmes[indexPath.row].cosmeName
+        cell.nameLabel.text = displayedCosmes[indexPath.row].cosmeName
         
-        let startDateString = Date.stringFromDate(date: cosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
-        let limitDateString = Date.stringFromDate(date: cosmes[indexPath.row].limitDate, format: "yyyy / MM / dd")
+        let startDateString = Date.stringFromDate(date: displayedCosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
+        let limitDateString = Date.stringFromDate(date: displayedCosmes[indexPath.row].limitDate, format: "yyyy / MM / dd")
         cell.startDateLabel.text = startDateString
         cell.LimitDateLabel.text = limitDateString
         
-        let countDate = Date.dateToLimitDate(limitDate: cosmes[indexPath.row].limitDate)
+        let countDate = Date.dateToLimitDate(limitDate: displayedCosmes[indexPath.row].limitDate)
         cell.countLabel.text = String(countDate)
         // 残り日数に応じてセルの色を変える
         DesignView.changeCountColor(count: countDate, view: cell.countView)
         
         // 画像取得
-        let data = cosmes[indexPath.row].imageData
+        let data = displayedCosmes[indexPath.row].imageData
         let image = UIImage(data: data)
         cell.cosmeImageView.image = image
-        
-        print(cosmes[indexPath.row].objectId,"aaaa")
     }
 }
 
