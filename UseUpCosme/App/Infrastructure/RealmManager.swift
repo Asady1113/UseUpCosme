@@ -14,7 +14,7 @@ enum RealmError: Error {
 }
 
 class RealmManager: RealmManagerProtocol {
-    func loadCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
+    func fetchCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
         guard let realm = try? Realm() else {
             completion?(.failure(RealmError.realmFailedToStart))
             return

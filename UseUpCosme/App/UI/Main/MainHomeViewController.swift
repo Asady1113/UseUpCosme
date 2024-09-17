@@ -16,8 +16,8 @@ class MainHomeViewController: UIViewController {
     // 表示用のコスメ
     private var displayedCosmes = [CosmeModel]()
     // ボタンとイメージの配列
-    private var imagesArr = [UIImage]()
-    private var buttonsArr = [UIButton]()
+    private var optionbtnImages = [UIImage]()
+    private var buttons = [UIButton]()
     
     @IBOutlet private weak var listTableView: UITableView!
     @IBOutlet private weak var clockButton: UIButton!
@@ -36,16 +36,16 @@ class MainHomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        loadCosme()
+        fetchCosmes()
     }
     
     // TODO: UIもいい感じに変更
     private func configureUI() {
         // ボタンに写真をセット
-        imagesArr = [UIImage(named: "clock.png")!, UIImage(named: "foundation.png")!, UIImage(named: "lip.png")!, UIImage(named: "cheek.png")!, UIImage(named: "mascara.png")!, UIImage(named: "eyebrow.png")!, UIImage(named: "eyeliner.png")!, UIImage(named: "eyeshadow.png")!, UIImage(named: "skincare.png")!]
-        buttonsArr = [clockButton, foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton]
+        optionbtnImages = [UIImage(named: "clock.png")!, UIImage(named: "foundation.png")!, UIImage(named: "lip.png")!, UIImage(named: "cheek.png")!, UIImage(named: "mascara.png")!, UIImage(named: "eyebrow.png")!, UIImage(named: "eyeliner.png")!, UIImage(named: "eyeshadow.png")!, UIImage(named: "skincare.png")!]
+        buttons = [clockButton, foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton]
         
-        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+        DesignView.setImage(images: optionbtnImages, buttons: buttons)
         setUpTableView()
     }
     
@@ -63,13 +63,13 @@ class MainHomeViewController: UIViewController {
     }
     
     // 選択されたボタンのイメージを変える
-    private func changeImage(_sender: Int) {
+    private func changeSelectedOptionBtnImage(_sender: Int) {
         // 初期化
-        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+        DesignView.setImage(images: optionbtnImages, buttons: buttons)
         
         let tappedImageArr = [UIImage(named: "clock_tapped"), UIImage(named: "foundation_tapped"), UIImage(named: "lip_tapped"), UIImage(named: "cheek_tapped"), UIImage(named: "mascara_tapped"), UIImage(named: "eyebrow_tapped"), UIImage(named: "eyeliner_tapped"), UIImage(named: "eyeshadow_tapped"), UIImage(named: "skincare_tapped")]
         
-        buttonsArr[_sender].setImage(tappedImageArr[_sender], for: .normal)
+        buttons[_sender].setImage(tappedImageArr[_sender], for: .normal)
     }
     
     @IBAction private func changeDisplayedCosmesByOptionBtn(_sender: UIButton) {
@@ -80,16 +80,16 @@ class MainHomeViewController: UIViewController {
     
         if isSelectSameOption {
             // 画像初期化
-            DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+            DesignView.setImage(images: optionbtnImages, buttons: buttons)
         } else {
-            changeImage(_sender: _sender.tag)
+            changeSelectedOptionBtnImage(_sender: _sender.tag)
         }
     }
     
-    private func loadCosme() {
+    private func fetchCosmes() {
         KRProgressHUD.show()
         // 使い切られていないコスメを読み込む
-        mainHomeService.loadCosmesByUseupData(useup: false) { [weak self] result in
+        mainHomeService.fetchCosmesByUseupData(useup: false) { [weak self] result in
             guard let self else {
                 return
             }

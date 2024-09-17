@@ -52,8 +52,8 @@ class MainHomeService: MainHomeServiceProtocol {
         return filteredCosmeModels
     }
     
-    func loadCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
-        _realmManagerProtocol.loadCosmesByUseupData(useup: useup) { [weak self] result in
+    func fetchCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
+        _realmManagerProtocol.fetchCosmesByUseupData(useup: useup) { [weak self] result in
             guard let self else {
                 return
             }
