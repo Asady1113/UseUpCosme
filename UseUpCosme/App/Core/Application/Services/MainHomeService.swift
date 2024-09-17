@@ -9,6 +9,27 @@ import Foundation
 
 class MainHomeService: MainHomeServiceProtocol {
     private let _realmManagerProtocol: RealmManagerProtocol = RealmManager()
+    private var selectedOptionNum: Int?
+    
+    func changeDisplayedCosmesByOptionBtn(_ senderTag: Int, prevDisplayedCosmes: [CosmeModel], allCosmes: [CosmeModel]) -> (nextDisplayedCosmes: [CosmeModel], isSelectSameOption: Bool) {
+        
+        var nextDisplayedCosmes = [CosmeModel]()
+        // 選択中のボタンを押されたら初期化
+        if selectedOptionNum == senderTag {
+            // 初期化
+            nextDisplayedCosmes = allCosmes
+            selectedOptionNum = nil
+            return (nextDisplayedCosmes: nextDisplayedCosmes, isSelectSameOption: true)
+        }
+        
+        selectedOptionNum = senderTag
+        if selectedOptionNum == 0 {
+            nextDisplayedCosmes = sortCosmesByLimitDate(cosmes: prevDisplayedCosmes)
+        } else {
+            nextDisplayedCosmes = filterCosmesByCategory(senderTag, cosmes: allCosmes)
+        }
+        return (nextDisplayedCosmes: nextDisplayedCosmes, isSelectSameOption: false)
+    }
     
     func sortCosmesByLimitDate(cosmes: [CosmeModel]) -> [CosmeModel] {
         // $0と$1にはそれぞれCosmeModelが入っている。それを比較する

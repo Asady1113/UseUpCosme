@@ -51,7 +51,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ztS-gf-HWd"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ztS-gf-HWd"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjF-I0-zwo">
@@ -60,7 +60,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apS-du-HtK"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apS-du-HtK"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hn3-GD-Fn2">
@@ -69,7 +69,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rAH-kg-Ucn"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rAH-kg-Ucn"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="use-Gp-jbf">
@@ -78,7 +78,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kY-gW-hSs"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kY-gW-hSs"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oII-ed-Kzd">
@@ -87,7 +87,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4X6-ze-3k1"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4X6-ze-3k1"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-IN-dyH">
@@ -96,7 +96,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9P-5s-dUd"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9P-5s-dUd"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O63-2g-vHw">
@@ -105,7 +105,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rvp-y8-FRb"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rvp-y8-FRb"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocX-9B-7NM">
@@ -114,7 +114,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QcS-nC-TUR"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QcS-nC-TUR"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzS-M0-zrp">
@@ -123,7 +123,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectFilterCategoryWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2RI-qI-50O"/>
+                                                            <action selector="changeDisplayedCosmesByOptionBtnWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2RI-qI-50O"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

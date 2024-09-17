@@ -15,9 +15,6 @@ class MainHomeViewController: UIViewController {
     private var allCosmes = [CosmeModel]()
     // 表示用のコスメ
     private var displayedCosmes = [CosmeModel]()
-    // 選択中カテゴリ
-    private var selectedFilterNum: Int?
-    
     // ボタンとイメージの配列
     private var imagesArr = [UIImage]()
     private var buttonsArr = [UIButton]()
@@ -70,31 +67,23 @@ class MainHomeViewController: UIViewController {
         // 初期化
         DesignView.setImage(images: imagesArr, buttons: buttonsArr)
         
-        var tappedImageArr = [UIImage(named: "clock_tapped"), UIImage(named: "foundation_tapped"), UIImage(named: "lip_tapped"), UIImage(named: "cheek_tapped"), UIImage(named: "mascara_tapped"), UIImage(named: "eyebrow_tapped"), UIImage(named: "eyeliner_tapped"), UIImage(named: "eyeshadow_tapped"), UIImage(named: "skincare_tapped")]
+        let tappedImageArr = [UIImage(named: "clock_tapped"), UIImage(named: "foundation_tapped"), UIImage(named: "lip_tapped"), UIImage(named: "cheek_tapped"), UIImage(named: "mascara_tapped"), UIImage(named: "eyebrow_tapped"), UIImage(named: "eyeliner_tapped"), UIImage(named: "eyeshadow_tapped"), UIImage(named: "skincare_tapped")]
         
         buttonsArr[_sender].setImage(tappedImageArr[_sender], for: .normal)
     }
     
-    //ボタンによる操作（カテゴリーや期限順）
-    @IBAction private func selectFilterCategory(_sender: UIButton) {
-        // 選択中のボタンを押されたら初期化
-        if selectedFilterNum == _sender.tag {
-            // 初期化
-            DesignView.setImage(images: imagesArr, buttons: buttonsArr)
-            displayedCosmes = allCosmes
-            selectedFilterNum = nil
-            self.listTableView.reloadData()
-            return
-        }
+    @IBAction private func changeDisplayedCosmesByOptionBtn(_sender: UIButton) {
+        let (nextDisplayedCosmes, isSelectSameOption) = mainHomeService.changeDisplayedCosmesByOptionBtn(_sender.tag, prevDisplayedCosmes: displayedCosmes, allCosmes: allCosmes)
         
-        selectedFilterNum = _sender.tag
-        if selectedFilterNum == 0 {
-            displayedCosmes = mainHomeService.sortCosmesByLimitDate(cosmes: displayedCosmes)
-        } else {
-            displayedCosmes = mainHomeService.filterCosmesByCategory(_sender.tag, cosmes: allCosmes)
-        }
+        displayedCosmes = nextDisplayedCosmes
         self.listTableView.reloadData()
-        changeImage(_sender: _sender.tag)
+    
+        if isSelectSameOption {
+            // 画像初期化
+            DesignView.setImage(images: imagesArr, buttons: buttonsArr)
+        } else {
+            changeImage(_sender: _sender.tag)
+        }
     }
     
     private func loadCosme() {
