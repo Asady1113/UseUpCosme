@@ -11,7 +11,7 @@ class MainHomeService: MainHomeServiceProtocol {
     private let _realmManagerProtocol: RealmManagerProtocol = RealmManager()
     private var selectedOptionNum: Int?
     
-    func changeDisplayedCosmesByOptionBtn(_ senderTag: Int, prevDisplayedCosmes: [CosmeModel], allCosmes: [CosmeModel]) -> (nextDisplayedCosmes: [CosmeModel], isSelectSameOption: Bool) {
+    func getDisplayedCosmesByOption(_ senderTag: Int, prevDisplayedCosmes: [CosmeModel], allCosmes: [CosmeModel]) -> (nextDisplayedCosmes: [CosmeModel], isSelectSameOption: Bool) {
         
         var nextDisplayedCosmes = [CosmeModel]()
         // 選択中のボタンを押されたら初期化
@@ -52,8 +52,8 @@ class MainHomeService: MainHomeServiceProtocol {
         return filteredCosmeModels
     }
     
-    func fetchCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
-        _realmManagerProtocol.fetchCosmesByUseupData(useup: useup) { [weak self] result in
+    func fetchCosmesNotUsedUp(completion: ((Result<[CosmeModel], Error>) -> Void)?) {
+        _realmManagerProtocol.fetchCosmesByUseupData(useup: false) { [weak self] result in
             guard let self else {
                 return
             }

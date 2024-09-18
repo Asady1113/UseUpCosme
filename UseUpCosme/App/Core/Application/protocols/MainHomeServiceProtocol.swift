@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MainHomeServiceProtocol {
-    func changeDisplayedCosmesByOptionBtn(_ senderTag: Int, prevDisplayedCosmes: [CosmeModel], allCosmes: [CosmeModel]) -> (nextDisplayedCosmes: [CosmeModel], isSelectSameOption: Bool)
+    func getDisplayedCosmesByOption(_ senderTag: Int, prevDisplayedCosmes: [CosmeModel], allCosmes: [CosmeModel]) -> (nextDisplayedCosmes: [CosmeModel], isSelectSameOption: Bool)
     func sortCosmesByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel]
     func filterCosmesByCategory(_ senderTag: Int, cosmes: [CosmeModel]) -> [CosmeModel]
-    func fetchCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
+    func fetchCosmesNotUsedUp(completion: ((Result<[CosmeModel], Error>) -> Void)?)
 }
