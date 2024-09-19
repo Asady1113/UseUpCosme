@@ -9,14 +9,12 @@ import UIKit
 import KRProgressHUD
 
 class MainHomeViewController: UIViewController {
-    // TODO: DIしたい
-    private let mainHomeService: MainHomeServiceProtocol = MainHomeService()
+    private var mainHomeService: MainHomeServiceProtocol!
+    private var mainHomeView: MainHomeViewProtocol!
     // 全権取得したコスメ
     private var allCosmes = [CosmeModel]()
     // 表示用のコスメ
     private var displayedCosmes = [CosmeModel]()
-    
-    private var optionButtons = [UIButton]()
     
     @IBOutlet private weak var listTableView: UITableView!
     @IBOutlet private weak var clockButton: UIButton!
@@ -31,6 +29,7 @@ class MainHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        di()
         configureUI()
     }
     
@@ -38,16 +37,24 @@ class MainHomeViewController: UIViewController {
         fetchCosmes()
     }
     
-    // TODO: UIもいい感じに変更
-    private func configureUI() {
-        setUpTableView()
-        initOptionButtonImage()
+    // TODO: もっといいDIのやり方ありそう
+    private func di() {
+        mainHomeService = MainHomeService()
+        mainHomeView = MainHomeView(tableView: listTableView, optionButtons: getOptionButtons())
     }
     
-    private func setUpTableView() {
-        listTableView.separatorStyle = .none
-        let nib = UINib(nibName: "CosmeTableViewCell", bundle: Bundle.main)
-        listTableView.register(nib, forCellReuseIdentifier: "Cell")
+    private func getOptionButtons() -> [UIButton] {
+        return [
+            clockButton, foundationButton, lipButton,
+            cheekButton, mascaraButton, eyebrowButton,
+            eyelinerButton, eyeshadowButton, skincareButton
+        ]
+    }
+    
+    // TODO: UIもいい感じに変更
+    private func configureUI() {
+        mainHomeView.setUpTableView()
+        mainHomeView.initOptionButtonImage()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,50 +63,16 @@ class MainHomeViewController: UIViewController {
         }
     }
     
-    // ボタンの画像初期化
-    private func initOptionButtonImage() {
-        let optionButtonImageNames = [
-            "clock.png", "foundation.png", "lip.png",
-            "cheek.png", "mascara.png", "eyebrow.png",
-            "eyeliner.png", "eyeshadow.png", "skincare.png"
-        ]
-                
-        optionButtons = [
-            clockButton, foundationButton, lipButton,
-            cheekButton, mascaraButton, eyebrowButton,
-            eyelinerButton, eyeshadowButton, skincareButton
-        ]
-        
-        for (index, button) in optionButtons.enumerated() {
-            button.setImage(UIImage(named: optionButtonImageNames[index]), for: .normal)
-        }
-    }
-    
-    // 選択されたボタンのイメージを変更する
-    private func updateSelectedOptionButtonImage(at index: Int) {
-        initOptionButtonImage()
-        
-        let tappedImageNames = [
-            "clock_tapped", "foundation_tapped", "lip_tapped",
-            "cheek_tapped", "mascara_tapped", "eyebrow_tapped",
-            "eyeliner_tapped", "eyeshadow_tapped", "skincare_tapped"
-        ]
-        
-        if let tappedImage = UIImage(named: tappedImageNames[index]) {
-            optionButtons[index].setImage(tappedImage, for: .normal)
-        }
-    }
-    
     @IBAction private func changeDisplayedCosmesByOptionBtn(_sender: UIButton) {
         let (nextDisplayedCosmes, isSelectSameOption) = mainHomeService.getDisplayedCosmesByOption(_sender.tag, prevDisplayedCosmes: displayedCosmes, allCosmes: allCosmes)
         
         displayedCosmes = nextDisplayedCosmes
-        self.listTableView.reloadData()
+        self.mainHomeView.reloadTableView()
     
         if isSelectSameOption {
-            initOptionButtonImage()
+            mainHomeView.initOptionButtonImage()
         } else {
-            updateSelectedOptionButtonImage(at: _sender.tag)
+            mainHomeView.updateSelectedOptionButtonImage(at: _sender.tag)
         }
     }
     
@@ -113,7 +86,7 @@ class MainHomeViewController: UIViewController {
             case .success(let cosmes):
                 self.allCosmes = cosmes
                 self.displayedCosmes = allCosmes
-                self.listTableView.reloadData()
+                self.mainHomeView.reloadTableView()
             case .failure(let error):
                 KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
             }
