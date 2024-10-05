@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */; };
-		0B32F1872C3AE24600806688 /* MainHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* MainHomeService.swift */; };
-		0B32F18A2C3AE2D700806688 /* MainHomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */; };
+		0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* CosmesListService.swift */; };
+		0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */; };
 		0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5734DC2B9B212A008BA71B /* RealmManager.swift */; };
 		0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C188F2B9B165500344C84 /* CosmeModel.swift */; };
-		0B6989572C9C692700086DDA /* MainHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6989562C9C692700086DDA /* MainHomeView.swift */; };
-		0B69895A2C9C6A0C00086DDA /* MainHomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6989592C9C6A0C00086DDA /* MainHomeViewProtocol.swift */; };
+		0B6989572C9C692700086DDA /* CosmesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6989562C9C692700086DDA /* CosmesListView.swift */; };
+		0B69895A2C9C6A0C00086DDA /* CosmesListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6989592C9C6A0C00086DDA /* CosmesListViewProtocol.swift */; };
 		0B6ECA8F2C986C9A003F5F9B /* CosmeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6ECA8E2C986C9A003F5F9B /* CosmeCategory.swift */; };
 		0B7008102BA2CAF400D63E22 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70080F2BA2CAF400D63E22 /* UIViewController+.swift */; };
 		0B7BB4C52BAA8747009353CE /* mascara_tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4B32BAA8747009353CE /* mascara_tapped.png */; };
@@ -97,12 +97,12 @@
 
 /* Begin PBXFileReference section */
 		0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
-		0B32F1862C3AE24600806688 /* MainHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeService.swift; sourceTree = "<group>"; };
-		0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeServiceProtocol.swift; sourceTree = "<group>"; };
+		0B32F1862C3AE24600806688 /* CosmesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListService.swift; sourceTree = "<group>"; };
+		0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListServiceProtocol.swift; sourceTree = "<group>"; };
 		0B5734DC2B9B212A008BA71B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0B5C188F2B9B165500344C84 /* CosmeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeModel.swift; sourceTree = "<group>"; };
-		0B6989562C9C692700086DDA /* MainHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeView.swift; sourceTree = "<group>"; };
-		0B6989592C9C6A0C00086DDA /* MainHomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewProtocol.swift; sourceTree = "<group>"; };
+		0B6989562C9C692700086DDA /* CosmesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListView.swift; sourceTree = "<group>"; };
+		0B6989592C9C6A0C00086DDA /* CosmesListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListViewProtocol.swift; sourceTree = "<group>"; };
 		0B6ECA8E2C986C9A003F5F9B /* CosmeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeCategory.swift; sourceTree = "<group>"; };
 		0B70080F2BA2CAF400D63E22 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		0B7BB4B32BAA8747009353CE /* mascara_tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mascara_tapped.png; sourceTree = "<group>"; };
@@ -236,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
+				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,7 +271,7 @@
 		0B32F1852C3AE21B00806688 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0B32F1862C3AE24600806688 /* MainHomeService.swift */,
+				0B32F1862C3AE24600806688 /* CosmesListService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,7 +279,7 @@
 		0B32F1882C3AE28400806688 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0B32F1892C3AE2D700806688 /* MainHomeServiceProtocol.swift */,
+				0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -295,16 +296,6 @@
 				94AE16F62891989B00E3DA12 /* Images */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		0B5C188C2B9B110400344C84 /* Archive */ = {
-			isa = PBXGroup;
-			children = (
-				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
-				94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */,
-				94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */,
-			);
-			path = Archive;
 			sourceTree = "<group>";
 		};
 		0B5C188D2B9B112300344C84 /* Detail */ = {
@@ -327,8 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				0B69895B2C9C6A4F00086DDA /* StoryBoard */,
-				0B69895C2C9C6A7700086DDA /* Views */,
 				0B6989582C9C69F700086DDA /* Protocols */,
+				0B69895C2C9C6A7700086DDA /* Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,7 +327,7 @@
 		0B6989582C9C69F700086DDA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0B6989592C9C6A0C00086DDA /* MainHomeViewProtocol.swift */,
+				0B6989592C9C6A0C00086DDA /* CosmesListViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -352,7 +343,7 @@
 		0B69895C2C9C6A7700086DDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B6989562C9C692700086DDA /* MainHomeView.swift */,
+				0B6989562C9C692700086DDA /* CosmesListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +353,8 @@
 			children = (
 				94D4726B2951904900873FDF /* CosmeTableViewCell.swift */,
 				94D4726C2951904900873FDF /* CosmeTableViewCell.xib */,
+				94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */,
+				94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -524,7 +517,6 @@
 			isa = PBXGroup;
 			children = (
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
-				0B5C188C2B9B110400344C84 /* Archive */,
 				0B5C188D2B9B112300344C84 /* Detail */,
 				0B5C188E2B9B112B00344C84 /* Edit */,
 				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
@@ -823,17 +815,17 @@
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
 				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* Date+.swift in Sources */,
-				0B32F1872C3AE24600806688 /* MainHomeService.swift in Sources */,
+				0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */,
 				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
-				0B32F18A2C3AE2D700806688 /* MainHomeServiceProtocol.swift in Sources */,
+				0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */,
 				94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */,
 				0B6ECA8F2C986C9A003F5F9B /* CosmeCategory.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */,
-				0B6989572C9C692700086DDA /* MainHomeView.swift in Sources */,
+				0B6989572C9C692700086DDA /* CosmesListView.swift in Sources */,
 				0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */,
 				0B7008102BA2CAF400D63E22 /* UIViewController+.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
@@ -843,7 +835,7 @@
 				94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */,
 				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
 				0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */,
-				0B69895A2C9C6A0C00086DDA /* MainHomeViewProtocol.swift in Sources */,
+				0B69895A2C9C6A0C00086DDA /* CosmesListViewProtocol.swift in Sources */,
 				0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

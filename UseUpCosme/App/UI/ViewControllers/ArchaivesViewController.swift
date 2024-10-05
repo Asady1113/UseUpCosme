@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  ArchaivesViewController.swift
 //  UseUpCosme
 //
-//  Created by 浅田智哉 on 2022/07/27.
+//  Created by 浅田智哉 on 2022/12/23.
 //
 
 import UIKit
 import KRProgressHUD
 
-class MainHomeViewController: UIViewController {
+class ArchaivesViewController: UIViewController {
     private var cosmesListService: CosmesListServiceProtocol!
     private var cosmesListView: CosmesListViewProtocol!
     // 全権取得したコスメ
@@ -34,7 +34,7 @@ class MainHomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchCosmes()
+        fetchUseUpCosmes()
     }
     
     // TODO: もっといいDIのやり方ありそう
@@ -51,18 +51,12 @@ class MainHomeViewController: UIViewController {
         ]
     }
     
-    // TODO: UIもいい感じに変更
     private func configureUI() {
-        cosmesListView.setUpTableView(nibName: "CosmeTableViewCell", id: "Cell")
+        cosmesListView.setUpTableView(nibName: "UseUpCosmeTableViewCell", id: "UseUpCell")
         cosmesListView.initOptionButtonImage()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let selectedIndex = listTableView.indexPathForSelectedRow, let detailVC = segue.destination as? DetailViewController {
-            detailVC.setCosme(displayedCosmes[selectedIndex.row])
-        }
-    }
-    
+    // ボタンによる操作（カテゴリーや終了日順）
     @IBAction private func changeDisplayedCosmesByOptionBtn(_sender: UIButton) {
         let (nextDisplayedCosmes, isSelectSameOption) = cosmesListService.getDisplayedCosmesByOption(_sender.tag, prevDisplayedCosmes: displayedCosmes, allCosmes: allCosmes)
         
@@ -76,9 +70,10 @@ class MainHomeViewController: UIViewController {
         }
     }
     
-    private func fetchCosmes() {
+    // コスメの読み込み
+    private func fetchUseUpCosmes() {
         KRProgressHUD.show()
-        cosmesListService.fetchCosmes(isUsedUp: false) { [weak self] result in
+        cosmesListService.fetchCosmes(isUsedUp: true) { [weak self] result in
             guard let self else {
                 return
             }
@@ -95,20 +90,20 @@ class MainHomeViewController: UIViewController {
     }
 }
 
-extension MainHomeViewController: UITableViewDataSource {
+extension ArchaivesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayedCosmes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CosmeTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UseUpCell") as? UseUpCosmeTableViewCell else {
             fatalError()
         }
         configureCell(cell: cell, indexPath: indexPath)
         return cell
     }
     
-    private func configureCell(cell: CosmeTableViewCell, indexPath: IndexPath) {
+    private func configureCell(cell: UseUpCosmeTableViewCell, indexPath: IndexPath) {
         cell.nameLabel.text = displayedCosmes[indexPath.row].cosmeName
         
         let startDateString = Date.stringFromDate(date: displayedCosmes[indexPath.row].startDate, format: "yyyy / MM / dd")
@@ -116,11 +111,10 @@ extension MainHomeViewController: UITableViewDataSource {
         cell.startDateLabel.text = startDateString
         cell.LimitDateLabel.text = limitDateString
         
-        let countDate = Date.dateToLimitDate(limitDate: displayedCosmes[indexPath.row].limitDate)
-        cell.countLabel.text = String(countDate)
-        // 残り日数に応じてセルの色を変える
-        DesignView.changeCountColor(count: countDate, view: cell.countView)
-        
+        if let useupDate = displayedCosmes[indexPath.row].useupDate {
+            cell.useupYearLabel.text = Date.stringFromDate(date: useupDate, format: "yyyy")
+            cell.useupDateLabel.text = Date.stringFromDate(date: useupDate, format: "MM/dd")
+        }
         // 画像取得
         let data = displayedCosmes[indexPath.row].imageData
         let image = UIImage(data: data)
@@ -128,9 +122,8 @@ extension MainHomeViewController: UITableViewDataSource {
     }
 }
 
-extension MainHomeViewController: UITableViewDelegate {
+extension ArchaivesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

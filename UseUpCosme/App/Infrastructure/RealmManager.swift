@@ -14,13 +14,13 @@ enum RealmError: Error {
 }
 
 class RealmManager: RealmManagerProtocol {
-    func fetchCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
+    func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
         guard let realm = try? Realm() else {
             completion?(.failure(RealmError.realmFailedToStart))
             return
         }
     
-        let result = realm.objects(CosmeModel.self).filter("useup== %@", useup)
+        let result = realm.objects(CosmeModel.self).filter("useup== %@", isUsedUp)
         let cosmes = Array(result)
         completion?(.success(cosmes))
     }

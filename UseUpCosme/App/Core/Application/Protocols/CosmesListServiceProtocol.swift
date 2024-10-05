@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol MainHomeServiceProtocol {
+protocol CosmesListServiceProtocol {
     func getDisplayedCosmesByOption(_ senderTag: Int, prevDisplayedCosmes: [CosmeModel], allCosmes: [CosmeModel]) -> (nextDisplayedCosmes: [CosmeModel], isSelectSameOption: Bool)
     func sortCosmesByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel]
     func filterCosmesByCategory(_ senderTag: Int, cosmes: [CosmeModel]) -> [CosmeModel]
-    func fetchCosmesNotUsedUp(completion: ((Result<[CosmeModel], Error>) -> Void)?)
+    func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
 }

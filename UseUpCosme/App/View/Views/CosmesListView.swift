@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainHomeView: MainHomeViewProtocol {
+class CosmesListView: CosmesListViewProtocol {
     private weak var tableView: UITableView?
     private var optionButtons: [UIButton]
     
@@ -16,10 +16,10 @@ class MainHomeView: MainHomeViewProtocol {
         self.optionButtons = optionButtons
     }
     
-    func setUpTableView() {
+    func setUpTableView(nibName: String, id: String) {
         tableView?.separatorStyle = .none
-        let nib = UINib(nibName: "CosmeTableViewCell", bundle: Bundle.main)
-        tableView?.register(nib, forCellReuseIdentifier: "Cell")
+        let nib = UINib(nibName: nibName, bundle: Bundle.main)
+        tableView?.register(nib, forCellReuseIdentifier: id)
         
     }
     

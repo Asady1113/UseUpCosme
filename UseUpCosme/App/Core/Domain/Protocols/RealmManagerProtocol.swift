@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RealmManagerProtocol {
-    func fetchCosmesByUseupData(useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
+    func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
 }

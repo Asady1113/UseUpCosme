@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainHomeService: MainHomeServiceProtocol {
+class CosmesListService: CosmesListServiceProtocol {
     private let _realmManagerProtocol: RealmManagerProtocol = RealmManager()
     private var selectedOptionNum: Int?
     
@@ -52,8 +52,8 @@ class MainHomeService: MainHomeServiceProtocol {
         return filteredCosmeModels
     }
     
-    func fetchCosmesNotUsedUp(completion: ((Result<[CosmeModel], Error>) -> Void)?) {
-        _realmManagerProtocol.fetchCosmesByUseupData(useup: false) { [weak self] result in
+    func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
+        _realmManagerProtocol.fetchCosmes(isUsedUp: isUsedUp) { [weak self] result in
             guard let self else {
                 return
             }

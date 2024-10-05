@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol MainHomeViewProtocol {
-    func setUpTableView()
+protocol CosmesListViewProtocol {
+    func setUpTableView(nibName: String, id: String)
     func reloadTableView()
     func initOptionButtonImage()
     func updateSelectedOptionButtonImage(at index: Int)
