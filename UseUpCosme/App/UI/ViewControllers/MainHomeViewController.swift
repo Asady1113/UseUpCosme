@@ -64,16 +64,17 @@ class MainHomeViewController: UIViewController {
     }
     
     @IBAction private func changeDisplayedCosmesByOptionBtn(_sender: UIButton) {
-        let (nextDisplayedCosmes, isSelectSameOption) = cosmesListService.getDisplayedCosmesByOption(_sender.tag, prevDisplayedCosmes: displayedCosmes, allCosmes: allCosmes)
+        if cosmesListService.isSelectedSameOption(_sender.tag) {
+            displayedCosmes = allCosmes
+            self.cosmesListView.reloadTableView()
+            cosmesListView.initOptionButtonImage()
+            return
+        }
         
+        let nextDisplayedCosmes = cosmesListService.getDisplayedCosmesByOption(_sender.tag, prevDisplayedCosmes: displayedCosmes, allCosmes: allCosmes)
         displayedCosmes = nextDisplayedCosmes
         self.cosmesListView.reloadTableView()
-    
-        if isSelectSameOption {
-            cosmesListView.initOptionButtonImage()
-        } else {
-            cosmesListView.updateSelectedOptionButtonImage(at: _sender.tag)
-        }
+        cosmesListView.updateSelectedOptionButtonImage(at: _sender.tag)
     }
     
     private func fetchCosmes() {

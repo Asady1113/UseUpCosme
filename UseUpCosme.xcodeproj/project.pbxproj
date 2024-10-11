@@ -40,6 +40,10 @@
 		0B7BB4DE2BAA9741009353CE /* clock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4DD2BAA9741009353CE /* clock2.png */; };
 		0B7BB4E02BAA9748009353CE /* clock2_tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4DF2BAA9748009353CE /* clock2_tapped.png */; };
 		0B7BB4E62BAA9BE1009353CE /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BB4E52BAA9BE1009353CE /* cancelButton.png */; };
+		0B7D5DCB2CB96F5400B90C27 /* AddService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D5DCA2CB96F5400B90C27 /* AddService.swift */; };
+		0B7D5DCD2CB96F6800B90C27 /* AddServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D5DCC2CB96F6800B90C27 /* AddServiceProtocol.swift */; };
+		0BC56FDE2CB574AC00B82B4F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC56FDD2CB574AC00B82B4F /* AddView.swift */; };
+		0BC56FE02CB574CC00B82B4F /* AddViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC56FDF2CB574CC00B82B4F /* AddViewProtocol.swift */; };
 		1B63F060461E0281171E7C11 /* Pods_UseUpCosme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */; };
 		51A751B868EC01BE78845899 /* Pods_UseUpCosme_UseUpCosmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23B1EDA1053D4DE7EB957DF /* Pods_UseUpCosme_UseUpCosmeUITests.framework */; };
 		742B48E852DD1B4132633CC2 /* Pods_UseUpCosmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBF4444E7F45C4140142790 /* Pods_UseUpCosmeTests.framework */; };
@@ -129,6 +133,10 @@
 		0B7BB4DD2BAA9741009353CE /* clock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock2.png; sourceTree = "<group>"; };
 		0B7BB4DF2BAA9748009353CE /* clock2_tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock2_tapped.png; sourceTree = "<group>"; };
 		0B7BB4E52BAA9BE1009353CE /* cancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelButton.png; sourceTree = "<group>"; };
+		0B7D5DCA2CB96F5400B90C27 /* AddService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddService.swift; sourceTree = "<group>"; };
+		0B7D5DCC2CB96F6800B90C27 /* AddServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceProtocol.swift; sourceTree = "<group>"; };
+		0BC56FDD2CB574AC00B82B4F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		0BC56FDF2CB574CC00B82B4F /* AddViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewProtocol.swift; sourceTree = "<group>"; };
 		47FB82775C80B77E7080ACE3 /* Pods_UseUpCosme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseUpCosme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C97CF778AE84433C36775DE /* Pods-UseUpCosmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosmeTests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosmeTests/Pods-UseUpCosmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		525905A68590518F3B3102FA /* Pods-UseUpCosme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +245,7 @@
 			children = (
 				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
 				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
+				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				0B32F1862C3AE24600806688 /* CosmesListService.swift */,
+				0B7D5DCA2CB96F5400B90C27 /* AddService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -280,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */,
+				0B7D5DCC2CB96F6800B90C27 /* AddServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -328,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				0B6989592C9C6A0C00086DDA /* CosmesListViewProtocol.swift */,
+				0BC56FDF2CB574CC00B82B4F /* AddViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -344,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				0B6989562C9C692700086DDA /* CosmesListView.swift */,
+				0BC56FDD2CB574AC00B82B4F /* AddView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -516,7 +529,6 @@
 		94FD05302950CCC9003B7FA6 /* Main_OLD */ = {
 			isa = PBXGroup;
 			children = (
-				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 				0B5C188D2B9B112300344C84 /* Detail */,
 				0B5C188E2B9B112B00344C84 /* Edit */,
 				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
@@ -813,11 +825,13 @@
 			files = (
 				9493065929598BAC0075694C /* EditViewController.swift in Sources */,
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
+				0BC56FDE2CB574AC00B82B4F /* AddView.swift in Sources */,
 				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* Date+.swift in Sources */,
 				0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */,
 				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
+				0B7D5DCB2CB96F5400B90C27 /* AddService.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
 				0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */,
@@ -828,6 +842,7 @@
 				0B6989572C9C692700086DDA /* CosmesListView.swift in Sources */,
 				0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */,
 				0B7008102BA2CAF400D63E22 /* UIViewController+.swift in Sources */,
+				0B7D5DCD2CB96F6800B90C27 /* AddServiceProtocol.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
 				94FDDFEA2938C09800BBC400 /* DesignView.swift in Sources */,
@@ -836,6 +851,7 @@
 				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
 				0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */,
 				0B69895A2C9C6A0C00086DDA /* CosmesListViewProtocol.swift in Sources */,
+				0BC56FE02CB574CC00B82B4F /* AddViewProtocol.swift in Sources */,
 				0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

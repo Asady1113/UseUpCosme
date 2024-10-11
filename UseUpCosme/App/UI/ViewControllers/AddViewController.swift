@@ -10,8 +10,10 @@ import KRProgressHUD
 import NYXImagesKit
 
 // TODO: ここからアーキテクチャ修正
-
 class AddViewController: UIViewController {
+    private var addService: AddServiceProtocol!
+    private var addView: AddViewProtocol!
+    
     private var resizedImage: UIImage?
     private var selectedCategory: String?
     // ボタンとイメージの配列
@@ -35,24 +37,27 @@ class AddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        di()
         configureUI()
     }
     
-    private func configureUI() {
-        // ボタンに写真をセット
-        imagesArr = [UIImage(named: "foundation.png")!, UIImage(named: "lip.png")!, UIImage(named: "cheek.png")!, UIImage(named: "mascara.png")!, UIImage(named: "eyebrow.png")!, UIImage(named: "eyeliner.png")!, UIImage(named: "eyeshadow.png")!, UIImage(named: "skincare.png")!]
-        buttonsArr = [foundationButton, lipButton, cheekButton, mascaraButton, eyebrowButton, eyelinerButton,eyeshadowButton, skincareButton]
-        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
-        // pickerの設定
-        DesignView.makeDatePicker(startDateTextField: startDateTextField, useupDateTextField: useupDateTextField, view: view)
-        // 鉛筆の画像を丸くする
-        DesignView.designImage(image: pencilImageView)
+    private func di() {
+        addService = AddService()
+        addView = AddView(view: self.view, cosmeImageView: cosmeImageView, pencilImageView: pencilImageView, startDateTextField: startDateTextField, cosmeNameTextField: cosmeNameTextField, useupDateTextField: useupDateTextField, optionButtons: getOptionButtons())
     }
     
-    // 入力されたデータを削除する
-    private func deleteInputData() {
-        DesignView.delete(cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, useupDateTextField: useupDateTextField)
-        selectedCategory = nil
+    private func getOptionButtons() -> [UIButton] {
+        return [
+            foundationButton, lipButton,
+            cheekButton, mascaraButton, eyebrowButton,
+            eyelinerButton, eyeshadowButton, skincareButton
+        ]
+    }
+    
+    private func configureUI() {
+        addView.initCategoryButtonImage()
+        addView.setUpDatePickers()
+        addView.setUpPencilImageView()
     }
 
     // 画像選択の処理
@@ -70,9 +75,12 @@ class AddViewController: UIViewController {
     
     // カテゴリ選択関数
     @IBAction private func selectCategory(_sender: UIButton) {
-        let category = ["ファンデーション","口紅","チーク","マスカラ","アイブロウ","アイライナ-","アイシャドウ","スキンケア"]
-        selectedCategory = category[_sender.tag]
-        changeImage(_sender: _sender.tag)
+        if addService.isSelectedSameCategory(_sender.tag) {
+            addView.initCategoryButtonImage()
+            return
+        }
+        addService.selectCategory(_sender.tag)
+        addView.updateSelectedCategoryButtonImage(at: _sender.tag)
     }
     
     // 選択されたボタンのイメージを変える
@@ -122,7 +130,8 @@ class AddViewController: UIViewController {
             }
             switch result {
             case .success():
-                self.deleteInputData()
+                addView.initUI()
+                self.selectedCategory = nil
                 KRProgressHUD.showMessage("保存が完了しました！")
             case .failure(let error):
                 switch error {
@@ -189,7 +198,8 @@ class AddViewController: UIViewController {
     }
     
     @IBAction private func delete() {
-        deleteInputData()
+        addView.initUI()
+        self.selectedCategory = nil
     }
 
 }
