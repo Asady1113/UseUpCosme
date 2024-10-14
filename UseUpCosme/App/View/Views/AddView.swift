@@ -99,6 +99,7 @@ class AddView: AddViewProtocol {
         cosmeNameTextField.text = nil
         startDateTextField.text = nil
         useupDateTextField.text = nil
+        initCategoryButtonImage()
     }
 }
 

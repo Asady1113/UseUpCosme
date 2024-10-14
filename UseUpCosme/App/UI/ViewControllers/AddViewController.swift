@@ -14,17 +14,13 @@ class AddViewController: UIViewController {
     private var addService: AddServiceProtocol!
     private var addView: AddViewProtocol!
     
-    private var resizedImage: UIImage?
-    private var selectedCategory: String?
-    // ボタンとイメージの配列
-    private var imagesArr = [UIImage]()
-    private var buttonsArr = [UIButton]()
+    private var selectedImageData: Data?
     
     @IBOutlet private weak var cosmeImageView: UIImageView!
     @IBOutlet private weak var pencilImageView: UIImageView!
     @IBOutlet private weak var cosmeNameTextField: UITextField!
     @IBOutlet private weak var startDateTextField: UITextField!
-    @IBOutlet private weak var useupDateTextField: UITextField!
+    @IBOutlet private weak var limitDateTextField: UITextField!
     
     @IBOutlet private weak var foundationButton: UIButton!
     @IBOutlet private weak var lipButton: UIButton!
@@ -43,7 +39,7 @@ class AddViewController: UIViewController {
     
     private func di() {
         addService = AddService()
-        addView = AddView(view: self.view, cosmeImageView: cosmeImageView, pencilImageView: pencilImageView, startDateTextField: startDateTextField, cosmeNameTextField: cosmeNameTextField, useupDateTextField: useupDateTextField, optionButtons: getOptionButtons())
+        addView = AddView(view: self.view, cosmeImageView: cosmeImageView, pencilImageView: pencilImageView, startDateTextField: startDateTextField, cosmeNameTextField: cosmeNameTextField, useupDateTextField: limitDateTextField, optionButtons: getOptionButtons())
     }
     
     private func getOptionButtons() -> [UIButton] {
@@ -68,8 +64,12 @@ class AddViewController: UIViewController {
     // ImagePickerViewに写真を表示する
     private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        resizedImage = selectedImage?.scale(byFactor: 0.3)
+        let resizedImage = selectedImage?.scale(byFactor: 0.3)
         cosmeImageView.image = resizedImage
+        
+        if let resizedImage {
+            selectedImageData = arrangeImageToData(image: resizedImage)
+        }
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -79,59 +79,46 @@ class AddViewController: UIViewController {
             addView.initCategoryButtonImage()
             return
         }
-        addService.selectCategory(_sender.tag)
+        addService.setSelectedCategoryNum(_sender.tag)
         addView.updateSelectedCategoryButtonImage(at: _sender.tag)
-    }
-    
-    // 選択されたボタンのイメージを変える
-    private func changeImage(_sender: Int) {
-        // 初期化
-        DesignView.setImage(images: imagesArr, buttons: buttonsArr)
-        
-        var tappedImageArr = [UIImage(named: "foundation_tapped"), UIImage(named: "lip_tapped"), UIImage(named: "cheek_tapped"), UIImage(named: "mascara_tapped"), UIImage(named: "eyebrow_tapped"), UIImage(named: "eyeliner_tapped"), UIImage(named: "eyeshadow_tapped"), UIImage(named: "skincare_tapped")]
-        
-        buttonsArr[_sender].setImage(tappedImageArr[_sender], for: .normal)
     }
     
     // コスメを追加する
     @IBAction private func add() {
         KRProgressHUD.show()
-        // 画像が選択されていなければリターン
-        guard let resizedImage = resizedImage else {
-            KRProgressHUD.showError(withMessage: "画像を登録してください")
-            return
-        }
-        // 各項目が入力されているか
-        guard let cosmeName = cosmeNameTextField.text else {
-            KRProgressHUD.showError(withMessage: "名前を登録してください")
-            return
-        }
-        guard let startDateText = startDateTextField.text else {
-            KRProgressHUD.showError(withMessage: "使用開始日を登録してください")
-            return
-        }
-        guard let useupDateText = useupDateTextField.text else {
-            KRProgressHUD.showError(withMessage: "使用期限を登録してください")
-            return
-        }
-        guard let selectedCategory = selectedCategory else {
-            KRProgressHUD.showError(withMessage: "カテゴリを登録してください")
-            return
-        }
-        // モデル化してDBに保存する
-        let cosme = createCosmeModel(cosmeName: cosmeName, selectedCategory: selectedCategory, resizedImage: resizedImage, startDateText: startDateText, useupDateText: useupDateText)
-        guard cosme.isDateValidate != false else {
+        
+        let (isInputDataError, inputDataErrorMessage)
+        = addService.validateInputData(selectedImageDate: selectedImageData, cosmeName: cosmeNameTextField.text, startDateText: startDateTextField.text, limitDateText: limitDateTextField.text)
+        if isInputDataError {
+            KRProgressHUD.showError(withMessage: inputDataErrorMessage)
             return
         }
         
-        RealmManager.uploadCosme(cosme: cosme.cosme) { [weak self] result in
+        guard let selectedImageData = selectedImageData,
+              let cosmeName = cosmeNameTextField.text,
+              let startDateText = startDateTextField.text,
+              let limitDateText = limitDateTextField.text,
+              let selectedCategory = addService.getSelectedCategory() else {
+            return
+        }
+              
+        let (startDate, limitDate) = addService.parseDate(startDateText: startDateText, limitDateText: limitDateText)
+        let (isDateError, dateErrorMessage) = addService.validateDate(startDate: startDate, limitDate: limitDate)
+        if isDateError {
+            KRProgressHUD.showError(withMessage: dateErrorMessage)
+            return
+        }
+        
+        let cosme = addService.createCosmeModel(cosmeName: cosmeName, selectedCategoryString: selectedCategory.rawValue, selectedImageData: selectedImageData, startDate: startDate, limitDate: limitDate)
+        
+        RealmManager.uploadCosme(cosme: cosme) { [weak self] result in
             guard let self else {
                 return
             }
             switch result {
             case .success():
                 addView.initUI()
-                self.selectedCategory = nil
+                addService.initSelectedCategoryNum()
                 KRProgressHUD.showMessage("保存が完了しました！")
             case .failure(let error):
                 switch error {
@@ -142,27 +129,6 @@ class AddViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    // 保存するコスメをモデル化する
-    private func createCosmeModel(cosmeName: String, selectedCategory: String, resizedImage: UIImage, startDateText: String, useupDateText: String) -> (cosme: CosmeModel, isDateValidate: Bool) {
-        // 画像の調整とData化
-        let imageData = arrangeImageToData(image: resizedImage)
-        // 日付をDate型に変換する
-        let startDate = Date.dateFromString(string: startDateText, format: "yyyy / MM / dd")
-        let limitDate = Date.dateFromString(string: useupDateText, format: "yyyy / MM / dd")
-        // 設定日付が正しいかを判定
-        let isDateValidate = validateDate(startDate: startDate, limitDate: limitDate)
-        if isDateValidate.bool == false {
-            KRProgressHUD.showError(withMessage: isDateValidate.message)
-            return (CosmeModel(), false)
-        }
-        // 通知を設定する
-        let notificationId = NotificateFunction.makenotification(name: cosmeName, limitDate: limitDate)
-        
-        // モデル化
-        let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategory, startDate: startDate, limitDate: limitDate, imageData: imageData, notificationId: notificationId, useup: false)
-        return (cosme,true)
     }
     
     // 画像の調整とデータ化
@@ -182,24 +148,9 @@ class AddViewController: UIViewController {
         return imageData
     }
     
-    // 使用期限の設定が正しいかどうか
-    private func validateDate(startDate: Date, limitDate: Date) -> (bool: Bool, message: String) {
-        // 使用期限と本日の差分)
-        let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
-        // 使用期限と使用開始日の差分
-        let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
-        
-        if dateSubtractionFromToday < 0 {
-            return (false,"すでに期限が切れているようです")
-        } else if dateSubtractionFromStart < 0 {
-            return (false,"使用開始時に期限が切れているようです")
-        }
-        return (true, "")
-    }
-    
     @IBAction private func delete() {
         addView.initUI()
-        self.selectedCategory = nil
+        addService.initSelectedCategoryNum()
     }
 
 }

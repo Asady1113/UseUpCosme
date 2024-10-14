@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2jC-vw-UIN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -541,12 +540,12 @@
                         <outlet property="eyelinerButton" destination="o0V-SS-Y8c" id="YBQ-wt-jGt"/>
                         <outlet property="eyeshadowButton" destination="w7I-3W-waI" id="rbf-U2-gas"/>
                         <outlet property="foundationButton" destination="a3P-XB-nuQ" id="Urp-2y-qWy"/>
+                        <outlet property="limitDateTextField" destination="7xJ-Rk-fIp" id="aSM-9e-RT2"/>
                         <outlet property="lipButton" destination="ujy-4R-GcN" id="Fe3-wA-sID"/>
                         <outlet property="mascaraButton" destination="FEh-qv-Lbe" id="WHW-wl-RnP"/>
                         <outlet property="pencilImageView" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
                         <outlet property="skincareButton" destination="XHF-Rr-6xV" id="V1e-yo-TRT"/>
                         <outlet property="startDateTextField" destination="iAF-kP-UMg" id="DAA-ZQ-1zs"/>
-                        <outlet property="useupDateTextField" destination="7xJ-Rk-fIp" id="aSM-9e-RT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHT-oK-YDQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1450,10 +1449,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
