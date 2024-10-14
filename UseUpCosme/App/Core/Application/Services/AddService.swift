@@ -8,6 +8,7 @@
 import Foundation
 
 class AddService: AddServiceProtocol {
+    private let realmManagerProtocol: RealmManagerProtocol = RealmManager()
     private var selectedCategoryNum: Int?
     
     func isSelectedSameCategory(_ senderTag: Int) -> Bool {
@@ -93,5 +94,19 @@ class AddService: AddServiceProtocol {
         let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategoryString, startDate: startDate, limitDate: limitDate, imageData: selectedImageData, notificationId: notificationId, useup: false)
         
         return cosme
+    }
+    
+    func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+        realmManagerProtocol.createCosme(cosme: cosme) { [weak self] result in
+            guard let self else {
+                return
+            }
+            switch result {
+            case .success():
+                completion?(.success(()))
+            case .failure(let error):
+                completion?(.failure(error))
+            }
+        }
     }
 }

@@ -19,10 +19,26 @@ class RealmManager: RealmManagerProtocol {
             completion?(.failure(RealmError.realmFailedToStart))
             return
         }
-    
+        
         let result = realm.objects(CosmeModel.self).filter("useup== %@", isUsedUp)
         let cosmes = Array(result)
         completion?(.success(cosmes))
+    }
+    
+    func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        
+        do {
+            try realm.write {
+                realm.add(cosme)
+                completion?(.success(()))
+            }
+        } catch {
+            completion?(.failure(error))
+        }
     }
     
     // TODO: あとで削除

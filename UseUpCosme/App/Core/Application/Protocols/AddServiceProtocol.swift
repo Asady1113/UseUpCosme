@@ -16,4 +16,5 @@ protocol AddServiceProtocol {
     func parseDate(startDateText: String, limitDateText: String) -> (startDate: Date, limitDate: Date)
     func validateDate(startDate: Date, limitDate: Date) -> (isError: Bool, errorMessage: String?)
     func createCosmeModel(cosmeName: String, selectedCategoryString: String, selectedImageData: Data, startDate: Date, limitDate: Date) -> CosmeModel
+    func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?)
 }

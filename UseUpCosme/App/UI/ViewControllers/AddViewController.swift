@@ -111,7 +111,7 @@ class AddViewController: UIViewController {
         
         let cosme = addService.createCosmeModel(cosmeName: cosmeName, selectedCategoryString: selectedCategory.rawValue, selectedImageData: selectedImageData, startDate: startDate, limitDate: limitDate)
         
-        RealmManager.uploadCosme(cosme: cosme) { [weak self] result in
+        addService.createCosme(cosme: cosme) { [weak self] result in
             guard let self else {
                 return
             }
