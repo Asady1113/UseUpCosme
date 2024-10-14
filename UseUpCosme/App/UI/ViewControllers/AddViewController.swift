@@ -84,7 +84,7 @@ class AddViewController: UIViewController {
     }
     
     // コスメを追加する
-    @IBAction private func add() {
+    @IBAction private func tappedAddBtn() {
         KRProgressHUD.show()
         
         let (isInputDataError, inputDataErrorMessage)
@@ -109,8 +109,21 @@ class AddViewController: UIViewController {
             return
         }
         
-        let cosme = addService.createCosmeModel(cosmeName: cosmeName, selectedCategoryString: selectedCategory.rawValue, selectedImageData: selectedImageData, startDate: startDate, limitDate: limitDate)
-        
+        addService.createNotification(cosmeName: cosmeName, limitDate: limitDate) { [weak self] result in
+            guard let self else {
+                return
+            }
+            switch result {
+            case .success(let notificationId):
+                let cosme = addService.createCosmeModel(cosmeName: cosmeName, selectedCategoryString: selectedCategory.rawValue, selectedImageData: selectedImageData, startDate: startDate, limitDate: limitDate, notificationId: notificationId)
+                createCosme(cosme: cosme)
+            case .failure(let error):
+                KRProgressHUD.showError(withMessage: error.localizedDescription)
+            }
+        }
+    }
+    
+    private func createCosme(cosme: CosmeModel) {
         addService.createCosme(cosme: cosme) { [weak self] result in
             guard let self else {
                 return

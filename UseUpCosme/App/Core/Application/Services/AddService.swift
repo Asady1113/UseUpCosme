@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class AddService: AddServiceProtocol {
     private let realmManagerProtocol: RealmManagerProtocol = RealmManager()
@@ -86,11 +87,33 @@ class AddService: AddServiceProtocol {
         return (false, nil)
     }
     
-    func createCosmeModel(cosmeName: String, selectedCategoryString: String, selectedImageData: Data, startDate: Date, limitDate: Date) -> CosmeModel {
-        // 通知を設定する
-        let notificationId = NotificateFunction.makenotification(name: cosmeName, limitDate: limitDate)
+    func createNotification(cosmeName: String, limitDate: Date, completion: ((Result<String, Error>) -> Void)?) {
+        // ローカル通知の内容
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+        content.title = "\(String(describing: cosmeName))の使用期限が残り一週間です"
+        content.subtitle = "使用期限まで残り一週間のコスメがあります"
+        content.body =
+        "\(String(describing: cosmeName))が使用期限まで残り一週間です。今週中に使い切りましょう！"
+        content.badge = 1
         
-        // モデル化
+        // 日付を設定して、通知に入れる
+        let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
+        // idを用いて、ローカル通知リクエストを作成
+        let notificationId = UUID().uuidString
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
+        let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
+        
+        // ローカル通知リクエストを登録
+        UNUserNotificationCenter.current().add(request){ (error : Error?) in
+            if let error {
+                completion?(.failure(error))
+            }
+        }
+        completion?(.success((notificationId)))
+    }
+    
+    func createCosmeModel(cosmeName: String, selectedCategoryString: String, selectedImageData: Data, startDate: Date, limitDate: Date, notificationId: String) -> CosmeModel {
         let cosme = CosmeModel(cosmeName: cosmeName, category: selectedCategoryString, startDate: startDate, limitDate: limitDate, imageData: selectedImageData, notificationId: notificationId, useup: false)
         
         return cosme

@@ -230,7 +230,7 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="add" destination="xGB-qV-CB7" eventType="touchUpInside" id="NSP-tn-gve"/>
+                                            <action selector="tappedAddBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="NSP-tn-gve"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mt2-IF-I3E">
