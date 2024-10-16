@@ -5,12 +5,13 @@
 //  Created by 浅田智哉 on 2024/10/11.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 
 class AddService: AddServiceProtocol {
     private let realmManagerProtocol: RealmManagerProtocol = RealmManager()
     private var selectedCategoryNum: Int?
+    private var selectedImageData: Data?
     
     func isSelectedSameCategory(_ senderTag: Int) -> Bool {
         if selectedCategoryNum == senderTag {
@@ -46,8 +47,34 @@ class AddService: AddServiceProtocol {
         selectedCategoryNum = nil
     }
     
-    func validateInputData(selectedImageDate: Data?, cosmeName: String?, startDateText: String?, limitDateText: String?) -> (isError: Bool, errorMessage: String?) {
-        guard let selectedImageDate else {
+    func setSelectedImageData(selectedImage: UIImage?) {
+        if let selectedImage {
+            selectedImageData = arrangeImageToData(image: selectedImage)
+        }
+    }
+    
+    func arrangeImageToData(image: UIImage) -> Data {
+        // 画像を調整
+        UIGraphicsBeginImageContext(image.size)
+        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        image.draw(in: rect)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return Data()
+        }
+        UIGraphicsEndImageContext()
+        // pngに変換
+        guard let imageData = image.pngData() else {
+            return Data()
+        }
+        return imageData
+    }
+    
+    func getSelectdImagaData() -> Data? {
+        return selectedImageData
+    }
+    
+    func validateInputData(cosmeName: String?, startDateText: String?, limitDateText: String?) -> (isError: Bool, errorMessage: String?) {
+        guard let selectedImageData else {
             return (true, "画像を登録してください")
         }
         if cosmeName == "" {

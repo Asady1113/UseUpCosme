@@ -230,7 +230,7 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="tappedAddBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="NSP-tn-gve"/>
+                                            <action selector="createCosmeByAddBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="NSP-tn-gve"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mt2-IF-I3E">
@@ -239,7 +239,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="cancelButton.png"/>
                                         <connections>
-                                            <action selector="delete" destination="xGB-qV-CB7" eventType="touchUpInside" id="uPh-u6-Tk6"/>
+                                            <action selector="deleteDataByDeleteBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="uPh-u6-Tk6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -393,7 +393,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="U8X-dp-hMr"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="U8X-dp-hMr"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujy-4R-GcN">
@@ -402,7 +402,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="xK5-hP-aNA"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="xK5-hP-aNA"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-oz-jBX">
@@ -411,7 +411,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="Adw-Ho-m4v"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="Adw-Ho-m4v"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEh-qv-Lbe">
@@ -420,7 +420,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7X8-ni-7Mg"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7X8-ni-7Mg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQy-NP-Rh5">
@@ -429,7 +429,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7Nk-FV-Q1v"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="7Nk-FV-Q1v"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-SS-Y8c">
@@ -438,7 +438,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="hcr-Gp-PQX"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="hcr-Gp-PQX"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-3W-waI">
@@ -447,7 +447,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="wuh-Vj-7KF"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="wuh-Vj-7KF"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHF-Rr-6xV">
@@ -456,7 +456,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <action selector="selectCategoryWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="NPE-Zf-0Qy"/>
+                                                            <action selector="selectCategoryByCategoryBtnWith_sender:" destination="xGB-qV-CB7" eventType="touchUpInside" id="NPE-Zf-0Qy"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -492,7 +492,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="selectImage" destination="xGB-qV-CB7" eventType="touchUpInside" id="N3h-b9-tt1"/>
+                                    <action selector="selectImageByImageBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="N3h-b9-tt1"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="editButton.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Fm-XLN">

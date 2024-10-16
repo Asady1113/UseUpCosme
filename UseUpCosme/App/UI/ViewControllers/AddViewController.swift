@@ -9,12 +9,9 @@ import UIKit
 import KRProgressHUD
 import NYXImagesKit
 
-// TODO: ここからアーキテクチャ修正
 class AddViewController: UIViewController {
     private var addService: AddServiceProtocol!
     private var addView: AddViewProtocol!
-    
-    private var selectedImageData: Data?
     
     @IBOutlet private weak var cosmeImageView: UIImageView!
     @IBOutlet private weak var pencilImageView: UIImageView!
@@ -57,7 +54,7 @@ class AddViewController: UIViewController {
     }
 
     // 画像選択の処理
-    @IBAction private func selectImage(){
+    @IBAction private func selectImageByImageBtn(){
         self.showImagePicker()
     }
     
@@ -65,16 +62,13 @@ class AddViewController: UIViewController {
     private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         let resizedImage = selectedImage?.scale(byFactor: 0.3)
+        addService.setSelectedImageData(selectedImage: resizedImage)
         cosmeImageView.image = resizedImage
-        
-        if let resizedImage {
-            selectedImageData = arrangeImageToData(image: resizedImage)
-        }
         picker.dismiss(animated: true, completion: nil)
     }
     
     // カテゴリ選択関数
-    @IBAction private func selectCategory(_sender: UIButton) {
+    @IBAction private func selectCategoryByCategoryBtn(_sender: UIButton) {
         if addService.isSelectedSameCategory(_sender.tag) {
             addView.initCategoryButtonImage()
             return
@@ -84,17 +78,17 @@ class AddViewController: UIViewController {
     }
     
     // コスメを追加する
-    @IBAction private func tappedAddBtn() {
+    @IBAction private func createCosmeByAddBtn() {
         KRProgressHUD.show()
         
         let (isInputDataError, inputDataErrorMessage)
-        = addService.validateInputData(selectedImageDate: selectedImageData, cosmeName: cosmeNameTextField.text, startDateText: startDateTextField.text, limitDateText: limitDateTextField.text)
+        = addService.validateInputData(cosmeName: cosmeNameTextField.text, startDateText: startDateTextField.text, limitDateText: limitDateTextField.text)
         if isInputDataError {
             KRProgressHUD.showError(withMessage: inputDataErrorMessage)
             return
         }
         
-        guard let selectedImageData = selectedImageData,
+        guard let selectedImageData = addService.getSelectdImagaData(),
               let cosmeName = cosmeNameTextField.text,
               let startDateText = startDateTextField.text,
               let limitDateText = limitDateTextField.text,
@@ -144,24 +138,7 @@ class AddViewController: UIViewController {
         }
     }
     
-    // 画像の調整とデータ化
-    private func arrangeImageToData(image: UIImage) -> Data {
-        // 画像を調整
-        UIGraphicsBeginImageContext(image.size)
-        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        image.draw(in: rect)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            return Data()
-        }
-        UIGraphicsEndImageContext()
-        // pngに変換
-        guard let imageData = image.pngData() else {
-            return Data()
-        }
-        return imageData
-    }
-    
-    @IBAction private func delete() {
+    @IBAction private func deleteDataByDeleteBtn() {
         addView.initUI()
         addService.initSelectedCategoryNum()
     }
