@@ -832,7 +832,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="useUpBottonTapped" destination="FzE-VR-CGz" eventType="touchUpInside" id="t7A-vS-6Yh"/>
+                                    <action selector="tappedUseUpBotton" destination="FzE-VR-CGz" eventType="touchUpInside" id="t7A-vS-6Yh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -876,12 +876,12 @@
                         <outlet property="eyelinerButton" destination="ehO-oL-0jG" id="ede-bf-M1n"/>
                         <outlet property="eyeshadowButton" destination="viH-Kx-3ey" id="4c8-G5-XiB"/>
                         <outlet property="foundationButton" destination="Pvc-ud-Vyk" id="ddF-yr-cT0"/>
+                        <outlet property="limitDateTextField" destination="FpV-zl-ebN" id="e2W-Mr-0s1"/>
                         <outlet property="lipButton" destination="Tvq-r5-RTf" id="acj-zi-ieT"/>
                         <outlet property="mascaraButton" destination="668-pC-PW8" id="1bA-TY-hQ8"/>
                         <outlet property="skincareButton" destination="xCL-UL-Q5g" id="f0K-Ds-CxR"/>
                         <outlet property="startDateTextField" destination="LQr-1b-zlu" id="1dR-kx-PXe"/>
                         <outlet property="useupButton" destination="ACk-t6-XhI" id="QRW-oe-d5u"/>
-                        <outlet property="useupDateTextField" destination="FpV-zl-ebN" id="e2W-Mr-0s1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nya-I8-7HY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1376,7 +1376,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="useUpBottonTapped" destination="FzE-VR-CGz" eventType="touchUpInside" id="RTe-gT-vyw"/>
+                                    <action selector="tappedUseUpBotton" destination="FzE-VR-CGz" eventType="touchUpInside" id="RTe-gT-vyw"/>
                                 </connections>
                             </button>
                         </subviews>

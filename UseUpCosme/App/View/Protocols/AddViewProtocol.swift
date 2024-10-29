@@ -5,7 +5,7 @@
 //  Created by 浅田智哉 on 2024/10/08.
 //
 
-import Foundation
+import UIKit
 
 protocol AddViewProtocol {
     func setUpPencilImageView()

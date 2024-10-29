@@ -9,7 +9,7 @@ import UIKit
 import UserNotifications
 
 class AddService: AddServiceProtocol {
-    private let realmManagerProtocol: RealmManagerProtocol = RealmManager()
+    private let realmManager: RealmManagerProtocol = RealmManager()
     private var selectedCategoryNum: Int?
     private var selectedImageData: Data?
     
@@ -147,7 +147,7 @@ class AddService: AddServiceProtocol {
     }
     
     func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
-        realmManagerProtocol.createCosme(cosme: cosme) { [weak self] result in
+        realmManager.createCosme(cosme: cosme) { [weak self] result in
             guard let self else {
                 return
             }

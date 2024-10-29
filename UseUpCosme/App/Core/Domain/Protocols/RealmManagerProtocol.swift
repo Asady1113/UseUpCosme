@@ -10,4 +10,6 @@ import Foundation
 protocol RealmManagerProtocol {
     func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
     func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?)
+    func useUpCosme(selectedCosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?)
+    func countUseUpCosmes(completion: ((Result<Int, Error>) -> Void)?)
 }

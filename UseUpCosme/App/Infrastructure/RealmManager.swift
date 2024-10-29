@@ -41,6 +41,37 @@ class RealmManager: RealmManagerProtocol {
         }
     }
     
+    func useUpCosme(selectedCosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        
+        if let object = realm.object(ofType: CosmeModel.self, forPrimaryKey: selectedCosme.objectId) {
+            do {
+                try realm.write {
+                    // 取得したオブジェクトの状態を更新
+                    object.useup = true
+                    object.useupDate = Date()
+                    completion?(.success(()))
+                }
+            } catch {
+                completion?(.failure(error))
+            }
+        } else {
+            completion?(.failure(RealmError.objectNotFound))
+        }
+    }
+    
+    func countUseUpCosmes(completion: ((Result<Int, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        let result = realm.objects(CosmeModel.self).filter("useup== %@", true)
+        completion?(.success(result.count))
+    }
+    
     // TODO: あとで削除
     static func loadCosme(selectedCategory: String, useup: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
         

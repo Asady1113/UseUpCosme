@@ -8,7 +8,7 @@
 import Foundation
 
 class CosmesListService: CosmesListServiceProtocol {
-    private let realmManagerProtocol: RealmManagerProtocol = RealmManager()
+    private let realmManager: RealmManagerProtocol = RealmManager()
     private var selectedOptionNum: Int?
     
     func isSelectedSameOption(_ senderTag: Int) -> Bool {
@@ -53,7 +53,7 @@ class CosmesListService: CosmesListServiceProtocol {
     }
     
     func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
-        realmManagerProtocol.fetchCosmes(isUsedUp: isUsedUp) { [weak self] result in
+        realmManager.fetchCosmes(isUsedUp: isUsedUp) { [weak self] result in
             guard let self else {
                 return
             }

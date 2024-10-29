@@ -59,7 +59,7 @@ class MainHomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedIndex = listTableView.indexPathForSelectedRow, let detailVC = segue.destination as? DetailViewController {
-            detailVC.setCosme(displayedCosmes[selectedIndex.row])
+            detailVC.setSelectedCosme(displayedCosmes[selectedIndex.row])
         }
     }
     
