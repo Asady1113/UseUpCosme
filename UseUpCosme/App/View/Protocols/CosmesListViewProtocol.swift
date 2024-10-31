@@ -12,4 +12,5 @@ protocol CosmesListViewProtocol {
     func reloadTableView()
     func initOptionButtonImage()
     func updateSelectedOptionButtonImage(at index: Int)
+    func changeCountColorByLimitDate(count: Int, view: UIView)
 }

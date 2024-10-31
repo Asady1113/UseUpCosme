@@ -14,6 +14,10 @@
 		0B283B1D2CC7F15B00E43A32 /* DetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B283B1C2CC7F15B00E43A32 /* DetailViewProtocol.swift */; };
 		0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* CosmesListService.swift */; };
 		0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */; };
+		0B4756EF2CD25F0C00E9C715 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4756EE2CD25F0C00E9C715 /* EditView.swift */; };
+		0B4756F12CD25F2300E9C715 /* EditViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4756F02CD25F2300E9C715 /* EditViewProtocol.swift */; };
+		0B4756F32CD264E700E9C715 /* EditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4756F22CD264E700E9C715 /* EditService.swift */; };
+		0B4756F52CD264FB00E9C715 /* EditServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4756F42CD264FB00E9C715 /* EditServiceProtocol.swift */; };
 		0B5734DD2B9B212A008BA71B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5734DC2B9B212A008BA71B /* RealmManager.swift */; };
 		0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C188F2B9B165500344C84 /* CosmeModel.swift */; };
 		0B6989572C9C692700086DDA /* CosmesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6989562C9C692700086DDA /* CosmesListView.swift */; };
@@ -82,8 +86,6 @@
 		94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */; };
 		94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */; };
 		94ED1F502954B39700BE4215 /* UseUpCosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */; };
-		94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */; };
-		94FDDFEA2938C09800BBC400 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDDFE92938C09800BBC400 /* DesignView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,10 @@
 		0B283B1C2CC7F15B00E43A32 /* DetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewProtocol.swift; sourceTree = "<group>"; };
 		0B32F1862C3AE24600806688 /* CosmesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListService.swift; sourceTree = "<group>"; };
 		0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListServiceProtocol.swift; sourceTree = "<group>"; };
+		0B4756EE2CD25F0C00E9C715 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		0B4756F02CD25F2300E9C715 /* EditViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewProtocol.swift; sourceTree = "<group>"; };
+		0B4756F22CD264E700E9C715 /* EditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditService.swift; sourceTree = "<group>"; };
+		0B4756F42CD264FB00E9C715 /* EditServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServiceProtocol.swift; sourceTree = "<group>"; };
 		0B5734DC2B9B212A008BA71B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0B5C188F2B9B165500344C84 /* CosmeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeModel.swift; sourceTree = "<group>"; };
 		0B6989562C9C692700086DDA /* CosmesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListView.swift; sourceTree = "<group>"; };
@@ -183,8 +189,6 @@
 		94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchaivesViewController.swift; sourceTree = "<group>"; };
 		94ED1F4D2954B39700BE4215 /* UseUpCosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseUpCosmeTableViewCell.swift; sourceTree = "<group>"; };
 		94ED1F4E2954B39700BE4215 /* UseUpCosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UseUpCosmeTableViewCell.xib; sourceTree = "<group>"; };
-		94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificateFunction.swift; sourceTree = "<group>"; };
-		94FDDFE92938C09800BBC400 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 		A457AB2BCD1A50D280375EB8 /* Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA8FC41EFE210C91A77B45E5 /* Pods-UseUpCosme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme.release.xcconfig"; path = "Target Support Files/Pods-UseUpCosme/Pods-UseUpCosme.release.xcconfig"; sourceTree = "<group>"; };
 		B99EFAA45BD0C539268FB429 /* Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-UseUpCosme-UseUpCosmeUITests/Pods-UseUpCosme-UseUpCosmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
 				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
+				9493065829598BAC0075694C /* EditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				0B32F1862C3AE24600806688 /* CosmesListService.swift */,
 				0B7D5DCA2CB96F5400B90C27 /* AddService.swift */,
 				0B283B162CC7E72E00E43A32 /* DetailService.swift */,
+				0B4756F22CD264E700E9C715 /* EditService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 				0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */,
 				0B7D5DCC2CB96F6800B90C27 /* AddServiceProtocol.swift */,
 				0B283B182CC7E80800E43A32 /* DetailServiceProtocol.swift */,
+				0B4756F42CD264FB00E9C715 /* EditServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -313,19 +320,10 @@
 				0B6989552C9C68C700086DDA /* View */,
 				0B32F17F2C3ADF3000806688 /* Core */,
 				0B1ED68B2C98297B0012C903 /* Infrastructure */,
-				94FD05302950CCC9003B7FA6 /* Main_OLD */,
 				0B70080E2BA2CA6400D63E22 /* Extension */,
 				94AE16F62891989B00E3DA12 /* Images */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		0B5C188E2B9B112B00344C84 /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-				9493065829598BAC0075694C /* EditViewController.swift */,
-			);
-			path = Edit;
 			sourceTree = "<group>";
 		};
 		0B6989552C9C68C700086DDA /* View */ = {
@@ -344,6 +342,7 @@
 				0B6989592C9C6A0C00086DDA /* CosmesListViewProtocol.swift */,
 				0BC56FDF2CB574CC00B82B4F /* AddViewProtocol.swift */,
 				0B283B1C2CC7F15B00E43A32 /* DetailViewProtocol.swift */,
+				0B4756F02CD25F2300E9C715 /* EditViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -362,6 +361,7 @@
 				0B6989562C9C692700086DDA /* CosmesListView.swift */,
 				0BC56FDD2CB574AC00B82B4F /* AddView.swift */,
 				0B283B1A2CC7F13800E43A32 /* DetailView.swift */,
+				0B4756EE2CD25F0C00E9C715 /* EditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -529,16 +529,6 @@
 				94AE16EC289190B200E3DA12 /* SignIn.storyboard */,
 			);
 			path = Design;
-			sourceTree = "<group>";
-		};
-		94FD05302950CCC9003B7FA6 /* Main_OLD */ = {
-			isa = PBXGroup;
-			children = (
-				0B5C188E2B9B112B00344C84 /* Edit */,
-				94FD052D2950C52E003B7FA6 /* NotificateFunction.swift */,
-				94FDDFE92938C09800BBC400 /* DesignView.swift */,
-			);
-			path = Main_OLD;
 			sourceTree = "<group>";
 		};
 		C54581C8E18A110ECA725CEA /* Pods */ = {
@@ -830,16 +820,18 @@
 				9493065929598BAC0075694C /* EditViewController.swift in Sources */,
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
 				0BC56FDE2CB574AC00B82B4F /* AddView.swift in Sources */,
+				0B4756F32CD264E700E9C715 /* EditService.swift in Sources */,
 				0B283B172CC7E72E00E43A32 /* DetailService.swift in Sources */,
 				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* Date+.swift in Sources */,
 				0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */,
-				94FD052E2950C52E003B7FA6 /* NotificateFunction.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
 				0B283B1D2CC7F15B00E43A32 /* DetailViewProtocol.swift in Sources */,
 				0B7D5DCB2CB96F5400B90C27 /* AddService.swift in Sources */,
+				0B4756EF2CD25F0C00E9C715 /* EditView.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
+				0B4756F52CD264FB00E9C715 /* EditServiceProtocol.swift in Sources */,
 				0B283B192CC7E80800E43A32 /* DetailServiceProtocol.swift in Sources */,
 				0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */,
 				94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */,
@@ -853,11 +845,11 @@
 				0B7D5DCD2CB96F6800B90C27 /* AddServiceProtocol.swift in Sources */,
 				9403CD9C2891778E00243A79 /* AppDelegate.swift in Sources */,
 				9403CD9E2891778E00243A79 /* SceneDelegate.swift in Sources */,
-				94FDDFEA2938C09800BBC400 /* DesignView.swift in Sources */,
 				94AE16FC28919FD700E3DA12 /* HomeViewController.swift in Sources */,
 				94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */,
 				94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */,
 				0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */,
+				0B4756F12CD25F2300E9C715 /* EditViewProtocol.swift in Sources */,
 				0B69895A2C9C6A0C00086DDA /* CosmesListViewProtocol.swift in Sources */,
 				0BC56FE02CB574CC00B82B4F /* AddViewProtocol.swift in Sources */,
 				0B5C18902B9B165500344C84 /* CosmeModel.swift in Sources */,

@@ -52,4 +52,12 @@ class CosmesListView: CosmesListViewProtocol {
             optionButtons[index].setImage(tappedImage, for: .normal)
         }
     }
+    
+    func changeCountColorByLimitDate(count: Int, view: UIView) {
+        if count <= 5 {
+            view.backgroundColor = UIColor(hex: "EA9C8F")
+        } else if count > 5 && count <= 100 {
+            view.backgroundColor = UIColor(hex: "F7C8BC")
+        }
+    }
 }

@@ -12,4 +12,5 @@ protocol RealmManagerProtocol {
     func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?)
     func useUpCosme(selectedCosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?)
     func countUseUpCosmes(completion: ((Result<Int, Error>) -> Void)?)
+    func editSelectedCosme(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, completion: ((Result<Void, Error>) -> Void)?)
 }

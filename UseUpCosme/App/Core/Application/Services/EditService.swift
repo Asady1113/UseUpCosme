@@ -1,0 +1,151 @@
+//
+//  EditService.swift
+//  UseUpCosme
+//
+//  Created by 浅田智哉 on 2024/10/30.
+//
+
+import UIKit
+
+class EditService: EditServiceProtocol {
+    private let realmManager: RealmManagerProtocol = RealmManager()
+    
+    private var selectedCategoryNum: Int?
+    private var selectedImageData: Data?
+    
+    func setSelectedImageData(selectedImage: UIImage?) {
+        if let selectedImage {
+            selectedImageData = arrangeImageToData(image: selectedImage)
+        }
+    }
+    
+    func arrangeImageToData(image: UIImage) -> Data {
+        // 画像を調整
+        UIGraphicsBeginImageContext(image.size)
+        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        image.draw(in: rect)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return Data()
+        }
+        UIGraphicsEndImageContext()
+        // pngに変換
+        guard let imageData = image.pngData() else {
+            return Data()
+        }
+        return imageData
+    }
+    
+    func isSelectedSameCategory(_ senderTag: Int) -> Bool {
+        if selectedCategoryNum == senderTag {
+            selectedCategoryNum = nil
+            return true
+        }
+        return false
+    }
+    
+    func setSelectedCategoryNum(_ senderTag: Int) {
+        selectedCategoryNum = senderTag
+    }
+    
+    func getSelectedCategory() -> CosmeCategory? {
+        let category: [CosmeCategory] = [
+            .foundation,
+            .lip,
+            .cheek,
+            .mascara,
+            .eyebrow,
+            .eyeliner,
+            .eyeshadow,
+            .skincare
+        ]
+        
+        guard let selectedCategoryNum else {
+            return nil
+        }
+        return category[selectedCategoryNum]
+    }
+    
+    func validateInputData(cosmeName: String?, startDateText: String?, limitDateText: String?) -> (isError: Bool, errorMessage: String?) {
+        guard let selectedImageData else {
+            return (true, "画像を登録してください")
+        }
+        if cosmeName == "" {
+            return (true, "名前を登録してください")
+        }
+        if startDateText == "" {
+            return (true, "使用開始日を登録してください")
+        }
+        if limitDateText == "" {
+            return (true, "使用期限を登録してください")
+        }
+        let selectedCategory = getSelectedCategory()
+        guard let selectedCategory else {
+            return (true, "カテゴリを登録してください")
+        }
+        return (false, nil)
+    }
+    
+    func getSelectdImagaData() -> Data? {
+        return selectedImageData
+    }
+    
+    func parseDate(startDateText: String, limitDateText: String) -> (startDate: Date, limitDate: Date) {
+        let startDate = Date.dateFromString(string: startDateText, format: "yyyy / MM / dd")
+        let limitDate = Date.dateFromString(string: limitDateText, format: "yyyy / MM / dd")
+        
+        return (startDate, limitDate)
+    }
+    
+    func validateDate(startDate: Date, limitDate: Date) -> (isError: Bool, errorMessage: String?) {
+        // 使用期限と本日の差分)
+        let dateSubtractionFromToday = Int(limitDate.timeIntervalSince(Date()))
+        // 使用期限と使用開始日の差分
+        let dateSubtractionFromStart = Int(limitDate.timeIntervalSince(startDate))
+        
+        if dateSubtractionFromToday < 0 {
+            return (true,"すでに期限が切れているようです")
+        } else if dateSubtractionFromStart < 0 {
+            return (true,"使用開始時に期限が切れているようです")
+        }
+        return (false, nil)
+    }
+    
+    func editNotification(notificationId: String, cosmeName: String, limitDate: Date, completion: ((Result<Void, Error>) -> Void)?) {
+        // ローカル通知の内容
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+        content.title = "\(String(describing: cosmeName))の使用期限が残り一週間です"
+        content.subtitle = "使用期限まで残り一週間のコスメがあります"
+        content.body =
+        "\(String(describing: cosmeName))が使用期限まで残り一週間です。今週中に使い切りましょう！"
+        content.badge = 1
+        
+        // 日付を設定して、通知に入れる
+        let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
+        // ローカル通知リクエストを作成
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
+        let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
+        
+        // ローカル通知リクエストを登録
+        UNUserNotificationCenter.current().add(request){ (error : Error?) in
+            if let error {
+                completion?(.failure(error))
+            }
+        }
+        completion?(.success(()))
+    }
+    
+    func editSelectedCosme(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, completion: ((Result<Void, Error>) -> Void)?) {
+        realmManager.editSelectedCosme(objectId: objectId, cosmeName: cosmeName, category: category, startDate: startDate, limitDate: limitDate, imageData: imageData) { [weak self] result in
+            guard let self else {
+                return
+            }
+            switch result {
+            case .success():
+                completion?(.success(()))
+            case .failure(let error):
+                completion?(.failure(error))
+            }
+        }
+    }
+}

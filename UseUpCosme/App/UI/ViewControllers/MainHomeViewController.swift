@@ -120,7 +120,7 @@ extension MainHomeViewController: UITableViewDataSource {
         let countDate = Date.dateToLimitDate(limitDate: displayedCosmes[indexPath.row].limitDate)
         cell.countLabel.text = String(countDate)
         // 残り日数に応じてセルの色を変える
-        DesignView.changeCountColor(count: countDate, view: cell.countView)
+        cosmesListView.changeCountColorByLimitDate(count: countDate, view: cell.countView)
         
         // 画像取得
         let data = displayedCosmes[indexPath.row].imageData
