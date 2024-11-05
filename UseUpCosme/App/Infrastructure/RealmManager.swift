@@ -91,4 +91,24 @@ class RealmManager: RealmManagerProtocol {
             completion?(.failure(RealmError.objectNotFound))
         }
     }
+    
+    func deleteSelectedCosme(objectId: String, completion: ((Result<Void, Error>) -> Void)?) {
+        guard let realm = try? Realm() else {
+            completion?(.failure(RealmError.realmFailedToStart))
+            return
+        }
+        
+        if let object = realm.object(ofType: CosmeModel.self, forPrimaryKey: objectId) {
+            do {
+                try realm.write {
+                    realm.delete(object)
+                    completion?(.success(()))
+                }
+            } catch {
+                completion?(.failure(error))
+            }
+        } else {
+            completion?(.failure(RealmError.objectNotFound))
+        }
+    }
 }

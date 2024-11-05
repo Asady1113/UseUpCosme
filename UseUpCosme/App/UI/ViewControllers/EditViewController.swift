@@ -142,6 +142,26 @@ class EditViewController: UIViewController {
         }
     }
     
+    @IBAction private func deleteSelectedCosme() {
+        editService.deleteSelectedCosme(objectId: selectedCosme.objectId, notificationId: selectedCosme.notificationId) { [weak self] result in
+            guard let self else {
+                return
+            }
+            switch result {
+            case .success():
+                KRProgressHUD.showMessage("削除が完了しました！")
+                self.dismiss(animated: true)
+            case .failure(let error):
+                switch error {
+                case RealmError.realmFailedToStart:
+                    KRProgressHUD.showError(withMessage: "削除処理に失敗しました")
+                default:
+                    KRProgressHUD.showError(withMessage: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
     @IBAction private func back() {
         self.dismiss(animated: true)
     }
