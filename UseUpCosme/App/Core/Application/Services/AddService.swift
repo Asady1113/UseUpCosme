@@ -74,7 +74,7 @@ class AddService: AddServiceProtocol {
     }
     
     func validateInputData(cosmeName: String?, startDateText: String?, limitDateText: String?) -> (isError: Bool, errorMessage: String?) {
-        guard let selectedImageData else {
+        guard selectedImageData != nil else {
             return (true, "画像を登録してください")
         }
         if cosmeName == "" {
@@ -87,7 +87,7 @@ class AddService: AddServiceProtocol {
             return (true, "使用期限を登録してください")
         }
         let selectedCategory = getSelectedCategory()
-        guard let selectedCategory else {
+        guard selectedCategory != nil else {
             return (true, "カテゴリを登録してください")
         }
         return (false, nil)
@@ -147,10 +147,7 @@ class AddService: AddServiceProtocol {
     }
     
     func createCosme(cosme: CosmeModel, completion: ((Result<Void, Error>) -> Void)?) {
-        realmManager.createCosme(cosme: cosme) { [weak self] result in
-            guard let self else {
-                return
-            }
+        realmManager.createCosme(cosme: cosme) { result in
             switch result {
             case .success():
                 completion?(.success(()))

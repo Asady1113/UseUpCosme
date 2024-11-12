@@ -53,10 +53,7 @@ class CosmesListService: CosmesListServiceProtocol {
     }
     
     func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?) {
-        realmManager.fetchCosmes(isUsedUp: isUsedUp) { [weak self] result in
-            guard let self else {
-                return
-            }
+        realmManager.fetchCosmes(isUsedUp: isUsedUp) { result in
             switch result {
             case .success(let cosmes):
                 completion?(.success(cosmes))

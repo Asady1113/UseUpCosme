@@ -17,14 +17,11 @@ class DetailService: DetailServiceProtocol {
             }
             switch result {
             case .success():
-                realmManager.countUseUpCosmes { [weak self] result in
-                    guard let self else {
-                        return
-                    }
+                realmManager.countUseUpCosmes { result in
                     switch result {
                     case .success(let count):
                         completion?(.success(count))
-                    case .failure(let error):
+                    case .failure(_):
                         completion?(.failure(RealmError.realmFailedToStart))
                     }
                 }

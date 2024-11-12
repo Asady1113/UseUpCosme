@@ -66,7 +66,7 @@ class EditService: EditServiceProtocol {
     }
     
     func validateInputData(cosmeName: String?, startDateText: String?, limitDateText: String?) -> (isError: Bool, errorMessage: String?) {
-        guard let selectedImageData else {
+        guard selectedImageData != nil else {
             return (true, "画像を登録してください")
         }
         if cosmeName == "" {
@@ -79,7 +79,7 @@ class EditService: EditServiceProtocol {
             return (true, "使用期限を登録してください")
         }
         let selectedCategory = getSelectedCategory()
-        guard let selectedCategory else {
+        guard selectedCategory != nil else {
             return (true, "カテゴリを登録してください")
         }
         return (false, nil)
@@ -136,10 +136,7 @@ class EditService: EditServiceProtocol {
     }
     
     func editSelectedCosme(objectId: String, cosmeName: String, category: String, startDate: Date, limitDate: Date, imageData: Data, completion: ((Result<Void, Error>) -> Void)?) {
-        realmManager.editSelectedCosme(objectId: objectId, cosmeName: cosmeName, category: category, startDate: startDate, limitDate: limitDate, imageData: imageData) { [weak self] result in
-            guard let self else {
-                return
-            }
+        realmManager.editSelectedCosme(objectId: objectId, cosmeName: cosmeName, category: category, startDate: startDate, limitDate: limitDate, imageData: imageData) { result in
             switch result {
             case .success():
                 completion?(.success(()))

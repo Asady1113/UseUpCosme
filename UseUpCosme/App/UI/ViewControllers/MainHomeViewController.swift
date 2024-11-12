@@ -89,7 +89,7 @@ class MainHomeViewController: UIViewController {
                 self.displayedCosmes = allCosmes
                 self.cosmesListView.reloadTableView()
             case .failure(let error):
-                KRProgressHUD.showError(withMessage: "読み込みに失敗しました")
+                KRProgressHUD.showError(withMessage: error.localizedDescription)
             }
             KRProgressHUD.dismiss()
         }
