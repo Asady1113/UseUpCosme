@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */; };
-		0B283B172CC7E72E00E43A32 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B283B162CC7E72E00E43A32 /* DetailService.swift */; };
-		0B283B192CC7E80800E43A32 /* DetailServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B283B182CC7E80800E43A32 /* DetailServiceProtocol.swift */; };
-		0B283B1B2CC7F13800E43A32 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B283B1A2CC7F13800E43A32 /* DetailView.swift */; };
-		0B283B1D2CC7F15B00E43A32 /* DetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B283B1C2CC7F15B00E43A32 /* DetailViewProtocol.swift */; };
 		0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* CosmesListService.swift */; };
 		0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */; };
 		0B4756EF2CD25F0C00E9C715 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4756EE2CD25F0C00E9C715 /* EditView.swift */; };
@@ -78,7 +74,6 @@
 		94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */; };
 		94D069F92892525700755C92 /* emailImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D069F82892525700755C92 /* emailImage.png */; };
 		94D0B016295364EA00A1FC70 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B015295364EA00A1FC70 /* UIColorHex.swift */; };
-		94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0B01729536B4300A1FC70 /* DetailViewController.swift */; };
 		94D4726A29518FB600873FDF /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726929518FB600873FDF /* search@2x.png */; };
 		94D4726D2951904900873FDF /* CosmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4726B2951904900873FDF /* CosmeTableViewCell.swift */; };
 		94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D4726C2951904900873FDF /* CosmeTableViewCell.xib */; };
@@ -107,10 +102,6 @@
 
 /* Begin PBXFileReference section */
 		0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
-		0B283B162CC7E72E00E43A32 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
-		0B283B182CC7E80800E43A32 /* DetailServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceProtocol.swift; sourceTree = "<group>"; };
-		0B283B1A2CC7F13800E43A32 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		0B283B1C2CC7F15B00E43A32 /* DetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewProtocol.swift; sourceTree = "<group>"; };
 		0B32F1862C3AE24600806688 /* CosmesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListService.swift; sourceTree = "<group>"; };
 		0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListServiceProtocol.swift; sourceTree = "<group>"; };
 		0B4756EE2CD25F0C00E9C715 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
@@ -181,7 +172,6 @@
 		94AE16FF2891AA1D00E3DA12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94D069F82892525700755C92 /* emailImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImage.png; sourceTree = "<group>"; };
 		94D0B015295364EA00A1FC70 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
-		94D0B01729536B4300A1FC70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		94D4726929518FB600873FDF /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		94D4726B2951904900873FDF /* CosmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeTableViewCell.swift; sourceTree = "<group>"; };
 		94D4726C2951904900873FDF /* CosmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmeTableViewCell.xib; sourceTree = "<group>"; };
@@ -258,7 +248,6 @@
 				9403CD9F2891778E00243A79 /* MainHomeViewController.swift */,
 				94ED1F4B2954B00700BE4215 /* ArchaivesViewController.swift */,
 				944E8C3028BD1D1B0024F9BE /* AddViewController.swift */,
-				94D0B01729536B4300A1FC70 /* DetailViewController.swift */,
 				9493065829598BAC0075694C /* EditViewController.swift */,
 			);
 			path = ViewControllers;
@@ -296,7 +285,6 @@
 			children = (
 				0B32F1862C3AE24600806688 /* CosmesListService.swift */,
 				0B7D5DCA2CB96F5400B90C27 /* AddService.swift */,
-				0B283B162CC7E72E00E43A32 /* DetailService.swift */,
 				0B4756F22CD264E700E9C715 /* EditService.swift */,
 			);
 			path = Services;
@@ -307,7 +295,6 @@
 			children = (
 				0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */,
 				0B7D5DCC2CB96F6800B90C27 /* AddServiceProtocol.swift */,
-				0B283B182CC7E80800E43A32 /* DetailServiceProtocol.swift */,
 				0B4756F42CD264FB00E9C715 /* EditServiceProtocol.swift */,
 			);
 			path = Protocols;
@@ -341,7 +328,6 @@
 			children = (
 				0B6989592C9C6A0C00086DDA /* CosmesListViewProtocol.swift */,
 				0BC56FDF2CB574CC00B82B4F /* AddViewProtocol.swift */,
-				0B283B1C2CC7F15B00E43A32 /* DetailViewProtocol.swift */,
 				0B4756F02CD25F2300E9C715 /* EditViewProtocol.swift */,
 			);
 			path = Protocols;
@@ -360,7 +346,6 @@
 			children = (
 				0B6989562C9C692700086DDA /* CosmesListView.swift */,
 				0BC56FDD2CB574AC00B82B4F /* AddView.swift */,
-				0B283B1A2CC7F13800E43A32 /* DetailView.swift */,
 				0B4756EE2CD25F0C00E9C715 /* EditView.swift */,
 			);
 			path = Views;
@@ -821,22 +806,17 @@
 				94AE16EF2891914F00E3DA12 /* SignInViewController.swift in Sources */,
 				0BC56FDE2CB574AC00B82B4F /* AddView.swift in Sources */,
 				0B4756F32CD264E700E9C715 /* EditService.swift in Sources */,
-				0B283B172CC7E72E00E43A32 /* DetailService.swift in Sources */,
-				94D0B01829536B4300A1FC70 /* DetailViewController.swift in Sources */,
 				940F2EEA294E133B00700453 /* Date+.swift in Sources */,
 				0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */,
 				94AE17002891AA1D00E3DA12 /* SignUpViewController.swift in Sources */,
-				0B283B1D2CC7F15B00E43A32 /* DetailViewProtocol.swift in Sources */,
 				0B7D5DCB2CB96F5400B90C27 /* AddService.swift in Sources */,
 				0B4756EF2CD25F0C00E9C715 /* EditView.swift in Sources */,
 				944E8C3128BD1D1B0024F9BE /* AddViewController.swift in Sources */,
 				9403CDA02891778E00243A79 /* MainHomeViewController.swift in Sources */,
 				0B4756F52CD264FB00E9C715 /* EditServiceProtocol.swift in Sources */,
-				0B283B192CC7E80800E43A32 /* DetailServiceProtocol.swift in Sources */,
 				0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */,
 				94ED1F4F2954B39700BE4215 /* UseUpCosmeTableViewCell.swift in Sources */,
 				0B6ECA8F2C986C9A003F5F9B /* CosmeCategory.swift in Sources */,
-				0B283B1B2CC7F13800E43A32 /* DetailView.swift in Sources */,
 				94AE16F5289195A300E3DA12 /* CustomButton.swift in Sources */,
 				94ED1F4C2954B00700BE4215 /* ArchaivesViewController.swift in Sources */,
 				0B6989572C9C692700086DDA /* CosmesListView.swift in Sources */,

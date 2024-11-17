@@ -146,24 +146,32 @@ class EditService: EditServiceProtocol {
         }
     }
     
-    func deleteSelectedCosme(objectId: String, notificationId: String, completion: ((Result<Void, Error>) -> Void)?) {
-        realmManager.deleteSelectedCosme(objectId: objectId) { [weak self]  result in
+    func useUpCosme(selectedCosme: CosmeModel, completion: ((Result<Int, Error>) -> Void)?) {
+        realmManager.useUpCosme(selectedCosme: selectedCosme) { [weak self] result in
             guard let self else {
                 return
             }
             switch result {
             case .success():
-                self.deleteNotification(notificationId: notificationId)
-                completion?(.success(()))
+                realmManager.countUseUpCosmes { result in
+                    switch result {
+                    case .success(let count):
+                        completion?(.success(count))
+                    case .failure(_):
+                        completion?(.failure(RealmError.realmFailedToStart))
+                    }
+                }
             case .failure(let error):
-                completion?(.failure(error))
+                switch error {
+                case RealmError.realmFailedToStart:
+                    completion?(.failure(RealmError.realmFailedToStart))
+                case RealmError.objectNotFound:
+                    completion?(.failure(RealmError.objectNotFound))
+                default:
+                    completion?(.failure(error))
+                }
             }
         }
-    }
-    
-    private func deleteNotification(notificationId: String) {
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId])
-        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [notificationId])
     }
     
 }

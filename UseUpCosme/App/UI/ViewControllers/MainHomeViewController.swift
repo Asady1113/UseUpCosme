@@ -58,8 +58,8 @@ class MainHomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let selectedIndex = listTableView.indexPathForSelectedRow, let detailVC = segue.destination as? DetailViewController {
-            detailVC.setSelectedCosme(displayedCosmes[selectedIndex.row])
+        if let selectedIndex = listTableView.indexPathForSelectedRow, let editVC = segue.destination as? EditViewController {
+            editVC.setSelectedCosme(displayedCosmes[selectedIndex.row])
         }
     }
     
@@ -158,7 +158,7 @@ extension MainHomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
+        self.performSegue(withIdentifier: "toEdit", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

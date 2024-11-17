@@ -14,4 +14,5 @@ protocol EditViewProtocol {
     func updateSelectedCategoryButtonImage(at index: Int)
     func setInitialCategoryButtonImage(selectedCategory: String)
     func setUpDatePickers()
+    func displayMessageOfUseUpCount(count: Int, vc: UIViewController)
 }

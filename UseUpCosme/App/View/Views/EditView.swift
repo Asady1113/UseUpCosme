@@ -127,4 +127,14 @@ class EditView: EditViewProtocol {
         textField.endEditing(true)
     }
     
+    func displayMessageOfUseUpCount(count: Int, vc: UIViewController) {
+        let alert = UIAlertController(title: "使い切りおめでとう！", message: "これであなたが使い切ったコスメは\(String(describing: count))個目です！", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "閉じる", style: .default) { action in
+            alert.dismiss(animated: true)
+            vc.dismiss(animated: true)
+        }
+        alert.addAction(okAction)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
 }

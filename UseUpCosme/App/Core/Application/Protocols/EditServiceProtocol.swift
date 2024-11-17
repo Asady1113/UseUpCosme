@@ -16,5 +16,5 @@ protocol EditServiceProtocol {
     func parseDate(startDateText: String, limitDateText: String) -> (startDate: Date, limitDate: Date)
     func validateDate(startDate: Date, limitDate: Date) -> (isError: Bool, errorMessage: String?)
     func editNotification(notificationId: String, cosmeName: String, limitDate: Date, completion: ((Result<Void, Error>) -> Void)?)
-    func deleteSelectedCosme(objectId: String, notificationId: String, completion: ((Result<Void, Error>) -> Void)?)
+    func useUpCosme(selectedCosme: CosmeModel, completion: ((Result<Int, Error>) -> Void)?)
 }
