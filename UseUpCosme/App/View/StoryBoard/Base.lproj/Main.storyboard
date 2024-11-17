@@ -162,7 +162,9 @@
                                     <constraint firstAttribute="height" constant="30" id="U3J-Ul-eQc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="search.png"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system">
+                                    <color key="baseForegroundColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1442,8 +1444,8 @@
         <image name="editButton.jpeg" width="360" height="360"/>
         <image name="homeicon.png" width="25" height="25"/>
         <image name="plusicon.png" width="25" height="25"/>
-        <image name="search.png" width="35" height="36"/>
         <image name="textField.png" width="22" height="33"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
