@@ -10,25 +10,18 @@ import UIKit
 class EditView: EditViewProtocol {
     private var view: UIView
     private var cosmeImageView: UIImageView
-    private var pencilImageView: UIImageView
     private var cosmeNameTextField: UITextField
     private var startDateTextField: UITextField
     private var limitDateTextField: UITextField
     private var categoryButtons: [UIButton]
     
-    init(view: UIView, cosmeImageView: UIImageView, cosmeNameTextField: UITextField, pencilImageView: UIImageView, startDateTextField: UITextField, limitDateTextField: UITextField, categoryButtons: [UIButton]) {
+    init(view: UIView, cosmeImageView: UIImageView, cosmeNameTextField: UITextField, startDateTextField: UITextField, limitDateTextField: UITextField, categoryButtons: [UIButton]) {
         self.view = view
         self.cosmeImageView = cosmeImageView
-        self.pencilImageView = pencilImageView
         self.cosmeNameTextField = cosmeNameTextField
         self.startDateTextField = startDateTextField
         self.limitDateTextField = limitDateTextField
         self.categoryButtons = categoryButtons
-    }
-    
-    func setUpPencilImageView() {
-        pencilImageView.layer.cornerRadius = 15
-        pencilImageView.clipsToBounds = true
     }
     
     func displaySelectedCosmeData(selectedCosme: CosmeModel) {

@@ -20,8 +20,6 @@ class EditViewController: UIViewController {
     private var resizedImage: UIImage?
     
     @IBOutlet private weak var cosmeImageView: UIImageView!
-    @IBOutlet private weak var pencilImageView: UIImageView!
-    
     @IBOutlet private weak var cosmeNameTextField: UITextField!
     @IBOutlet private weak var startDateTextField: UITextField!
     @IBOutlet private weak var limitDateTextField: UITextField!
@@ -43,7 +41,7 @@ class EditViewController: UIViewController {
     
     private func di() {
         editService = EditService()
-        editView = EditView(view: self.view, cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, pencilImageView: pencilImageView, startDateTextField: startDateTextField, limitDateTextField: limitDateTextField, categoryButtons: getOptionButtons())
+        editView = EditView(view: self.view, cosmeImageView: cosmeImageView, cosmeNameTextField: cosmeNameTextField, startDateTextField: startDateTextField, limitDateTextField: limitDateTextField, categoryButtons: getOptionButtons())
     }
     
     private func getOptionButtons() -> [UIButton] {
@@ -55,7 +53,6 @@ class EditViewController: UIViewController {
     }
     
     private func configureUI() {
-        editView.setUpPencilImageView()
         editView.setInitialCategoryButtonImage(selectedCategory: selectedCosme.category)
         editView.setUpDatePickers()
         editView.displaySelectedCosmeData(selectedCosme: selectedCosme)

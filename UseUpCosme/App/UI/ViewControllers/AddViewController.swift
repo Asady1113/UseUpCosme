@@ -14,7 +14,6 @@ class AddViewController: UIViewController {
     private var addView: AddViewProtocol!
     
     @IBOutlet private weak var cosmeImageView: UIImageView!
-    @IBOutlet private weak var pencilImageView: UIImageView!
     @IBOutlet private weak var cosmeNameTextField: UITextField!
     @IBOutlet private weak var startDateTextField: UITextField!
     @IBOutlet private weak var limitDateTextField: UITextField!
@@ -36,7 +35,7 @@ class AddViewController: UIViewController {
     
     private func di() {
         addService = AddService()
-        addView = AddView(view: self.view, cosmeImageView: cosmeImageView, pencilImageView: pencilImageView, startDateTextField: startDateTextField, cosmeNameTextField: cosmeNameTextField, useupDateTextField: limitDateTextField, optionButtons: getOptionButtons())
+        addView = AddView(view: self.view, cosmeImageView: cosmeImageView, startDateTextField: startDateTextField, cosmeNameTextField: cosmeNameTextField, useupDateTextField: limitDateTextField, optionButtons: getOptionButtons())
     }
     
     private func getOptionButtons() -> [UIButton] {
@@ -50,7 +49,6 @@ class AddViewController: UIViewController {
     private func configureUI() {
         addView.initCategoryButtonImage()
         addView.setUpDatePickers()
-        addView.setUpPencilImageView()
     }
 
     // 画像選択の処理
@@ -139,8 +137,17 @@ class AddViewController: UIViewController {
     }
     
     @IBAction private func deleteDataByDeleteBtn() {
-        addView.initUI()
-        addService.initSelectedCategoryNum()
+        let alert = UIAlertController(title: "登録内容を破棄しますか？", message: "破棄した内容は保存されません", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.addView.initUI()
+            self.addService.initSelectedCategoryNum()
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { action in
+            alert.dismiss(animated: true)
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
     }
 
 }

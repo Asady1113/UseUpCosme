@@ -10,25 +10,18 @@ import UIKit
 class AddView: AddViewProtocol {
     private var view: UIView
     private var cosmeImageView: UIImageView
-    private var pencilImageView: UIImageView
     private var cosmeNameTextField: UITextField
     private var startDateTextField: UITextField
     private var useupDateTextField: UITextField
     private var optionButtons: [UIButton]
     
-    init(view: UIView, cosmeImageView: UIImageView, pencilImageView: UIImageView, startDateTextField: UITextField, cosmeNameTextField: UITextField, useupDateTextField: UITextField, optionButtons: [UIButton]) {
+    init(view: UIView, cosmeImageView: UIImageView, startDateTextField: UITextField, cosmeNameTextField: UITextField, useupDateTextField: UITextField, optionButtons: [UIButton]) {
         self.view = view
         self.cosmeImageView = cosmeImageView
-        self.pencilImageView = pencilImageView
         self.cosmeNameTextField = cosmeNameTextField
         self.startDateTextField = startDateTextField
         self.useupDateTextField = useupDateTextField
         self.optionButtons = optionButtons
-    }
-    
-    func setUpPencilImageView() {
-        pencilImageView.layer.cornerRadius = 15
-        pencilImageView.clipsToBounds = true
     }
     
     func initCategoryButtonImage() {

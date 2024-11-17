@@ -8,7 +8,6 @@
 import UIKit
 
 protocol EditViewProtocol {
-    func setUpPencilImageView()
     func displaySelectedCosmeData(selectedCosme: CosmeModel)
     func initCategoryButtonImage()
     func updateSelectedCategoryButtonImage(at index: Int)

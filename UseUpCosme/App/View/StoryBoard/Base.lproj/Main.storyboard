@@ -226,8 +226,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mt2-IF-I3E">
                                         <rect key="frame" x="8" y="7" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cancelButton.png"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system"/>
                                         <connections>
                                             <action selector="deleteDataByDeleteBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="uPh-u6-Tk6"/>
                                         </connections>
@@ -485,9 +486,10 @@
                                     <action selector="selectImageByImageBtn" destination="xGB-qV-CB7" eventType="touchUpInside" id="N3h-b9-tt1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="editButton.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Fm-XLN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Fm-XLN">
                                 <rect key="frame" x="294" y="323" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PAQ-t2-SfI"/>
@@ -533,7 +535,6 @@
                         <outlet property="limitDateTextField" destination="7xJ-Rk-fIp" id="aSM-9e-RT2"/>
                         <outlet property="lipButton" destination="ujy-4R-GcN" id="Fe3-wA-sID"/>
                         <outlet property="mascaraButton" destination="FEh-qv-Lbe" id="WHW-wl-RnP"/>
-                        <outlet property="pencilImageView" destination="AeV-Fm-XLN" id="EQx-BK-XQb"/>
                         <outlet property="skincareButton" destination="XHF-Rr-6xV" id="V1e-yo-TRT"/>
                         <outlet property="startDateTextField" destination="iAF-kP-UMg" id="DAA-ZQ-1zs"/>
                     </connections>
@@ -562,7 +563,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfg-R9-Ugp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="84"/>
+            <point key="canvasLocation" x="-181" y="761"/>
         </scene>
         <!--アーカイブ-->
         <scene sceneID="4TF-rY-P1G">
@@ -743,7 +744,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bms-Lt-eEa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="1442"/>
+            <point key="canvasLocation" x="661" y="1491"/>
         </scene>
         <!--追加-->
         <scene sceneID="fpW-h2-h8s">
@@ -780,7 +781,9 @@
                                         <rect key="frame" x="8" y="7" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cancelButton.png"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="back" destination="HRR-X8-EwP" eventType="touchUpInside" id="yG5-x9-hfV"/>
                                         </connections>
@@ -1038,9 +1041,10 @@
                                     <action selector="selectImageByImageBtn" destination="HRR-X8-EwP" eventType="touchUpInside" id="z4O-fu-kUk"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="editButton.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="l1s-RA-DFt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="l1s-RA-DFt">
                                 <rect key="frame" x="294" y="323" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-sA-045">
                                 <rect key="frame" x="34" y="766" width="347" height="40"/>
@@ -1099,7 +1103,6 @@
                         <outlet property="limitDateTextField" destination="A7s-Wj-Hjz" id="OuF-Ps-4Vr"/>
                         <outlet property="lipButton" destination="6Lp-lt-dN1" id="fG8-ew-UNL"/>
                         <outlet property="mascaraButton" destination="pSK-Wm-HId" id="fwl-kb-reK"/>
-                        <outlet property="pencilImageView" destination="l1s-RA-DFt" id="rbA-Dz-Wwx"/>
                         <outlet property="skincareButton" destination="4HQ-n9-ZGc" id="NGb-AI-vsm"/>
                         <outlet property="startDateTextField" destination="IZD-nA-6Uh" id="Wfg-Wn-OnA"/>
                     </connections>
@@ -1111,10 +1114,10 @@
     </scenes>
     <resources>
         <image name="archivesicon.png" width="24" height="24"/>
-        <image name="cancelButton.png" width="30" height="30"/>
+        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="default-placeholder.png" width="1500" height="1500"/>
-        <image name="editButton.jpeg" width="360" height="360"/>
         <image name="homeicon.png" width="25" height="25"/>
+        <image name="pencil.circle" catalog="system" width="128" height="123"/>
         <image name="plusicon.png" width="25" height="25"/>
         <image name="textField.png" width="22" height="33"/>
         <namedColor name="AccentColor">

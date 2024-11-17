@@ -8,7 +8,6 @@
 import UIKit
 
 protocol AddViewProtocol {
-    func setUpPencilImageView()
     func initCategoryButtonImage()
     func updateSelectedCategoryButtonImage(at index: Int)
     func setUpDatePickers()
