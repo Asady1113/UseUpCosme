@@ -13,4 +13,5 @@ protocol CosmesListServiceProtocol {
     func sortCosmesByLimitDate(cosmes : [CosmeModel]) -> [CosmeModel]
     func filterCosmesByCategory(_ senderTag: Int, cosmes: [CosmeModel]) -> [CosmeModel]
     func fetchCosmes(isUsedUp: Bool, completion: ((Result<[CosmeModel], Error>) -> Void)?)
+    func deleteSelectedCosme(objectId: String, notificationId: String, completion: ((Result<Void, Error>) -> Void)?)
 }

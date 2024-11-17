@@ -155,17 +155,6 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="C5n-uS-vbr"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Rgm-nv-0Le"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJO-vP-IkL">
-                                <rect key="frame" x="356" y="48" width="38" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="PID-Xz-oVn"/>
-                                    <constraint firstAttribute="height" constant="30" id="U3J-Ul-eQc"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system">
-                                    <color key="baseForegroundColor" red="0.13725490870000001" green="0.33333334329999997" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -173,11 +162,9 @@
                         <constraints>
                             <constraint firstItem="JVv-Sn-wyd" firstAttribute="top" secondItem="0cM-H9-QLM" secondAttribute="bottom" constant="17" id="5fe-sM-BTL"/>
                             <constraint firstItem="0cM-H9-QLM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EwQ-Q8-TgF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dJO-vP-IkL" secondAttribute="trailing" constant="20" id="HPg-hN-vbD"/>
                             <constraint firstItem="0cM-H9-QLM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I0w-KM-bJx"/>
                             <constraint firstItem="RYS-hB-0eZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LEv-Lg-pyJ"/>
                             <constraint firstItem="0cM-H9-QLM" firstAttribute="top" secondItem="RYS-hB-0eZ" secondAttribute="bottom" constant="22" id="NUK-2s-eZX"/>
-                            <constraint firstItem="dJO-vP-IkL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="R41-X3-zwR"/>
                             <constraint firstItem="JVv-Sn-wyd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y6E-uH-zd3"/>
                             <constraint firstItem="RYS-hB-0eZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="exu-EI-drA"/>
                             <constraint firstItem="JVv-Sn-wyd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kzb-8J-HW0"/>
@@ -1445,7 +1432,6 @@
         <image name="homeicon.png" width="25" height="25"/>
         <image name="plusicon.png" width="25" height="25"/>
         <image name="textField.png" width="22" height="33"/>
-        <image name="trash" catalog="system" width="117" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

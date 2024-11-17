@@ -94,6 +94,22 @@ class MainHomeViewController: UIViewController {
             KRProgressHUD.dismiss()
         }
     }
+    
+    private func deleteCosme(selectedCosme: CosmeModel) {
+        KRProgressHUD.show()
+        cosmesListService.deleteSelectedCosme(objectId: selectedCosme.objectId, notificationId: selectedCosme.notificationId) { [weak self] result in
+            guard let self else {
+                return
+            }
+            switch result {
+            case .success():
+                self.fetchCosmes()
+            case .failure(let error):
+                KRProgressHUD.showError(withMessage: error.localizedDescription)
+            }
+            KRProgressHUD.dismiss()
+        }
+    }
 }
 
 extension MainHomeViewController: UITableViewDataSource {
@@ -130,6 +146,17 @@ extension MainHomeViewController: UITableViewDataSource {
 }
 
 extension MainHomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (action, view, completionHandler) in
+            self.deleteCosme(selectedCosme: self.displayedCosmes[indexPath.row])
+            completionHandler(true)
+        }
+
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
+        swipeActions.performsFirstActionWithFullSwipe = false
+        return swipeActions
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
