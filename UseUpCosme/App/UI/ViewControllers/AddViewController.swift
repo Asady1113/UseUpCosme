@@ -47,8 +47,18 @@ class AddViewController: UIViewController {
     }
     
     private func configureUI() {
+        dismissKeyBoardByTapped()
         addView.initCategoryButtonImage()
         addView.setUpDatePickers()
+    }
+    
+    private func dismissKeyBoardByTapped() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     // 画像選択の処理

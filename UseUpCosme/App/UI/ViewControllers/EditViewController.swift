@@ -53,9 +53,19 @@ class EditViewController: UIViewController {
     }
     
     private func configureUI() {
+        dismissKeyBoardByTapped()
         editView.setInitialCategoryButtonImage(selectedCategory: selectedCosme.category)
         editView.setUpDatePickers()
         editView.displaySelectedCosmeData(selectedCosme: selectedCosme)
+    }
+    
+    private func dismissKeyBoardByTapped() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction private func selectImageByImageBtn(){
