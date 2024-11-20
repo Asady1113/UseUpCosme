@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B14E0C42CEE1C8400CA5832 /* Icon-App-20x20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B02CEE1C8400CA5832 /* Icon-App-20x20@1x.png */; };
+		0B14E0C52CEE1C8400CA5832 /* Icon-App-20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B12CEE1C8400CA5832 /* Icon-App-20x20@2x.png */; };
+		0B14E0C62CEE1C8400CA5832 /* Icon-App-20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B22CEE1C8400CA5832 /* Icon-App-20x20@3x.png */; };
+		0B14E0C72CEE1C8400CA5832 /* Icon-App-29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B32CEE1C8400CA5832 /* Icon-App-29x29@1x.png */; };
+		0B14E0C82CEE1C8400CA5832 /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B42CEE1C8400CA5832 /* Icon-App-29x29@2x.png */; };
+		0B14E0C92CEE1C8400CA5832 /* Icon-App-29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B52CEE1C8400CA5832 /* Icon-App-29x29@3x.png */; };
+		0B14E0CA2CEE1C8400CA5832 /* Icon-App-40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B62CEE1C8400CA5832 /* Icon-App-40x40@1x.png */; };
+		0B14E0CB2CEE1C8400CA5832 /* Icon-App-40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B72CEE1C8400CA5832 /* Icon-App-40x40@2x.png */; };
+		0B14E0CC2CEE1C8400CA5832 /* Icon-App-40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B82CEE1C8400CA5832 /* Icon-App-40x40@3x.png */; };
+		0B14E0CD2CEE1C8400CA5832 /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0B92CEE1C8400CA5832 /* Icon-App-60x60@2x.png */; };
+		0B14E0CE2CEE1C8400CA5832 /* Icon-App-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0BA2CEE1C8400CA5832 /* Icon-App-60x60@3x.png */; };
+		0B14E0CF2CEE1C8400CA5832 /* Icon-App-76x76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0BB2CEE1C8400CA5832 /* Icon-App-76x76@1x.png */; };
+		0B14E0D02CEE1C8400CA5832 /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0BC2CEE1C8400CA5832 /* Icon-App-76x76@2x.png */; };
+		0B14E0D12CEE1C8400CA5832 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0BD2CEE1C8400CA5832 /* Icon-App-83.5x83.5@2x.png */; };
+		0B14E0D22CEE1C8400CA5832 /* ItunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0BE2CEE1C8400CA5832 /* ItunesArtwork@2x.png */; };
+		0B14E0D32CEE1C8400CA5832 /* iTunesArtwork@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0C02CEE1C8400CA5832 /* iTunesArtwork@1x.png */; };
+		0B14E0D42CEE1C8400CA5832 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0C12CEE1C8400CA5832 /* iTunesArtwork@2x.png */; };
+		0B14E0D52CEE1C8400CA5832 /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14E0C22CEE1C8400CA5832 /* iTunesArtwork@3x.png */; };
 		0B1ED68D2C9838500012C903 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */; };
 		0B32F1872C3AE24600806688 /* CosmesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1862C3AE24600806688 /* CosmesListService.swift */; };
 		0B32F18A2C3AE2D700806688 /* CosmesListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */; };
@@ -101,6 +119,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B14E0B02CEE1C8400CA5832 /* Icon-App-20x20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@1x.png"; sourceTree = "<group>"; };
+		0B14E0B12CEE1C8400CA5832 /* Icon-App-20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@2x.png"; sourceTree = "<group>"; };
+		0B14E0B22CEE1C8400CA5832 /* Icon-App-20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-20x20@3x.png"; sourceTree = "<group>"; };
+		0B14E0B32CEE1C8400CA5832 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
+		0B14E0B42CEE1C8400CA5832 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
+		0B14E0B52CEE1C8400CA5832 /* Icon-App-29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@3x.png"; sourceTree = "<group>"; };
+		0B14E0B62CEE1C8400CA5832 /* Icon-App-40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@1x.png"; sourceTree = "<group>"; };
+		0B14E0B72CEE1C8400CA5832 /* Icon-App-40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@2x.png"; sourceTree = "<group>"; };
+		0B14E0B82CEE1C8400CA5832 /* Icon-App-40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@3x.png"; sourceTree = "<group>"; };
+		0B14E0B92CEE1C8400CA5832 /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
+		0B14E0BA2CEE1C8400CA5832 /* Icon-App-60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@3x.png"; sourceTree = "<group>"; };
+		0B14E0BB2CEE1C8400CA5832 /* Icon-App-76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@1x.png"; sourceTree = "<group>"; };
+		0B14E0BC2CEE1C8400CA5832 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
+		0B14E0BD2CEE1C8400CA5832 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		0B14E0BE2CEE1C8400CA5832 /* ItunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ItunesArtwork@2x.png"; sourceTree = "<group>"; };
+		0B14E0C02CEE1C8400CA5832 /* iTunesArtwork@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@1x.png"; sourceTree = "<group>"; };
+		0B14E0C12CEE1C8400CA5832 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		0B14E0C22CEE1C8400CA5832 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		0B1ED68C2C9838500012C903 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		0B32F1862C3AE24600806688 /* CosmesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListService.swift; sourceTree = "<group>"; };
 		0B32F1892C3AE2D700806688 /* CosmesListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmesListServiceProtocol.swift; sourceTree = "<group>"; };
@@ -215,6 +251,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B14E0BF2CEE1C8400CA5832 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				0B14E0B02CEE1C8400CA5832 /* Icon-App-20x20@1x.png */,
+				0B14E0B12CEE1C8400CA5832 /* Icon-App-20x20@2x.png */,
+				0B14E0B22CEE1C8400CA5832 /* Icon-App-20x20@3x.png */,
+				0B14E0B32CEE1C8400CA5832 /* Icon-App-29x29@1x.png */,
+				0B14E0B42CEE1C8400CA5832 /* Icon-App-29x29@2x.png */,
+				0B14E0B52CEE1C8400CA5832 /* Icon-App-29x29@3x.png */,
+				0B14E0B62CEE1C8400CA5832 /* Icon-App-40x40@1x.png */,
+				0B14E0B72CEE1C8400CA5832 /* Icon-App-40x40@2x.png */,
+				0B14E0B82CEE1C8400CA5832 /* Icon-App-40x40@3x.png */,
+				0B14E0B92CEE1C8400CA5832 /* Icon-App-60x60@2x.png */,
+				0B14E0BA2CEE1C8400CA5832 /* Icon-App-60x60@3x.png */,
+				0B14E0BB2CEE1C8400CA5832 /* Icon-App-76x76@1x.png */,
+				0B14E0BC2CEE1C8400CA5832 /* Icon-App-76x76@2x.png */,
+				0B14E0BD2CEE1C8400CA5832 /* Icon-App-83.5x83.5@2x.png */,
+				0B14E0BE2CEE1C8400CA5832 /* ItunesArtwork@2x.png */,
+			);
+			path = AppIcon.appiconset;
+			sourceTree = "<group>";
+		};
+		0B14E0C32CEE1C8400CA5832 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				0B14E0BF2CEE1C8400CA5832 /* AppIcon.appiconset */,
+				0B14E0C02CEE1C8400CA5832 /* iTunesArtwork@1x.png */,
+				0B14E0C12CEE1C8400CA5832 /* iTunesArtwork@2x.png */,
+				0B14E0C22CEE1C8400CA5832 /* iTunesArtwork@3x.png */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
 		0B1D21432BA9DE8F00257572 /* TabbarIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +520,7 @@
 		9403CD9A2891778E00243A79 /* UseUpCosme */ = {
 			isa = PBXGroup;
 			children = (
+				0B14E0C32CEE1C8400CA5832 /* ios */,
 				9403CD9B2891778E00243A79 /* AppDelegate.swift */,
 				9403CD9D2891778E00243A79 /* SceneDelegate.swift */,
 				0B5C18882B9B0FBF00344C84 /* App */,
@@ -641,39 +711,57 @@
 				94AE16ED289190B200E3DA12 /* SignIn.storyboard in Resources */,
 				0B7BB4D62BAA8747009353CE /* eyeshadow.png in Resources */,
 				0B7BB4C72BAA8747009353CE /* eyebrow.png in Resources */,
+				0B14E0C62CEE1C8400CA5832 /* Icon-App-20x20@3x.png in Resources */,
 				0B7BB4D22BAA8747009353CE /* lip_tapped.png in Resources */,
+				0B14E0CA2CEE1C8400CA5832 /* Icon-App-40x40@1x.png in Resources */,
 				0B7BB4DA2BAA8FB8009353CE /* archivesicon@2x.png in Resources */,
+				0B14E0D32CEE1C8400CA5832 /* iTunesArtwork@1x.png in Resources */,
+				0B14E0C42CEE1C8400CA5832 /* Icon-App-20x20@1x.png in Resources */,
 				0B7BB4DC2BAA8FCD009353CE /* plusicon@2x.png in Resources */,
+				0B14E0C82CEE1C8400CA5832 /* Icon-App-29x29@2x.png in Resources */,
 				0B7BB4CE2BAA8747009353CE /* lip.png in Resources */,
 				0B7BB4CD2BAA8747009353CE /* eyeliner_tapped.png in Resources */,
+				0B14E0D02CEE1C8400CA5832 /* Icon-App-76x76@2x.png in Resources */,
 				0B7BB4CF2BAA8747009353CE /* foundation.png in Resources */,
 				0B7BB4D52BAA8747009353CE /* eyebrow_tapped.png in Resources */,
+				0B14E0D52CEE1C8400CA5832 /* iTunesArtwork@3x.png in Resources */,
 				0B7BB4D42BAA8747009353CE /* skincare_tapped.png in Resources */,
+				0B14E0CB2CEE1C8400CA5832 /* Icon-App-40x40@2x.png in Resources */,
 				0B7BB4D02BAA8747009353CE /* clock.png in Resources */,
 				0B7BB4D32BAA8747009353CE /* foundation_tapped.png in Resources */,
 				9403CDA82891778F00243A79 /* LaunchScreen.storyboard in Resources */,
 				0B7BB4CA2BAA8747009353CE /* eyeliner.png in Resources */,
 				0B7BB4C82BAA8747009353CE /* cheek_tapped.png in Resources */,
+				0B14E0C52CEE1C8400CA5832 /* Icon-App-20x20@2x.png in Resources */,
 				0B7BB4D82BAA8A95009353CE /* homeicon@2x.png in Resources */,
+				0B14E0CF2CEE1C8400CA5832 /* Icon-App-76x76@1x.png in Resources */,
 				0B7BB4C62BAA8747009353CE /* skincare.png in Resources */,
 				9403CDA52891778F00243A79 /* Assets.xcassets in Resources */,
+				0B14E0C72CEE1C8400CA5832 /* Icon-App-29x29@1x.png in Resources */,
 				0B7BB4DE2BAA9741009353CE /* clock2.png in Resources */,
+				0B14E0CE2CEE1C8400CA5832 /* Icon-App-60x60@3x.png in Resources */,
 				9403CDA32891778E00243A79 /* Main.storyboard in Resources */,
+				0B14E0D12CEE1C8400CA5832 /* Icon-App-83.5x83.5@2x.png in Resources */,
 				0B7BB4E02BAA9748009353CE /* clock2_tapped.png in Resources */,
 				94D7B19828CDE6470053A5F4 /* editButton.jpeg in Resources */,
 				94D4726A29518FB600873FDF /* search@2x.png in Resources */,
 				0B7BB4D12BAA8747009353CE /* eyeshadow_tapped.png in Resources */,
 				0B7BB4E62BAA9BE1009353CE /* cancelButton.png in Resources */,
 				0B7BB4C52BAA8747009353CE /* mascara_tapped.png in Resources */,
+				0B14E0C92CEE1C8400CA5832 /* Icon-App-29x29@3x.png in Resources */,
+				0B14E0D22CEE1C8400CA5832 /* ItunesArtwork@2x.png in Resources */,
 				944E8C2728BD1BB40024F9BE /* textField.png in Resources */,
 				94AE16FE2891A47F00E3DA12 /* peopleImage.png in Resources */,
 				0B7BB4CC2BAA8747009353CE /* clock_tapped.png in Resources */,
 				9408525628E87A700093987A /* default-placeholder.png in Resources */,
 				94D4726E2951904900873FDF /* CosmeTableViewCell.xib in Resources */,
 				0B7BB4CB2BAA8747009353CE /* mascara.png in Resources */,
+				0B14E0CC2CEE1C8400CA5832 /* Icon-App-40x40@3x.png in Resources */,
 				0B7BB4C92BAA8747009353CE /* cheek.png in Resources */,
+				0B14E0D42CEE1C8400CA5832 /* iTunesArtwork@2x.png in Resources */,
 				94D069F92892525700755C92 /* emailImage.png in Resources */,
 				94AE16FA2891991400E3DA12 /* titleImage.png in Resources */,
+				0B14E0CD2CEE1C8400CA5832 /* Icon-App-60x60@2x.png in Resources */,
 				94ED1F502954B39700BE4215 /* UseUpCosmeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1010,14 +1098,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TZ5A5U924L;
+				DEVELOPMENT_TEAM = 6N4K99947A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UseUpCosme/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosme Clear";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1039,14 +1127,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TZ5A5U924L;
+				DEVELOPMENT_TEAM = 6N4K99947A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UseUpCosme/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosme Clear";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
