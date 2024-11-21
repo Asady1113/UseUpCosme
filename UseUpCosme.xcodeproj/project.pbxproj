@@ -1104,6 +1104,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UseUpCosme/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cosme Clear";
+				INFOPLIST_KEY_NSCameraUsageDescription = "このアプリでは写真を撮るためにカメラを使用します。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "このアプリでは写真登録のために、フォトライブラリを使用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1141,6 +1143,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UseUpCosme/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cosme Clear";
+				INFOPLIST_KEY_NSCameraUsageDescription = "このアプリでは写真を撮るためにカメラを使用します。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "このアプリでは写真登録のために、フォトライブラリを使用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
