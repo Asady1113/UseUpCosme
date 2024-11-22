@@ -133,7 +133,7 @@ class AddViewController: UIViewController {
             switch result {
             case .success():
                 addView.initUI()
-                addService.initSelectedCategoryNum()
+                addService.initData()
                 KRProgressHUD.showMessage("保存が完了しました！")
             case .failure(let error):
                 switch error {
@@ -150,7 +150,7 @@ class AddViewController: UIViewController {
         let alert = UIAlertController(title: "登録内容を破棄しますか？", message: "破棄した内容は保存されません", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
             self.addView.initUI()
-            self.addService.initSelectedCategoryNum()
+            self.addService.initData()
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { action in
             alert.dismiss(animated: true)

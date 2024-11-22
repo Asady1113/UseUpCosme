@@ -43,10 +43,6 @@ class AddService: AddServiceProtocol {
         return category[selectedCategoryNum]
     }
     
-    func initSelectedCategoryNum() {
-        selectedCategoryNum = nil
-    }
-    
     func setSelectedImageData(selectedImage: UIImage?) {
         if let selectedImage {
             selectedImageData = arrangeImageToData(image: selectedImage)
@@ -155,5 +151,10 @@ class AddService: AddServiceProtocol {
                 completion?(.failure(error))
             }
         }
+    }
+    
+    func initData() {
+        selectedCategoryNum = nil
+        selectedImageData = nil
     }
 }
