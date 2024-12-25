@@ -37,6 +37,7 @@ class EditViewController: UIViewController {
         super.viewDidLoad()
         di()
         configureUI()
+        setData()
     }
     
     private func di() {
@@ -57,6 +58,10 @@ class EditViewController: UIViewController {
         editView.setInitialCategoryButtonImage(selectedCategory: selectedCosme.category)
         editView.setUpDatePickers()
         editView.displaySelectedCosmeData(selectedCosme: selectedCosme)
+    }
+    
+    private func setData() {
+        editService.initData(selectedCategory: selectedCosme.category, imageData: selectedCosme.imageData)
     }
     
     private func dismissKeyBoardByTapped() {
@@ -95,7 +100,7 @@ class EditViewController: UIViewController {
     @IBAction func editCosmeByEditBtn() {
         KRProgressHUD.show()
         
-        let (isInputDataError, inputDataErrorMessage) = editService.validateInputData(cosmeName: cosmeNameTextField.text, startDateText: startDateTextField.text, limitDateText: limitDateTextField.text)
+        let (isInputDataError, inputDataErrorMessage) = editService.validateInputData(cosmeName: editView.getCosmeName(), startDateText: editView.getStartDate(), limitDateText: editView.getLimitDate())
         if isInputDataError {
             KRProgressHUD.showError(withMessage: inputDataErrorMessage)
             return

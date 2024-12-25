@@ -35,6 +35,18 @@ class EditView: EditViewProtocol {
         limitDateTextField.text = Date.stringFromDate(date: selectedCosme.limitDate, format: "yyyy / MM / dd")
     }
     
+    func getCosmeName() -> String? {
+        return cosmeNameTextField.text
+    }
+    
+    func getStartDate() -> String? {
+        return startDateTextField.text
+    }
+    
+    func getLimitDate() -> String? {
+        return limitDateTextField.text
+    }
+    
     func setInitialCategoryButtonImage(selectedCategory: String) {
         let categories = [CosmeCategory.foundation, CosmeCategory.lip, CosmeCategory.cheek, CosmeCategory.mascara, CosmeCategory.eyebrow, CosmeCategory.eyeliner, CosmeCategory.eyeshadow, CosmeCategory.skincare]
         let optionButtonImageNames = [

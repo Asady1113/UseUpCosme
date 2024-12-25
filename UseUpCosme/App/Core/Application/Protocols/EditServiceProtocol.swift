@@ -10,6 +10,7 @@ import UIKit
 protocol EditServiceProtocol {
     func setSelectedImageData(selectedImage: UIImage?)
     func isSelectedSameCategory(_ senderTag: Int) -> Bool
+    func initData(selectedCategory: String, imageData: Data)
     func setSelectedCategoryNum(_ senderTag: Int)
     func validateInputData(cosmeName: String?, startDateText: String?, limitDateText: String?) -> (isError: Bool, errorMessage: String?)
     func getSelectdImagaData() -> Data?

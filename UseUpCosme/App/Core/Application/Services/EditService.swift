@@ -13,6 +13,32 @@ class EditService: EditServiceProtocol {
     private var selectedCategoryNum: Int?
     private var selectedImageData: Data?
     
+    func initData(selectedCategory: String, imageData: Data) {
+        initSelectedCategoryNum(selectedCategory: selectedCategory)
+        initSelectedImageData(imageData: imageData)
+    }
+    
+    private func initSelectedCategoryNum(selectedCategory: String) {
+        let category: [CosmeCategory] = [
+            .foundation,
+            .lip,
+            .cheek,
+            .mascara,
+            .eyebrow,
+            .eyeliner,
+            .eyeshadow,
+            .skincare
+        ]
+        
+        for i in 0...category.count - 1 {
+            self.selectedCategoryNum = category[i].rawValue == selectedCategory ? i : self.selectedCategoryNum
+        }
+    }
+    
+    private func initSelectedImageData(imageData: Data) {
+        selectedImageData = imageData
+    }
+    
     func setSelectedImageData(selectedImage: UIImage?) {
         if let selectedImage {
             selectedImageData = arrangeImageToData(image: selectedImage)

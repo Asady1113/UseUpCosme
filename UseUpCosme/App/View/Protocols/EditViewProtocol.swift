@@ -9,6 +9,9 @@ import UIKit
 
 protocol EditViewProtocol {
     func displaySelectedCosmeData(selectedCosme: CosmeModel)
+    func getCosmeName() -> String?
+    func getStartDate() -> String?
+    func getLimitDate() -> String?
     func initCategoryButtonImage()
     func updateSelectedCategoryButtonImage(at index: Int)
     func setInitialCategoryButtonImage(selectedCategory: String)
