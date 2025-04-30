@@ -1098,18 +1098,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6N4K99947A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UseUpCosme/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cosme Clear";
-				INFOPLIST_KEY_NSCameraUsageDescription = "このアプリでは写真を撮るためにカメラを使用します。";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "このアプリでは写真登録のために、フォトライブラリを使用します";
+				INFOPLIST_KEY_NSCameraUsageDescription = "このアプリではコスメの画像を撮影し、アプリ内に保存・管理するためにカメラを使用します。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "このアプリではコスメの画像を選択し、アプリ内で保存・管理するためにフォトライブラリを使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1137,18 +1138,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6N4K99947A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UseUpCosme/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cosme Clear";
-				INFOPLIST_KEY_NSCameraUsageDescription = "このアプリでは写真を撮るためにカメラを使用します。";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "このアプリでは写真登録のために、フォトライブラリを使用します";
+				INFOPLIST_KEY_NSCameraUsageDescription = "このアプリではコスメの画像を撮影し、アプリ内に保存・管理するためにカメラを使用します。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "このアプリではコスメの画像を選択し、アプリ内で保存・管理するためにフォトライブラリを使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -147,7 +147,12 @@ class EditService: EditServiceProtocol {
         content.badge = 1
         
         // 日付を設定して、通知に入れる
-        let component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: limitDate)
+        guard let notificationDate = Calendar.current.date(byAdding: .day, value: -7, to: limitDate) else {
+            return
+        }
+        var component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
+        component.hour = 9
+        component.minute = 0
         // ローカル通知リクエストを作成
         let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
         let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
