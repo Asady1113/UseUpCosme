@@ -114,10 +114,10 @@ class AddService: AddServiceProtocol {
         // ローカル通知の内容
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
-        content.title = "\(String(describing: cosmeName))の使用期限が残り一週間です"
-        content.subtitle = "使用期限まで残り一週間のコスメがあります"
+        content.title = "\(String(describing: cosmeName))の使用期限が残り1週間です"
+        content.subtitle = "使用期限まで残り1週間のコスメがあります"
         content.body =
-        "\(String(describing: cosmeName))が使用期限まで残り一週間です。今週中に使い切りましょう！"
+        "\(String(describing: cosmeName))が使用期限まで残り1週間です。今週中に使い切りましょう！"
         content.badge = 1
         
         // 日付を設定して、通知に入れる
